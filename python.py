@@ -8,12 +8,17 @@ def reshape (wide_files):
 
     df = df[df["Generation type"].str.strip() == "All generating companies"] # interested in total generated output
 
-    df_long = df.pivot_table(
-        # columns to account for 2 components in the first 2 columns
-        index ="Year",
-        columns = "Fuel",                      # new column for years
-        values = "Value"                    # new column for data values
-        aggfunc = "first" # WHAT DOES THIS MEAN?
+    df_long = df.melt(
+        id_vars=["Fuel"],    
+        var_name="Year",     
+        value_name="Value"
+    )
+
+    df_final = df_long.pivot_table( #Pivoting to have fuel types as columns
+        index="Year",
+        columns="Fuel",
+        values="Value",
+        aggfunc="first"
     ).reset_index()
 
     print(df_long.head())
