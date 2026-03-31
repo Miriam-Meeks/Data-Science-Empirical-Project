@@ -11,14 +11,13 @@ def reshape (wide_files):
     df["Generation type"] = df["Generation type"].astype(str).str.strip()
 
     df = df[df["Generation type"] == "All generating companies"] # interested in total generated output
+    df = df.drop(columns=["Generation type"]) 
 
     df_long = df.melt(
         id_vars=["Fuel"],    
         var_name="Year",     
         value_name="Value"
     )
-
-    #df_long["Value"] = pd.to_numeric(df_long["Value"], errors="coerce") # CHECK THAT THIS USEFUL
 
     df_final = df_long.pivot( #Pivoting to have fuel types as columns but no aggregation
         index="Year",
