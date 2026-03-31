@@ -6,6 +6,8 @@ def reshape (wide_files):
     
     df = df.loc[:, ~df.columns.str.contains("^Unnamed")] # drop empty, unamed columns
 
+    df["Fuel"] = df["Fuel"].astype(str).str.strip()
+    df["Generation type"] = df["Generation type"].astype(str).str.strip()
     df = df[df["Generation type"].str.strip() == "All generating companies"] # interested in total generated output
 
     df_long = df.melt(
@@ -14,11 +16,10 @@ def reshape (wide_files):
         value_name="Value"
     )
 
-    df_final = df_long.pivot_table( #Pivoting to have fuel types as columns
+    df_final = df_long.pivot( #Pivoting to have fuel types as columns but no aggregation
         index="Year",
         columns="Fuel",
-        values="Value",
-        aggfunc="first"
+        values="Value"
     ).reset_index()
 
     print(df_long.head())
