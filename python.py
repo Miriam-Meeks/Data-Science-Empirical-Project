@@ -33,7 +33,15 @@ def reshape (wide_files):
 
 wide_files = ["electricity-generated.csv","share-electricity-generated.csv"]
 
-for file in wide_files:
-    reshape(file) # Working reshape :)
+# for file in wide_files:
+#     df_[file] = reshape(file) # Working reshape :)
+    
+gen_df = reshape("electricity-generated.csv")
+share_df = reshape("share-electricity-generated.csv")
 
+# share_df = share_df.rename(columns={
+#     col: f"{col} (%)" for col in share_df.columns if col != "Year"
+# })
 
+# pd.merge(gen_df, share_df, on="Year", how="inner") 
+# # Merge can be inner as you won't have missing years not in both datasets because of the nature of the datasets.
