@@ -18,7 +18,7 @@ def reshape (wide_files):
         value_name="Value"
     )
 
-    #df_long["Value"] = pd.to_numeric(df_long["Value"], errors="coerce") # CHECK THAT THIS USEFUL
+    df_long["Value"] = pd.to_numeric(df_long["Value"], errors="coerce") # CHECK THAT THIS USEFUL
 
     df_final = df_long.pivot( #Pivoting to have fuel types as columns but no aggregation
         index="Year",
@@ -29,7 +29,7 @@ def reshape (wide_files):
     print(df_long.head())
 
     output_name = wide_files.replace(".csv", "-long.csv")
-    df_long.to_csv(output_name, index=False) #saved to renamed csv
+    df_final.to_csv(output_name, index=False) #saved to renamed csv
 
 wide_files = ["electricity-generated.csv","share-electricity-generated.csv"]
 
