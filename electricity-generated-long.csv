@@ -1,511 +1,511 @@
 Fuel,Year,Value
-Coal,Generation type,All generating companies
-Oil,Generation type,All generating companies
-Gas,Generation type,All generating companies
-Nuclear,Generation type,All generating companies
-Hydro (natural flow),Generation type,All generating companies
-Total wind,Generation type,All generating companies
-Onshore wind,Generation type,All generating companies
-Offshore wind,Generation type,All generating companies
-Shoreline wave / tidal,Generation type,All generating companies
-Solar,Generation type,All generating companies
-Thermal renewables [note 9],Generation type,All generating companies
-Other fuels [note 10],Generation type,All generating companies
-Energy storage,Generation type,All generating companies
-Total all generating companies,Generation type,All generating companies
-Total renewable generation [note 13],Generation type,All generating companies
-Total low carbon generation [note 14],Generation type,All generating companies
-Total fossil fuel generation [note 15],Generation type,All generating companies
-Coal,1996,"145,216"
-Oil,1996,"14,955"
-Gas,1996,"84,086"
-Nuclear,1996,"94,671"
-Hydro (natural flow),1996,"3,393"
-Total wind,1996,488
-Onshore wind,1996,488
-Offshore wind,1996,0
-Shoreline wave / tidal,1996,0
-Solar,1996,0
-Thermal renewables [note 9],1996,"2,221"
-Other fuels [note 10],1996,"4,283"
-Energy storage,1996,"1,556"
-Total all generating companies,1996,"350,867"
-Total renewable generation [note 13],1996,"6,102"
-Total low carbon generation [note 14],1996,"100,773"
-Total fossil fuel generation [note 15],1996,"244,257"
-Coal,1997,"119,718"
-Oil,1997,"8,686"
-Gas,1997,"110,963"
-Nuclear,1997,"98,146"
-Hydro (natural flow),1997,"4,169"
-Total wind,1997,667
-Onshore wind,1997,667
-Offshore wind,1997,0
-Shoreline wave / tidal,1997,0
-Solar,1997,0
-Thermal renewables [note 9],1997,"2,593"
-Other fuels [note 10],1997,"4,239"
-Energy storage,1997,"1,486"
-Total all generating companies,1997,"350,667"
-Total renewable generation [note 13],1997,"7,429"
-Total low carbon generation [note 14],1997,"105,575"
-Total fossil fuel generation [note 15],1997,"239,367"
-Coal,1998,"122,971"
-Oil,1998,"7,355"
-Gas,1998,"117,798"
-Nuclear,1998,"99,486"
-Hydro (natural flow),1998,"5,118"
-Total wind,1998,877
-Onshore wind,1998,877
-Offshore wind,1998,0
-Shoreline wave / tidal,1998,0
-Solar,1998,0
-Thermal renewables [note 9],1998,"3,237"
-Other fuels [note 10],1998,"4,236"
-Energy storage,1998,"1,624"
-Total all generating companies,1998,"362,702"
-Total renewable generation [note 13],1998,"9,232"
-Total low carbon generation [note 14],1998,"108,718"
-Total fossil fuel generation [note 15],1998,"248,124"
-Coal,1999,"106,180"
-Oil,1999,"6,549"
-Gas,1999,"142,902"
-Nuclear,1999,"95,133"
-Hydro (natural flow),1999,"5,336"
-Total wind,1999,850
-Onshore wind,1999,850
-Offshore wind,1999,0
-Shoreline wave / tidal,1999,0
-Solar,1999,1
-Thermal renewables [note 9],1999,"3,988"
-Other fuels [note 10],1999,"4,312"
-Energy storage,1999,"2,902"
-Total all generating companies,1999,"368,153"
-Total renewable generation [note 13],1999,"10,175"
-Total low carbon generation [note 14],1999,"105,308"
-Total fossil fuel generation [note 15],1999,"255,631"
-Coal,2000,"119,950"
-Oil,2000,"6,524"
-Gas,2000,"148,077"
-Nuclear,2000,"85,063"
-Hydro (natural flow),2000,"5,086"
-Total wind,2000,946
-Onshore wind,2000,945
-Offshore wind,2000,1
-Shoreline wave / tidal,2000,0
-Solar,2000,1
-Thermal renewables [note 9],2000,"4,328"
-Other fuels [note 10],2000,"4,401"
-Energy storage,2000,"2,694"
-Total all generating companies,2000,"377,070"
-Total renewable generation [note 13],2000,"10,361"
-Total low carbon generation [note 14],2000,"95,424"
-Total fossil fuel generation [note 15],2000,"274,551"
-Coal,2001,"131,461"
-Oil,2001,"5,253"
-Gas,2001,"141,905"
-Nuclear,2001,"90,093"
-Hydro (natural flow),2001,"4,055"
-Total wind,2001,965
-Onshore wind,2001,960
-Offshore wind,2001,5
-Shoreline wave / tidal,2001,0
-Solar,2001,2
-Thermal renewables [note 9],2001,"5,054"
-Other fuels [note 10],2001,"3,577"
-Energy storage,2001,"2,422"
-Total all generating companies,2001,"384,787"
-Total renewable generation [note 13],2001,"10,076"
-Total low carbon generation [note 14],2001,"100,169"
-Total fossil fuel generation [note 15],2001,"278,619"
-Coal,2002,"124,279"
-Oil,2002,"4,799"
-Gas,2002,"152,277"
-Nuclear,2002,"87,848"
-Hydro (natural flow),2002,"4,787"
-Total wind,2002,"1,256"
-Onshore wind,2002,"1,251"
-Offshore wind,2002,5
-Shoreline wave / tidal,2002,0
-Solar,2002,3
-Thermal renewables [note 9],2002,"5,625"
-Other fuels [note 10],2002,"3,719"
-Energy storage,2002,"2,652"
-Total all generating companies,2002,"387,245"
-Total renewable generation [note 13],2002,"11,671"
-Total low carbon generation [note 14],2002,"99,519"
-Total fossil fuel generation [note 15],2002,"281,355"
-Coal,2003,"138,305"
-Oil,2003,"4,594"
-Gas,2003,"148,881"
-Nuclear,2003,"88,686"
-Hydro (natural flow),2003,"3,228"
-Total wind,2003,"1,285"
-Onshore wind,2003,"1,276"
-Offshore wind,2003,10
-Shoreline wave / tidal,2003,0
-Solar,2003,3
-Thermal renewables [note 9],2003,"6,691"
-Other fuels [note 10],2003,"3,800"
-Energy storage,2003,"2,734"
-Total all generating companies,2003,"398,207"
-Total renewable generation [note 13],2003,"11,207"
-Total low carbon generation [note 14],2003,"99,893"
-Total fossil fuel generation [note 15],2003,"291,780"
-Coal,2004,"131,788"
-Oil,2004,"4,644"
-Gas,2004,"157,064"
-Nuclear,2004,"79,999"
-Hydro (natural flow),2004,"4,844"
-Total wind,2004,"1,935"
-Onshore wind,2004,"1,736"
-Offshore wind,2004,199
-Shoreline wave / tidal,2004,0
-Solar,2004,4
-Thermal renewables [note 9],2004,"7,940"
-Other fuels [note 10],2004,"3,062"
-Energy storage,2004,"2,649"
-Total all generating companies,2004,"393,929"
-Total renewable generation [note 13],2004,"14,723"
-Total low carbon generation [note 14],2004,"94,722"
-Total fossil fuel generation [note 15],2004,"293,496"
-Coal,2005,"134,637"
-Oil,2005,"5,338"
-Gas,2005,"152,642"
-Nuclear,2005,"81,618"
-Hydro (natural flow),2005,"4,922"
-Total wind,2005,"2,904"
-Onshore wind,2005,"2,501"
-Offshore wind,2005,403
-Shoreline wave / tidal,2005,0
-Solar,2005,8
-Thermal renewables [note 9],2005,"9,685"
-Other fuels [note 10],2005,"3,676"
-Energy storage,2005,"2,930"
-Total all generating companies,2005,"398,360"
-Total renewable generation [note 13],2005,"17,519"
-Total low carbon generation [note 14],2005,"99,137"
-Total fossil fuel generation [note 15],2005,"292,617"
-Coal,2006,"148,850"
-Oil,2006,"6,173"
-Gas,2006,"140,828"
-Nuclear,2006,"75,451"
-Hydro (natural flow),2006,"4,593"
-Total wind,2006,"4,225"
-Onshore wind,2006,"3,574"
-Offshore wind,2006,651
-Shoreline wave / tidal,2006,0
-Solar,2006,11
-Thermal renewables [note 9],2006,"9,928"
-Other fuels [note 10],2006,"3,371"
-Energy storage,2006,"3,853"
-Total all generating companies,2006,"397,282"
-Total renewable generation [note 13],2006,"18,757"
-Total low carbon generation [note 14],2006,"94,207"
-Total fossil fuel generation [note 15],2006,"295,851"
-Coal,2007,"135,944"
-Oil,2007,"5,048"
-Gas,2007,"165,793"
-Nuclear,2007,"63,028"
-Hydro (natural flow),2007,"5,077"
-Total wind,2007,"5,274"
-Onshore wind,2007,"4,491"
-Offshore wind,2007,783
-Shoreline wave / tidal,2007,0
-Solar,2007,14
-Thermal renewables [note 9],2007,"9,325"
-Other fuels [note 10],2007,"3,467"
-Energy storage,2007,"3,859"
-Total all generating companies,2007,"396,830"
-Total renewable generation [note 13],2007,"19,690"
-Total low carbon generation [note 14],2007,"82,718"
-Total fossil fuel generation [note 15],2007,"306,785"
-Coal,2008,"124,381"
-Oil,2008,"6,709"
-Gas,2008,"176,219"
-Nuclear,2008,"52,486"
-Hydro (natural flow),2008,"5,145"
-Total wind,2008,"7,123"
-Onshore wind,2008,"5,788"
-Offshore wind,2008,"1,335"
-Shoreline wave / tidal,2008,0
-Solar,2008,17
-Thermal renewables [note 9],2008,"9,535"
-Other fuels [note 10],2008,"3,188"
-Energy storage,2008,"4,089"
-Total all generating companies,2008,"388,892"
-Total renewable generation [note 13],2008,"21,820"
-Total low carbon generation [note 14],2008,"74,306"
-Total fossil fuel generation [note 15],2008,"307,309"
-Coal,2009,"103,038"
-Oil,2009,"5,995"
-Gas,2009,"166,499"
-Nuclear,2009,"69,098"
-Hydro (natural flow),2009,"5,231"
-Total wind,2009,"9,283"
-Onshore wind,2009,"7,529"
-Offshore wind,2009,"1,754"
-Shoreline wave / tidal,2009,1
-Solar,2009,20
-Thermal renewables [note 9],2009,"10,674"
-Other fuels [note 10],2009,"3,196"
-Energy storage,2009,"3,685"
-Total all generating companies,2009,"376,718"
-Total renewable generation [note 13],2009,"25,208"
-Total low carbon generation [note 14],2009,"94,306"
-Total fossil fuel generation [note 15],2009,"275,531"
-Coal,2010,"107,594"
-Oil,2010,"4,805"
-Gas,2010,"175,653"
-Nuclear,2010,"62,140"
-Hydro (natural flow),2010,"3,591"
-Total wind,2010,"10,286"
-Onshore wind,2010,"7,226"
-Offshore wind,2010,"3,060"
-Shoreline wave / tidal,2010,2
-Solar,2010,40
-Thermal renewables [note 9],2010,"12,261"
-Other fuels [note 10],2010,"2,545"
-Energy storage,2010,"3,150"
-Total all generating companies,2010,"382,068"
-Total renewable generation [note 13],2010,"26,180"
-Total low carbon generation [note 14],2010,"88,320"
-Total fossil fuel generation [note 15],2010,"288,053"
-Coal,2011,"108,442"
-Oil,2011,"3,119"
-Gas,2011,"146,499"
-Nuclear,2011,"68,980"
-Hydro (natural flow),2011,"5,692"
-Total wind,2011,"15,963"
-Onshore wind,2011,"10,814"
-Offshore wind,2011,"5,149"
-Shoreline wave / tidal,2011,1
-Solar,2011,244
-Thermal renewables [note 9],2011,"13,313"
-Other fuels [note 10],2011,"2,823"
-Energy storage,2011,"2,906"
-Total all generating companies,2011,"367,982"
-Total renewable generation [note 13],2011,"35,212"
-Total low carbon generation [note 14],2011,"104,193"
-Total fossil fuel generation [note 15],2011,"258,060"
-Coal,2012,"142,792"
-Oil,2012,"2,891"
-Gas,2012,"100,170"
-Nuclear,2012,"70,405"
-Hydro (natural flow),2012,"5,310"
-Total wind,2012,"19,847"
-Onshore wind,2012,"12,244"
-Offshore wind,2012,"7,603"
-Shoreline wave / tidal,2012,4
-Solar,2012,"1,354"
-Thermal renewables [note 9],2012,"14,734"
-Other fuels [note 10],2012,"3,401"
-Energy storage,2012,"2,966"
-Total all generating companies,2012,"363,874"
-Total renewable generation [note 13],2012,"41,249"
-Total low carbon generation [note 14],2012,"111,654"
-Total fossil fuel generation [note 15],2012,"245,853"
-Coal,2013,"130,258"
-Oil,2013,"2,066"
-Gas,2013,"95,843"
-Nuclear,2013,"70,607"
-Hydro (natural flow),2013,"4,701"
-Total wind,2013,"28,397"
-Onshore wind,2013,"16,925"
-Offshore wind,2013,"11,472"
-Shoreline wave / tidal,2013,5
-Solar,2013,"2,010"
-Thermal renewables [note 9],2013,"18,100"
-Other fuels [note 10],2013,"3,392"
-Energy storage,2013,"2,904"
-Total all generating companies,2013,"358,283"
-Total renewable generation [note 13],2013,"53,213"
-Total low carbon generation [note 14],2013,"123,820"
-Total fossil fuel generation [note 15],2013,"228,167"
-Coal,2014,"100,239"
-Oil,2014,"1,920"
-Gas,2014,"100,892"
-Nuclear,2014,"63,748"
-Hydro (natural flow),2014,"5,888"
-Total wind,2014,"31,959"
-Onshore wind,2014,"18,555"
-Offshore wind,2014,"13,405"
-Shoreline wave / tidal,2014,2
-Solar,2014,"4,054"
-Thermal renewables [note 9],2014,"22,619"
-Other fuels [note 10],2014,"3,891"
-Energy storage,2014,"2,883"
-Total all generating companies,2014,"338,096"
-Total renewable generation [note 13],2014,"64,523"
-Total low carbon generation [note 14],2014,"128,270"
-Total fossil fuel generation [note 15],2014,"203,051"
-Coal,2015,"75,878"
-Oil,2015,"2,037"
-Gas,2015,"99,875"
-Nuclear,2015,"70,345"
-Hydro (natural flow),2015,"6,297"
-Total wind,2015,"40,275"
-Onshore wind,2015,"22,852"
-Offshore wind,2015,"17,423"
-Shoreline wave / tidal,2015,2
-Solar,2015,"7,533"
-Thermal renewables [note 9],2015,"29,257"
-Other fuels [note 10],2015,"4,636"
-Energy storage,2015,"2,739"
-Total all generating companies,2015,"338,875"
-Total renewable generation [note 13],2015,"83,364"
-Total low carbon generation [note 14],2015,"153,709"
-Total fossil fuel generation [note 15],2015,"177,791"
-Coal,2016,"30,669"
-Oil,2016,"1,890"
-Gas,2016,"143,356"
-Nuclear,2016,"71,726"
-Hydro (natural flow),2016,"5,370"
-Total wind,2016,"37,159"
-Onshore wind,2016,"20,754"
-Offshore wind,2016,"16,406"
-Shoreline wave / tidal,2016,0
-Solar,2016,"10,395"
-Thermal renewables [note 9],2016,"30,066"
-Other fuels [note 10],2016,"5,573"
-Energy storage,2016,"2,959"
-Total all generating companies,2016,"339,164"
-Total renewable generation [note 13],2016,"82,991"
-Total low carbon generation [note 14],2016,"154,717"
-Total fossil fuel generation [note 15],2016,"175,915"
-Coal,2017,"22,530"
-Oil,2017,"1,614"
-Gas,2017,"136,746"
-Nuclear,2017,"70,336"
-Hydro (natural flow),2017,"5,882"
-Total wind,2017,"49,641"
-Onshore wind,2017,"28,725"
-Offshore wind,2017,"20,916"
-Shoreline wave / tidal,2017,4
-Solar,2017,"11,457"
-Thermal renewables [note 9],2017,"31,894"
-Other fuels [note 10],2017,"5,219"
-Energy storage,2017,"2,872"
-Total all generating companies,2017,"338,198"
-Total renewable generation [note 13],2017,"98,879"
-Total low carbon generation [note 14],2017,"169,215"
-Total fossil fuel generation [note 15],2017,"160,891"
-Coal,2018,"16,831"
-Oil,2018,"1,573"
-Gas,2018,"131,490"
-Nuclear,2018,"65,064"
-Hydro (natural flow),2018,"5,443"
-Total wind,2018,"56,908"
-Onshore wind,2018,"30,382"
-Offshore wind,2018,"26,525"
-Shoreline wave / tidal,2018,9
-Solar,2018,"12,668"
-Thermal renewables [note 9],2018,"35,102"
-Other fuels [note 10],2018,"6,129"
-Energy storage,2018,"2,534"
-Total all generating companies,2018,"333,752"
-Total renewable generation [note 13],2018,"110,130"
-Total low carbon generation [note 14],2018,"175,194"
-Total fossil fuel generation [note 15],2018,"149,894"
-Coal,2019,"6,917"
-Oil,2019,"1,988"
-Gas,2019,"133,089"
-Nuclear,2019,"56,184"
-Hydro (natural flow),2019,"5,933"
-Total wind,2019,"63,835"
-Onshore wind,2019,"31,860"
-Offshore wind,2019,"31,975"
-Shoreline wave / tidal,2019,14
-Solar,2019,"12,418"
-Thermal renewables [note 9],2019,"37,526"
-Other fuels [note 10],2019,"7,433"
-Energy storage,2019,"1,838"
-Total all generating companies,2019,"327,175"
-Total renewable generation [note 13],2019,"119,726"
-Total low carbon generation [note 14],2019,"175,910"
-Total fossil fuel generation [note 15],2019,"141,993"
-Coal,2020,"5,700"
-Oil,2020,"1,431"
-Gas,2020,"111,894"
-Nuclear,2020,"50,239"
-Hydro (natural flow),2020,"6,878"
-Total wind,2020,"75,623"
-Onshore wind,2020,"34,873"
-Offshore wind,2020,"40,750"
-Shoreline wave / tidal,2020,11
-Solar,2020,"12,547"
-Thermal renewables [note 9],2020,"38,565"
-Other fuels [note 10],2020,"5,727"
-Energy storage,2020,"1,680"
-Total all generating companies,2020,"310,296"
-Total renewable generation [note 13],2020,"133,625"
-Total low carbon generation [note 14],2020,"183,864"
-Total fossil fuel generation [note 15],2020,"119,025"
-Coal,2021,"6,785"
-Oil,2021,"1,962"
-Gas,2021,"122,836"
-Nuclear,2021,"46,104"
-Hydro (natural flow),2021,"5,418"
-Total wind,2021,"64,924"
-Onshore wind,2021,"29,327"
-Offshore wind,2021,"35,597"
-Shoreline wave / tidal,2021,5
-Solar,2021,"12,128"
-Thermal renewables [note 9],2021,"40,001"
-Other fuels [note 10],2021,"5,729"
-Energy storage,2021,"1,987"
-Total all generating companies,2021,"307,881"
-Total renewable generation [note 13],2021,"122,477"
-Total low carbon generation [note 14],2021,"168,581"
-Total fossil fuel generation [note 15],2021,"131,583"
-Coal,2022,"5,943"
-Oil,2022,"2,830"
-Gas,2022,"125,118"
-Nuclear,2022,"47,400"
-Hydro (natural flow),2022,"5,068"
-Total wind,2022,"80,214"
-Onshore wind,2022,"35,102"
-Offshore wind,2022,"45,113"
-Shoreline wave / tidal,2022,11
-Solar,2022,"13,983"
-Thermal renewables [note 9],2022,"35,952"
-Other fuels [note 10],2022,"6,116"
-Energy storage,2022,"2,185"
-Total all generating companies,2022,"324,821"
-Total renewable generation [note 13],2022,"135,228"
-Total low carbon generation [note 14],2022,"182,628"
-Total fossil fuel generation [note 15],2022,"133,891"
-Coal,2023,"3,775"
-Oil,2023,"2,005"
-Gas,2023,"101,791"
-Nuclear,2023,"40,596"
-Hydro (natural flow),2023,"5,464"
-Total wind,2023,"82,146"
-Onshore wind,2023,"32,496"
-Offshore wind,2023,"49,650"
-Shoreline wave / tidal,2023,13
-Solar,2023,"14,639"
-Thermal renewables [note 9],2023,"34,497"
-Other fuels [note 10],2023,"6,310"
-Energy storage,2023,"2,844"
-Total all generating companies,2023,"294,079"
-Total renewable generation [note 13],2023,"136,758"
-Total low carbon generation [note 14],2023,"177,354"
-Total fossil fuel generation [note 15],2023,"107,571"
-Coal,2024,"2,040"
-Oil,2024,"1,817"
-Gas,2024,"86,674"
-Nuclear,2024,"40,588"
-Hydro (natural flow),2024,"5,796"
-Total wind,2024,"83,283"
-Onshore wind,2024,"34,744"
-Offshore wind,2024,"48,539"
-Shoreline wave / tidal,2024,13
-Solar,2024,"14,364"
-Thermal renewables [note 9],2024,"40,252"
-Other fuels [note 10],2024,"6,259"
-Energy storage,2024,"3,871"
-Total all generating companies,2024,"284,956"
-Total renewable generation [note 13],2024,"143,708"
-Total low carbon generation [note 14],2024,"184,296"
-Total fossil fuel generation [note 15],2024,"90,531"
+Coal,Generation type,
+Oil,Generation type,
+Gas,Generation type,
+Nuclear,Generation type,
+Hydro (natural flow),Generation type,
+Total wind,Generation type,
+Onshore wind,Generation type,
+Offshore wind,Generation type,
+Shoreline wave / tidal,Generation type,
+Solar,Generation type,
+Thermal renewables [note 9],Generation type,
+Other fuels [note 10],Generation type,
+Energy storage,Generation type,
+Total all generating companies,Generation type,
+Total renewable generation [note 13],Generation type,
+Total low carbon generation [note 14],Generation type,
+Total fossil fuel generation [note 15],Generation type,
+Coal,1996,
+Oil,1996,
+Gas,1996,
+Nuclear,1996,
+Hydro (natural flow),1996,
+Total wind,1996,488.0
+Onshore wind,1996,488.0
+Offshore wind,1996,0.0
+Shoreline wave / tidal,1996,0.0
+Solar,1996,0.0
+Thermal renewables [note 9],1996,
+Other fuels [note 10],1996,
+Energy storage,1996,
+Total all generating companies,1996,
+Total renewable generation [note 13],1996,
+Total low carbon generation [note 14],1996,
+Total fossil fuel generation [note 15],1996,
+Coal,1997,
+Oil,1997,
+Gas,1997,
+Nuclear,1997,
+Hydro (natural flow),1997,
+Total wind,1997,667.0
+Onshore wind,1997,667.0
+Offshore wind,1997,0.0
+Shoreline wave / tidal,1997,0.0
+Solar,1997,0.0
+Thermal renewables [note 9],1997,
+Other fuels [note 10],1997,
+Energy storage,1997,
+Total all generating companies,1997,
+Total renewable generation [note 13],1997,
+Total low carbon generation [note 14],1997,
+Total fossil fuel generation [note 15],1997,
+Coal,1998,
+Oil,1998,
+Gas,1998,
+Nuclear,1998,
+Hydro (natural flow),1998,
+Total wind,1998,877.0
+Onshore wind,1998,877.0
+Offshore wind,1998,0.0
+Shoreline wave / tidal,1998,0.0
+Solar,1998,0.0
+Thermal renewables [note 9],1998,
+Other fuels [note 10],1998,
+Energy storage,1998,
+Total all generating companies,1998,
+Total renewable generation [note 13],1998,
+Total low carbon generation [note 14],1998,
+Total fossil fuel generation [note 15],1998,
+Coal,1999,
+Oil,1999,
+Gas,1999,
+Nuclear,1999,
+Hydro (natural flow),1999,
+Total wind,1999,850.0
+Onshore wind,1999,850.0
+Offshore wind,1999,0.0
+Shoreline wave / tidal,1999,0.0
+Solar,1999,1.0
+Thermal renewables [note 9],1999,
+Other fuels [note 10],1999,
+Energy storage,1999,
+Total all generating companies,1999,
+Total renewable generation [note 13],1999,
+Total low carbon generation [note 14],1999,
+Total fossil fuel generation [note 15],1999,
+Coal,2000,
+Oil,2000,
+Gas,2000,
+Nuclear,2000,
+Hydro (natural flow),2000,
+Total wind,2000,946.0
+Onshore wind,2000,945.0
+Offshore wind,2000,1.0
+Shoreline wave / tidal,2000,0.0
+Solar,2000,1.0
+Thermal renewables [note 9],2000,
+Other fuels [note 10],2000,
+Energy storage,2000,
+Total all generating companies,2000,
+Total renewable generation [note 13],2000,
+Total low carbon generation [note 14],2000,
+Total fossil fuel generation [note 15],2000,
+Coal,2001,
+Oil,2001,
+Gas,2001,
+Nuclear,2001,
+Hydro (natural flow),2001,
+Total wind,2001,965.0
+Onshore wind,2001,960.0
+Offshore wind,2001,5.0
+Shoreline wave / tidal,2001,0.0
+Solar,2001,2.0
+Thermal renewables [note 9],2001,
+Other fuels [note 10],2001,
+Energy storage,2001,
+Total all generating companies,2001,
+Total renewable generation [note 13],2001,
+Total low carbon generation [note 14],2001,
+Total fossil fuel generation [note 15],2001,
+Coal,2002,
+Oil,2002,
+Gas,2002,
+Nuclear,2002,
+Hydro (natural flow),2002,
+Total wind,2002,
+Onshore wind,2002,
+Offshore wind,2002,5.0
+Shoreline wave / tidal,2002,0.0
+Solar,2002,3.0
+Thermal renewables [note 9],2002,
+Other fuels [note 10],2002,
+Energy storage,2002,
+Total all generating companies,2002,
+Total renewable generation [note 13],2002,
+Total low carbon generation [note 14],2002,
+Total fossil fuel generation [note 15],2002,
+Coal,2003,
+Oil,2003,
+Gas,2003,
+Nuclear,2003,
+Hydro (natural flow),2003,
+Total wind,2003,
+Onshore wind,2003,
+Offshore wind,2003,10.0
+Shoreline wave / tidal,2003,0.0
+Solar,2003,3.0
+Thermal renewables [note 9],2003,
+Other fuels [note 10],2003,
+Energy storage,2003,
+Total all generating companies,2003,
+Total renewable generation [note 13],2003,
+Total low carbon generation [note 14],2003,
+Total fossil fuel generation [note 15],2003,
+Coal,2004,
+Oil,2004,
+Gas,2004,
+Nuclear,2004,
+Hydro (natural flow),2004,
+Total wind,2004,
+Onshore wind,2004,
+Offshore wind,2004,199.0
+Shoreline wave / tidal,2004,0.0
+Solar,2004,4.0
+Thermal renewables [note 9],2004,
+Other fuels [note 10],2004,
+Energy storage,2004,
+Total all generating companies,2004,
+Total renewable generation [note 13],2004,
+Total low carbon generation [note 14],2004,
+Total fossil fuel generation [note 15],2004,
+Coal,2005,
+Oil,2005,
+Gas,2005,
+Nuclear,2005,
+Hydro (natural flow),2005,
+Total wind,2005,
+Onshore wind,2005,
+Offshore wind,2005,403.0
+Shoreline wave / tidal,2005,0.0
+Solar,2005,8.0
+Thermal renewables [note 9],2005,
+Other fuels [note 10],2005,
+Energy storage,2005,
+Total all generating companies,2005,
+Total renewable generation [note 13],2005,
+Total low carbon generation [note 14],2005,
+Total fossil fuel generation [note 15],2005,
+Coal,2006,
+Oil,2006,
+Gas,2006,
+Nuclear,2006,
+Hydro (natural flow),2006,
+Total wind,2006,
+Onshore wind,2006,
+Offshore wind,2006,651.0
+Shoreline wave / tidal,2006,0.0
+Solar,2006,11.0
+Thermal renewables [note 9],2006,
+Other fuels [note 10],2006,
+Energy storage,2006,
+Total all generating companies,2006,
+Total renewable generation [note 13],2006,
+Total low carbon generation [note 14],2006,
+Total fossil fuel generation [note 15],2006,
+Coal,2007,
+Oil,2007,
+Gas,2007,
+Nuclear,2007,
+Hydro (natural flow),2007,
+Total wind,2007,
+Onshore wind,2007,
+Offshore wind,2007,783.0
+Shoreline wave / tidal,2007,0.0
+Solar,2007,14.0
+Thermal renewables [note 9],2007,
+Other fuels [note 10],2007,
+Energy storage,2007,
+Total all generating companies,2007,
+Total renewable generation [note 13],2007,
+Total low carbon generation [note 14],2007,
+Total fossil fuel generation [note 15],2007,
+Coal,2008,
+Oil,2008,
+Gas,2008,
+Nuclear,2008,
+Hydro (natural flow),2008,
+Total wind,2008,
+Onshore wind,2008,
+Offshore wind,2008,
+Shoreline wave / tidal,2008,0.0
+Solar,2008,17.0
+Thermal renewables [note 9],2008,
+Other fuels [note 10],2008,
+Energy storage,2008,
+Total all generating companies,2008,
+Total renewable generation [note 13],2008,
+Total low carbon generation [note 14],2008,
+Total fossil fuel generation [note 15],2008,
+Coal,2009,
+Oil,2009,
+Gas,2009,
+Nuclear,2009,
+Hydro (natural flow),2009,
+Total wind,2009,
+Onshore wind,2009,
+Offshore wind,2009,
+Shoreline wave / tidal,2009,1.0
+Solar,2009,20.0
+Thermal renewables [note 9],2009,
+Other fuels [note 10],2009,
+Energy storage,2009,
+Total all generating companies,2009,
+Total renewable generation [note 13],2009,
+Total low carbon generation [note 14],2009,
+Total fossil fuel generation [note 15],2009,
+Coal,2010,
+Oil,2010,
+Gas,2010,
+Nuclear,2010,
+Hydro (natural flow),2010,
+Total wind,2010,
+Onshore wind,2010,
+Offshore wind,2010,
+Shoreline wave / tidal,2010,2.0
+Solar,2010,40.0
+Thermal renewables [note 9],2010,
+Other fuels [note 10],2010,
+Energy storage,2010,
+Total all generating companies,2010,
+Total renewable generation [note 13],2010,
+Total low carbon generation [note 14],2010,
+Total fossil fuel generation [note 15],2010,
+Coal,2011,
+Oil,2011,
+Gas,2011,
+Nuclear,2011,
+Hydro (natural flow),2011,
+Total wind,2011,
+Onshore wind,2011,
+Offshore wind,2011,
+Shoreline wave / tidal,2011,1.0
+Solar,2011,244.0
+Thermal renewables [note 9],2011,
+Other fuels [note 10],2011,
+Energy storage,2011,
+Total all generating companies,2011,
+Total renewable generation [note 13],2011,
+Total low carbon generation [note 14],2011,
+Total fossil fuel generation [note 15],2011,
+Coal,2012,
+Oil,2012,
+Gas,2012,
+Nuclear,2012,
+Hydro (natural flow),2012,
+Total wind,2012,
+Onshore wind,2012,
+Offshore wind,2012,
+Shoreline wave / tidal,2012,4.0
+Solar,2012,
+Thermal renewables [note 9],2012,
+Other fuels [note 10],2012,
+Energy storage,2012,
+Total all generating companies,2012,
+Total renewable generation [note 13],2012,
+Total low carbon generation [note 14],2012,
+Total fossil fuel generation [note 15],2012,
+Coal,2013,
+Oil,2013,
+Gas,2013,
+Nuclear,2013,
+Hydro (natural flow),2013,
+Total wind,2013,
+Onshore wind,2013,
+Offshore wind,2013,
+Shoreline wave / tidal,2013,5.0
+Solar,2013,
+Thermal renewables [note 9],2013,
+Other fuels [note 10],2013,
+Energy storage,2013,
+Total all generating companies,2013,
+Total renewable generation [note 13],2013,
+Total low carbon generation [note 14],2013,
+Total fossil fuel generation [note 15],2013,
+Coal,2014,
+Oil,2014,
+Gas,2014,
+Nuclear,2014,
+Hydro (natural flow),2014,
+Total wind,2014,
+Onshore wind,2014,
+Offshore wind,2014,
+Shoreline wave / tidal,2014,2.0
+Solar,2014,
+Thermal renewables [note 9],2014,
+Other fuels [note 10],2014,
+Energy storage,2014,
+Total all generating companies,2014,
+Total renewable generation [note 13],2014,
+Total low carbon generation [note 14],2014,
+Total fossil fuel generation [note 15],2014,
+Coal,2015,
+Oil,2015,
+Gas,2015,
+Nuclear,2015,
+Hydro (natural flow),2015,
+Total wind,2015,
+Onshore wind,2015,
+Offshore wind,2015,
+Shoreline wave / tidal,2015,2.0
+Solar,2015,
+Thermal renewables [note 9],2015,
+Other fuels [note 10],2015,
+Energy storage,2015,
+Total all generating companies,2015,
+Total renewable generation [note 13],2015,
+Total low carbon generation [note 14],2015,
+Total fossil fuel generation [note 15],2015,
+Coal,2016,
+Oil,2016,
+Gas,2016,
+Nuclear,2016,
+Hydro (natural flow),2016,
+Total wind,2016,
+Onshore wind,2016,
+Offshore wind,2016,
+Shoreline wave / tidal,2016,0.0
+Solar,2016,
+Thermal renewables [note 9],2016,
+Other fuels [note 10],2016,
+Energy storage,2016,
+Total all generating companies,2016,
+Total renewable generation [note 13],2016,
+Total low carbon generation [note 14],2016,
+Total fossil fuel generation [note 15],2016,
+Coal,2017,
+Oil,2017,
+Gas,2017,
+Nuclear,2017,
+Hydro (natural flow),2017,
+Total wind,2017,
+Onshore wind,2017,
+Offshore wind,2017,
+Shoreline wave / tidal,2017,4.0
+Solar,2017,
+Thermal renewables [note 9],2017,
+Other fuels [note 10],2017,
+Energy storage,2017,
+Total all generating companies,2017,
+Total renewable generation [note 13],2017,
+Total low carbon generation [note 14],2017,
+Total fossil fuel generation [note 15],2017,
+Coal,2018,
+Oil,2018,
+Gas,2018,
+Nuclear,2018,
+Hydro (natural flow),2018,
+Total wind,2018,
+Onshore wind,2018,
+Offshore wind,2018,
+Shoreline wave / tidal,2018,9.0
+Solar,2018,
+Thermal renewables [note 9],2018,
+Other fuels [note 10],2018,
+Energy storage,2018,
+Total all generating companies,2018,
+Total renewable generation [note 13],2018,
+Total low carbon generation [note 14],2018,
+Total fossil fuel generation [note 15],2018,
+Coal,2019,
+Oil,2019,
+Gas,2019,
+Nuclear,2019,
+Hydro (natural flow),2019,
+Total wind,2019,
+Onshore wind,2019,
+Offshore wind,2019,
+Shoreline wave / tidal,2019,14.0
+Solar,2019,
+Thermal renewables [note 9],2019,
+Other fuels [note 10],2019,
+Energy storage,2019,
+Total all generating companies,2019,
+Total renewable generation [note 13],2019,
+Total low carbon generation [note 14],2019,
+Total fossil fuel generation [note 15],2019,
+Coal,2020,
+Oil,2020,
+Gas,2020,
+Nuclear,2020,
+Hydro (natural flow),2020,
+Total wind,2020,
+Onshore wind,2020,
+Offshore wind,2020,
+Shoreline wave / tidal,2020,11.0
+Solar,2020,
+Thermal renewables [note 9],2020,
+Other fuels [note 10],2020,
+Energy storage,2020,
+Total all generating companies,2020,
+Total renewable generation [note 13],2020,
+Total low carbon generation [note 14],2020,
+Total fossil fuel generation [note 15],2020,
+Coal,2021,
+Oil,2021,
+Gas,2021,
+Nuclear,2021,
+Hydro (natural flow),2021,
+Total wind,2021,
+Onshore wind,2021,
+Offshore wind,2021,
+Shoreline wave / tidal,2021,5.0
+Solar,2021,
+Thermal renewables [note 9],2021,
+Other fuels [note 10],2021,
+Energy storage,2021,
+Total all generating companies,2021,
+Total renewable generation [note 13],2021,
+Total low carbon generation [note 14],2021,
+Total fossil fuel generation [note 15],2021,
+Coal,2022,
+Oil,2022,
+Gas,2022,
+Nuclear,2022,
+Hydro (natural flow),2022,
+Total wind,2022,
+Onshore wind,2022,
+Offshore wind,2022,
+Shoreline wave / tidal,2022,11.0
+Solar,2022,
+Thermal renewables [note 9],2022,
+Other fuels [note 10],2022,
+Energy storage,2022,
+Total all generating companies,2022,
+Total renewable generation [note 13],2022,
+Total low carbon generation [note 14],2022,
+Total fossil fuel generation [note 15],2022,
+Coal,2023,
+Oil,2023,
+Gas,2023,
+Nuclear,2023,
+Hydro (natural flow),2023,
+Total wind,2023,
+Onshore wind,2023,
+Offshore wind,2023,
+Shoreline wave / tidal,2023,13.0
+Solar,2023,
+Thermal renewables [note 9],2023,
+Other fuels [note 10],2023,
+Energy storage,2023,
+Total all generating companies,2023,
+Total renewable generation [note 13],2023,
+Total low carbon generation [note 14],2023,
+Total fossil fuel generation [note 15],2023,
+Coal,2024,
+Oil,2024,
+Gas,2024,
+Nuclear,2024,
+Hydro (natural flow),2024,
+Total wind,2024,
+Onshore wind,2024,
+Offshore wind,2024,
+Shoreline wave / tidal,2024,13.0
+Solar,2024,
+Thermal renewables [note 9],2024,
+Other fuels [note 10],2024,
+Energy storage,2024,
+Total all generating companies,2024,
+Total renewable generation [note 13],2024,
+Total low carbon generation [note 14],2024,
+Total fossil fuel generation [note 15],2024,
