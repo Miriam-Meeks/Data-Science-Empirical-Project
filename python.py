@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 # Function that reads, reshapes and renames files from wide to long formats for sheets in 5.6
 def reshape (wide_files):
     df = pd.read_csv(wide_files) 
@@ -33,4 +34,6 @@ def reshape (wide_files):
 wide_files = ["electricity-generated.csv","share-electricity-generated.csv"]
 
 for file in wide_files:
-    reshape(file)
+    reshape(file) # Working reshape :)
+
+
