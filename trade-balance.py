@@ -2,6 +2,11 @@ import pandas as pd
 
 df = pd.read_csv("net-imports.csv")
 
+df = df.drop(columns=["Total Imports (to UK)",
+    "Total Exports (from UK)",
+    "Net imports (to UK)"
+    ]) #Removing columns of no interest currently
+
 #reshape trade balance sheet to plot trade balance over time
 df_long = df.melt(
     id_vars=["Year"],
