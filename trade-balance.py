@@ -28,19 +28,19 @@ df_long["Country"] = (
 #Drop rows where NaN in Variable, i.e. removing transfers within UK columns
 df_long = df_long.dropna(subset=['Variable'])
 
-# df_final = df_long.pivot(
-#     index=["Year", "Country"],
-#     columns="Variable",
-#     values="Value",
-# ).reset_index()
-
-#Tried using a pivot but beause of the stacking and unstacking the import export to and from UK pivoting wasn't working, with lots of though and consulting LLMs this is what I came up with.
-df_final = df_long.pivot_table(
+df_final = df_long.pivot(
     index=["Year", "Country"],
     columns="Variable",
     values="Value",
-    aggfunc="sum"   # best choice for trade data acccording to AI
 ).reset_index()
+
+#Tried using a pivot but beause of the stacking and unstacking the import export to and from UK pivoting wasn't working, with lots of though and consulting LLMs this is what I came up with.
+# df_final = df_long.pivot_table(
+#     index=["Year", "Country"],
+#     columns="Variable",
+#     values="Value",
+#     aggfunc="sum"   # best choice for trade data acccording to AI
+# ).reset_index()
 
 print(df_final.head())
 df_final.to_csv("net-imports-long.csv", index=False)
