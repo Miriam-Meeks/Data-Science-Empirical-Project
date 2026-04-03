@@ -49,3 +49,5 @@ combined_electrcity = pd.merge(gen_df, share_df, on="Year", how="inner")
 cols = ["Year"] + sorted([col for col in combined_electrcity.columns if col != "Year"])
 combined_electrcity = combined_electrcity[cols] 
 print(combined_electrcity.head())
+
+#Maybe remove notes in column titles in csv files to make them more concise 
