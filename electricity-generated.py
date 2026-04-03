@@ -50,4 +50,5 @@ cols = ["Year"] + sorted([col for col in combined_electrcity.columns if col != "
 combined_electrcity = combined_electrcity[cols] 
 print(combined_electrcity.head())
 
-#Maybe remove notes in column titles in csv files to make them more concise 
+#Maybe remove notes in column titles in csv files to make them more concise, maybe using below line
+# combined_electrcity = combined_electrcity.str.replace(r"\s*\[.*?\]", "", regex=True)
