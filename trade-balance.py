@@ -71,7 +71,9 @@ df_long["Country"] = (
 print(df_long)
 
 df_long = df_long.dropna(subset=['Variable'])
-df_long["Value"] = pd.to_numeric(df_long["Value"], errors="coerce")
+df_long["Value"] = df_long["Value"].str.replace(',', '') # Removing commas from values to make them numeric
+df_long["Value"] = pd.to_numeric(df_long["Value"]) # Converting to numeric
+
 
 df_final = df_long.pivot_table(
     index=["Year", "Country"],
