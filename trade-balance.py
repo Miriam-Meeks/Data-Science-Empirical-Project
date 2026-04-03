@@ -1,10 +1,10 @@
 
-# # df_long['Type'] = (
-# #     df_long['Type']
-# #     .str.replace('Northern Ireland','UK')
-# #     .str.replace('Wales','UK') # Replacing NI and Wales with UK so that the formatting works with the pivot
-# #     .str.strip() 
-# # )
+# df_long['Type'] = (
+#     df_long['Type']
+#     .str.replace('Northern Ireland','UK')
+#     .str.replace('Wales','UK') # Replacing NI and Wales with UK so that the formatting works with the pivot
+#     .str.strip() 
+# )
 
 # df_long['Value'] = pd.to_numeric(
 #     df_long['Value'].str.replace(',', ''),
@@ -41,9 +41,24 @@ df_long = df.melt(
     var_name="Type",
     value_name="Value"
 )
+
 #Using regex to extract
 df_long["Variable"] = df_long["Type"].str.extract(r"^(Imports|Exports|Net imports)")
 df_long["Country"] = df_long["Type"].str.extract(r"\((.*?)\)") # Extracts countries trading in type column
+df_long['Country'] = (
+    df_long['Country']
+    .str.replace('Northern Ireland','UK')
+    #.str.replace('Wales','UK') # Replacing NI and Wales with UK so that the formatting works with the pivot
+    .str.strip() 
+)
+
+df_long['Country'] = (
+    df_long['Country']
+    #.str.replace('Northern Ireland','UK')
+    .str.replace('Wales','UK') # Replacing NI and Wales with UK so that the formatting works with the pivot
+    .str.strip() 
+)
+
 df_long["Country"] = (
     df_long["Country"]
     .str.replace(r"\s*\[.*?\]", "", regex=True) # remove notes in column
@@ -53,11 +68,16 @@ df_long["Country"] = (
 )
 
 # Drop rows where NaN in Variable, i.e. removing transfers within UK columns
+print(df_long)
+
 df_long = df_long.dropna(subset=['Variable'])
-df_final = df_long.pivot(
+df_long["Value"] = pd.to_numeric(df_long["Value"], errors="coerce")
+
+df_final = df_long.pivot_table(
     index=["Year", "Country"],
     columns="Variable",
     values="Value",
+    aggfunc="sum"
 ).reset_index()
 
 print(df_final.head())

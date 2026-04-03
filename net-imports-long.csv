@@ -1,244 +1,163 @@
 Year,Country,Exports,Imports,Net imports
-1998,Belgium,,,
-1998,Denmark,,,
-1998,France,0,"12,787","12,787"
-1998,Ireland to Northern Ireland,,52,-79
-1998,Ireland to Wales,,,
-1998,Netherlands,,,
-1998,Northern Ireland to Ireland,131,,
-1998,Norway,,,
-1998,Wales to Ireland,,,
-1999,Belgium,,,
-1999,Denmark,,,
-1999,France,0,"14,484","14,484"
-1999,Ireland to Northern Ireland,,23,-240
-1999,Ireland to Wales,,,
-1999,Netherlands,,,
-1999,Northern Ireland to Ireland,263,,
-1999,Norway,,,
-1999,Wales to Ireland,,,
-2000,Belgium,,,
-2000,Denmark,,,
-2000,France,1,"14,267","14,266"
-2000,Ireland to Northern Ireland,,41,-92
-2000,Ireland to Wales,,,
-2000,Netherlands,,,
-2000,Northern Ireland to Ireland,133,,
-2000,Norway,,,
-2000,Wales to Ireland,,,
-2001,Belgium,,,
-2001,Denmark,,,
-2001,France,193,"10,563","10,369"
-2001,Ireland to Northern Ireland,,101,30
-2001,Ireland to Wales,,,
-2001,Netherlands,,,
-2001,Northern Ireland to Ireland,71,,
-2001,Norway,,,
-2001,Wales to Ireland,,,
-2002,Belgium,,,
-2002,Denmark,,,
-2002,France,621,"9,042","8,421"
-2002,Ireland to Northern Ireland,,140,-8
-2002,Ireland to Wales,,,
-2002,Netherlands,,,
-2002,Northern Ireland to Ireland,148,,
-2002,Norway,,,
-2002,Wales to Ireland,,,
-2003,Belgium,,,
-2003,Denmark,,,
-2003,France,"2,873","5,000","2,127"
-2003,Ireland to Northern Ireland,,119,33
-2003,Ireland to Wales,,,
-2003,Netherlands,,,
-2003,Northern Ireland to Ireland,86,,
-2003,Norway,,,
-2003,Wales to Ireland,,,
-2004,Belgium,,,
-2004,Denmark,,,
-2004,France,728,"10,027","9,299"
-2004,Ireland to Northern Ireland,,0,"-1,574"
-2004,Ireland to Wales,,,
-2004,Netherlands,,,
-2004,Northern Ireland to Ireland,"1,574",,
-2004,Norway,,,
-2004,Wales to Ireland,,,
-2005,Belgium,,,
-2005,Denmark,,,
-2005,France,765,"11,159","10,394"
-2005,Ireland to Northern Ireland,,1,"-2,073"
-2005,Ireland to Wales,,,
-2005,Netherlands,,,
-2005,Northern Ireland to Ireland,"2,074",,
-2005,Norway,,,
-2005,Wales to Ireland,,,
-2006,Belgium,,,
-2006,Denmark,,,
-2006,France,861,"10,592","9,731"
-2006,Ireland to Northern Ireland,,10,"-1,778"
-2006,Ireland to Wales,,,
-2006,Netherlands,,,
-2006,Northern Ireland to Ireland,"1,788",,
-2006,Norway,,,
-2006,Wales to Ireland,,,
-2007,Belgium,,,
-2007,Denmark,,,
-2007,France,"2,016","8,562","6,546"
-2007,Ireland to Northern Ireland,,53,"-1,329"
-2007,Ireland to Wales,,,
-2007,Netherlands,,,
-2007,Northern Ireland to Ireland,"1,382",,
-2007,Norway,,,
-2007,Wales to Ireland,,,
-2008,Belgium,,,
-2008,Denmark,,,
-2008,France,898,"12,142","11,244"
-2008,Ireland to Northern Ireland,,152,-222
-2008,Ireland to Wales,,,
-2008,Netherlands,,,
-2008,Northern Ireland to Ireland,373,,
-2008,Norway,,,
-2008,Wales to Ireland,,,
-2009,Belgium,,,
-2009,Denmark,,,
-2009,France,"3,296","6,524","3,228"
-2009,Ireland to Northern Ireland,,85,-367
-2009,Ireland to Wales,,,
-2009,Netherlands,,,
-2009,Northern Ireland to Ireland,452,,
-2009,Norway,,,
-2009,Wales to Ireland,,,
-2010,Belgium,,,
-2010,Denmark,,,
-2010,France,"4,103","6,998","2,895"
-2010,Ireland to Northern Ireland,,145,-234
-2010,Ireland to Wales,,,
-2010,Netherlands,,,
-2010,Northern Ireland to Ireland,379,,
-2010,Norway,,,
-2010,Wales to Ireland,,,
-2011,Belgium,,,
-2011,Denmark,,,
-2011,France,"1,354","6,031","4,678"
-2011,Ireland to Northern Ireland,,121,-245
-2011,Ireland to Wales,,,
-2011,Netherlands,747,"2,538","1,791"
-2011,Northern Ireland to Ireland,366,,
-2011,Norway,,,
-2011,Wales to Ireland,,,
-2012,Belgium,,,
-2012,Denmark,,,
-2012,France,"1,185","7,550","6,365"
-2012,Ireland to Northern Ireland,,173,-160
-2012,Ireland to Wales,,22,-104
-2012,Netherlands,267,"6,030","5,763"
-2012,Northern Ireland to Ireland,333,,
-2012,Norway,,,
-2012,Wales to Ireland,126,,
-2013,Belgium,,,
-2013,Denmark,,,
-2013,France,534,"10,837","10,302"
-2013,Ireland to Northern Ireland,,157,-45
-2013,Ireland to Wales,,61,"-2,161"
-2013,Netherlands,143,"6,478","6,335"
-2013,Northern Ireland to Ireland,202,,
-2013,Norway,,,
-2013,Wales to Ireland,"2,222",,
-2014,Belgium,,,
-2014,Denmark,,,
-2014,France,13,"14,965","14,951"
-2014,Ireland to Northern Ireland,,243,121
-2014,Ireland to Wales,,169,"-2,408"
-2014,Netherlands,11,"7,867","7,856"
-2014,Northern Ireland to Ireland,122,,
-2014,Norway,,,
-2014,Wales to Ireland,"2,577",,
-2015,Belgium,,,
-2015,Denmark,,,
-2015,France,174,"14,012","13,838"
-2015,Ireland to Northern Ireland,,490,334
-2015,Ireland to Wales,,453,"-1,065"
-2015,Netherlands,8,"8,006","7,999"
-2015,Northern Ireland to Ireland,155,,
-2015,Norway,,,
-2015,Wales to Ireland,"1,518",,
-2016,Belgium,,,
-2016,Denmark,,,
-2016,France,"1,330","11,058","9,728"
-2016,Ireland to Northern Ireland,,639,399
-2016,Ireland to Wales,,874,313
-2016,Netherlands,141,"7,447","7,306"
-2016,Northern Ireland to Ireland,240,,
-2016,Norway,,,
-2016,Wales to Ireland,562,,
-2017,Belgium,0,0,0
-2017,Denmark,,,
-2017,France,"2,251","9,432","7,181"
-2017,Ireland to Northern Ireland,,271,-110
-2017,Ireland to Wales,,"1,413",831
-2017,Netherlands,193,"7,051","6,858"
-2017,Northern Ireland to Ireland,381,,
-2017,Norway,,,
-2017,Wales to Ireland,582,,
-2018,Belgium,0,0,0
-2018,Denmark,,,
-2018,France,397,"13,287","12,890"
-2018,Ireland to Northern Ireland,,377,-471
-2018,Ireland to Wales,,"1,277",504
-2018,Netherlands,207,"6,392","6,185"
-2018,Northern Ireland to Ireland,848,,
-2018,Norway,,,
-2018,Wales to Ireland,773,,
-2019,Belgium,118,"5,091","4,973"
-2019,Denmark,,,
-2019,France,729,"11,875","11,147"
-2019,Ireland to Northern Ireland,,302,-825
-2019,Ireland to Wales,,"1,238",180
-2019,Netherlands,354,"6,049","5,695"
-2019,Northern Ireland to Ireland,"1,127",,
-2019,Norway,,,
-2019,Wales to Ireland,"1,058",,
-2020,Belgium,491,"5,384","4,893"
-2020,Denmark,,,
-2020,France,"1,680","10,412","8,732"
-2020,Ireland to Northern Ireland,,321,-753
-2020,Ireland to Wales,,"1,600",911
-2020,Netherlands,547,"4,674","4,127"
-2020,Northern Ireland to Ireland,"1,074",,
-2020,Norway,,,
-2020,Wales to Ireland,689,,
-2021,Belgium,138,"6,995","6,857"
-2021,Denmark,,,
-2021,France,"1,483","15,164","13,681"
-2021,Ireland to Northern Ireland,,325,"-1,092"
-2021,Ireland to Wales,,538,-497
-2021,Netherlands,77,"4,341","4,263"
-2021,Northern Ireland to Ireland,"1,417",,
-2021,Norway,44,"1,456","1,412"
-2021,Wales to Ireland,"1,035",,
-2022,Belgium,"2,568","3,230",662
-2022,Denmark,,,
-2022,France,"12,776","2,792","-9,984"
-2022,Ireland to Northern Ireland,,336,-833
-2022,Ireland to Wales,,990,606
-2022,Netherlands,"2,158","3,610","1,453"
-2022,Northern Ireland to Ireland,"1,169",,
-2022,Norway,"1,762","4,547","2,785"
-2022,Wales to Ireland,384,,
-2023,Belgium,"1,000","3,986","2,985"
-2023,Denmark,14,64,50
-2023,France,"2,749","15,617","12,868"
-2023,Ireland to Northern Ireland,,203,"-1,604"
-2023,Ireland to Wales,,239,"-1,676"
-2023,Netherlands,"1,586","4,265","2,680"
-2023,Northern Ireland to Ireland,"1,807",,
-2023,Norway,414,"8,945","8,531"
-2023,Wales to Ireland,"1,915",,
-2024,Belgium,906,"5,068","4,162"
-2024,Denmark,"1,389","5,051","3,662"
-2024,France,824,"20,274","19,450"
-2024,Ireland to Northern Ireland,,71,"-2,390"
-2024,Ireland to Wales,,137,"-2,682"
-2024,Netherlands,"1,644","3,229","1,585"
-2024,Northern Ireland to Ireland,"2,461",,
-2024,Norway,282,"9,903","9,621"
-2024,Wales to Ireland,"2,819",,
+1998,Belgium,0.0,0.0,0.0
+1998,Denmark,0.0,0.0,0.0
+1998,France,0.0,0.0,0.0
+1998,Ireland,131.0,52.0,-79.0
+1998,Netherlands,0.0,0.0,0.0
+1998,Norway,0.0,0.0,0.0
+1999,Belgium,0.0,0.0,0.0
+1999,Denmark,0.0,0.0,0.0
+1999,France,0.0,0.0,0.0
+1999,Ireland,263.0,23.0,-240.0
+1999,Netherlands,0.0,0.0,0.0
+1999,Norway,0.0,0.0,0.0
+2000,Belgium,0.0,0.0,0.0
+2000,Denmark,0.0,0.0,0.0
+2000,France,1.0,0.0,0.0
+2000,Ireland,133.0,41.0,-92.0
+2000,Netherlands,0.0,0.0,0.0
+2000,Norway,0.0,0.0,0.0
+2001,Belgium,0.0,0.0,0.0
+2001,Denmark,0.0,0.0,0.0
+2001,France,193.0,0.0,0.0
+2001,Ireland,71.0,101.0,30.0
+2001,Netherlands,0.0,0.0,0.0
+2001,Norway,0.0,0.0,0.0
+2002,Belgium,0.0,0.0,0.0
+2002,Denmark,0.0,0.0,0.0
+2002,France,621.0,0.0,0.0
+2002,Ireland,148.0,140.0,-8.0
+2002,Netherlands,0.0,0.0,0.0
+2002,Norway,0.0,0.0,0.0
+2003,Belgium,0.0,0.0,0.0
+2003,Denmark,0.0,0.0,0.0
+2003,France,0.0,0.0,0.0
+2003,Ireland,86.0,119.0,33.0
+2003,Netherlands,0.0,0.0,0.0
+2003,Norway,0.0,0.0,0.0
+2004,Belgium,0.0,0.0,0.0
+2004,Denmark,0.0,0.0,0.0
+2004,France,728.0,0.0,0.0
+2004,Ireland,0.0,0.0,0.0
+2004,Netherlands,0.0,0.0,0.0
+2004,Norway,0.0,0.0,0.0
+2005,Belgium,0.0,0.0,0.0
+2005,Denmark,0.0,0.0,0.0
+2005,France,765.0,0.0,0.0
+2005,Ireland,0.0,1.0,0.0
+2005,Netherlands,0.0,0.0,0.0
+2005,Norway,0.0,0.0,0.0
+2006,Belgium,0.0,0.0,0.0
+2006,Denmark,0.0,0.0,0.0
+2006,France,861.0,0.0,0.0
+2006,Ireland,0.0,10.0,0.0
+2006,Netherlands,0.0,0.0,0.0
+2006,Norway,0.0,0.0,0.0
+2007,Belgium,0.0,0.0,0.0
+2007,Denmark,0.0,0.0,0.0
+2007,France,0.0,0.0,0.0
+2007,Ireland,0.0,53.0,0.0
+2007,Netherlands,0.0,0.0,0.0
+2007,Norway,0.0,0.0,0.0
+2008,Belgium,0.0,0.0,0.0
+2008,Denmark,0.0,0.0,0.0
+2008,France,898.0,0.0,0.0
+2008,Ireland,373.0,152.0,-222.0
+2008,Netherlands,0.0,0.0,0.0
+2008,Norway,0.0,0.0,0.0
+2009,Belgium,0.0,0.0,0.0
+2009,Denmark,0.0,0.0,0.0
+2009,France,0.0,0.0,0.0
+2009,Ireland,452.0,85.0,-367.0
+2009,Netherlands,0.0,0.0,0.0
+2009,Norway,0.0,0.0,0.0
+2010,Belgium,0.0,0.0,0.0
+2010,Denmark,0.0,0.0,0.0
+2010,France,0.0,0.0,0.0
+2010,Ireland,379.0,145.0,-234.0
+2010,Netherlands,0.0,0.0,0.0
+2010,Norway,0.0,0.0,0.0
+2011,Belgium,0.0,0.0,0.0
+2011,Denmark,0.0,0.0,0.0
+2011,France,0.0,0.0,0.0
+2011,Ireland,366.0,121.0,-245.0
+2011,Netherlands,747.0,0.0,0.0
+2011,Norway,0.0,0.0,0.0
+2012,Belgium,0.0,0.0,0.0
+2012,Denmark,0.0,0.0,0.0
+2012,France,0.0,0.0,0.0
+2012,Ireland,459.0,195.0,-264.0
+2012,Netherlands,267.0,0.0,0.0
+2012,Norway,0.0,0.0,0.0
+2013,Belgium,0.0,0.0,0.0
+2013,Denmark,0.0,0.0,0.0
+2013,France,534.0,0.0,0.0
+2013,Ireland,202.0,218.0,-45.0
+2013,Netherlands,143.0,0.0,0.0
+2013,Norway,0.0,0.0,0.0
+2014,Belgium,0.0,0.0,0.0
+2014,Denmark,0.0,0.0,0.0
+2014,France,13.0,0.0,0.0
+2014,Ireland,122.0,412.0,121.0
+2014,Netherlands,11.0,0.0,0.0
+2014,Norway,0.0,0.0,0.0
+2015,Belgium,0.0,0.0,0.0
+2015,Denmark,0.0,0.0,0.0
+2015,France,174.0,0.0,0.0
+2015,Ireland,155.0,943.0,334.0
+2015,Netherlands,8.0,0.0,0.0
+2015,Norway,0.0,0.0,0.0
+2016,Belgium,0.0,0.0,0.0
+2016,Denmark,0.0,0.0,0.0
+2016,France,0.0,0.0,0.0
+2016,Ireland,802.0,1513.0,712.0
+2016,Netherlands,141.0,0.0,0.0
+2016,Norway,0.0,0.0,0.0
+2017,Belgium,0.0,0.0,0.0
+2017,Denmark,0.0,0.0,0.0
+2017,France,0.0,0.0,0.0
+2017,Ireland,963.0,271.0,721.0
+2017,Netherlands,193.0,0.0,0.0
+2017,Norway,0.0,0.0,0.0
+2018,Belgium,0.0,0.0,0.0
+2018,Denmark,0.0,0.0,0.0
+2018,France,397.0,0.0,0.0
+2018,Ireland,1621.0,377.0,33.0
+2018,Netherlands,207.0,0.0,0.0
+2018,Norway,0.0,0.0,0.0
+2019,Belgium,118.0,0.0,0.0
+2019,Denmark,0.0,0.0,0.0
+2019,France,729.0,0.0,0.0
+2019,Ireland,0.0,302.0,-645.0
+2019,Netherlands,354.0,0.0,0.0
+2019,Norway,0.0,0.0,0.0
+2020,Belgium,491.0,0.0,0.0
+2020,Denmark,0.0,0.0,0.0
+2020,France,0.0,0.0,0.0
+2020,Ireland,689.0,321.0,158.0
+2020,Netherlands,547.0,0.0,0.0
+2020,Norway,0.0,0.0,0.0
+2021,Belgium,138.0,0.0,0.0
+2021,Denmark,0.0,0.0,0.0
+2021,France,0.0,0.0,0.0
+2021,Ireland,0.0,863.0,-497.0
+2021,Netherlands,77.0,0.0,0.0
+2021,Norway,44.0,0.0,0.0
+2022,Belgium,0.0,0.0,662.0
+2022,Denmark,0.0,0.0,0.0
+2022,France,0.0,0.0,0.0
+2022,Ireland,384.0,1326.0,-227.0
+2022,Netherlands,0.0,0.0,0.0
+2022,Norway,0.0,0.0,0.0
+2023,Belgium,0.0,0.0,0.0
+2023,Denmark,14.0,64.0,50.0
+2023,France,0.0,0.0,0.0
+2023,Ireland,0.0,442.0,0.0
+2023,Netherlands,0.0,0.0,0.0
+2023,Norway,414.0,0.0,0.0
+2024,Belgium,906.0,0.0,0.0
+2024,Denmark,0.0,0.0,0.0
+2024,France,824.0,0.0,0.0
+2024,Ireland,0.0,208.0,0.0
+2024,Netherlands,0.0,0.0,0.0
+2024,Norway,282.0,0.0,0.0
