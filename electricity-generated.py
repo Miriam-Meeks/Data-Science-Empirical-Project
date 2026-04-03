@@ -44,7 +44,8 @@ share_df.to_csv("share-electricity-generated-long.csv", index=False) #Saving (%)
 
 combined_electrcity = pd.merge(gen_df, share_df, on="Year", how="inner") 
 # Merge can be inner as you won't have missing years not in both datasets because of the nature of the datasets.
-print(combined_electrcity.head())
 
-# cols = ["Year"] + sorted([col for col in combined_electrcity.columns if col != "Year"])
-# combined_electrcity = combined_electrcity[cols] # Organising alphabetically for aesthetics, will need to edit the dataset names!!
+# Organising alphabetically for aesthetics to have share next to generation for each fuel type
+cols = ["Year"] + sorted([col for col in combined_electrcity.columns if col != "Year"])
+combined_electrcity = combined_electrcity[cols] 
+print(combined_electrcity.head())
