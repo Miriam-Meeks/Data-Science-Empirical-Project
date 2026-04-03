@@ -39,10 +39,12 @@ df_long["Country"] = (
     .str.strip() # useful to clean whitespace and standardise
 )
 
-df_long["Country"] = df_long["Country"].replace({
-    "Northern Ireland": "UK",
-    "Wales": "UK"
-})
+df_long['Country'] = (
+    df_long['Country']
+    .str.replace('Northern Ireland','UK')
+    .str.replace('Wales','UK') # Replacing NI and Wales with UK so that the formatting works with the pivot
+    .str.strip() 
+)
 
 #Drop rows where NaN in Variable, i.e. removing transfers within UK columns
 df_long = df_long.dropna(subset=['Variable'])
