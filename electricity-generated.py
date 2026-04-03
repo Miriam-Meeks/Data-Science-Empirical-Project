@@ -33,17 +33,14 @@ def reshape (wide_files):
 
 wide_files = ["electricity-generated.csv","share-electricity-generated.csv"]
 
+gen_df = reshape("electricity-generated.csv")
 #Altering column names for share sheet so they don't completely match electricity-generated
-df = pd.read_csv("share-electricity-generated.csv")
-df.columns = [
-    col if col in ["Year", "Fuel", "Generation type"] else col + " (%)"
-    for col in df.columns
+share_df = reshape("share-electricity-generated.csv")
+share_df.columns = [
+    col if col == "Year" else col + " (%)"
+    for col in share_df.columns
 ]
-print(df.head())
-df.to_csv("share-electricity-generated.csv", index=False)
-
-# gen_df = reshape("electricity-generated.csv")
-# share_df = reshape("share-electricity-generated.csv") # Working reshape :)
+print(share_df.head())
 
 # combined_electrcity = pd.merge(gen_df, share_df, on="Year", how="inner") 
 # print(combined_electrcity.head())
