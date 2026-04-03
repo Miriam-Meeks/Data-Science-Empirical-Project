@@ -2,10 +2,10 @@ import pandas as pd
 
 df = pd.read_csv("net-imports.csv")
 
-df = df.drop(columns=["Total Imports (to UK)",
-    "Total Exports (from UK)",
-    "Net imports (to UK)"
-    ]) #Removing columns of no interest currently
+# df = df.drop(columns=["Total Imports (to UK)",
+#     "Total Exports (from UK)",
+#     "Net imports (to UK)"
+#     ]) #Removing columns of no interest currently
 
 #reshape trade balance sheet to plot trade balance over time
 df_long = df.melt(
@@ -14,12 +14,12 @@ df_long = df.melt(
     value_name="Value"
 )
 
-# df_long['Type'] = (
-#     df_long['Type']
-#     .str.replace('Northern Ireland','UK')
-#     .str.replace('Wales','UK') # Replacing NI and Wales with UK so that the formatting works with the pivot
-#     .str.strip() 
-# )
+df_long['Type'] = (
+    df_long['Type']
+    .str.replace('Northern Ireland','UK')
+    .str.replace('Wales','UK') # Replacing NI and Wales with UK so that the formatting works with the pivot
+    .str.strip() 
+)
 
 df_long['Value'] = pd.to_numeric(
     df_long['Value'].str.replace(',', ''),
@@ -39,18 +39,8 @@ df_long["Country"] = (
     .str.strip() # useful to clean whitespace and standardise
 )
 
-df_long['Country'] = (
-    df_long['Country']
-    .str.replace('Northern Ireland','UK')
-    .str.replace('Wales','UK') # Replacing NI and Wales with UK so that the formatting works with the pivot
-    .str.strip() 
-)
-
 #Drop rows where NaN in Variable, i.e. removing transfers within UK columns
 df_long = df_long.dropna(subset=['Variable'])
-
-
-
 
 #WHAT DOES THIS LINE MEAN/ WHY IS IT SUGGESTED BY AI/ DOES IT MAKE A DIFFERENCE?
 df_final = df_long.groupby(['Year', 'Country', 'Variable'])['Value'].sum().unstack('Variable').reset_index()
