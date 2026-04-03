@@ -40,12 +40,11 @@ share_df.columns = [
     col if col == "Year" else col + " (%)"
     for col in share_df.columns
 ]
-print(share_df.head())
+share_df.to_csv("share-electricity-generated-long.csv", index=False) #Saving (%) column addition
 
-# combined_electrcity = pd.merge(gen_df, share_df, on="Year", how="inner") 
-# print(combined_electrcity.head())
+combined_electrcity = pd.merge(gen_df, share_df, on="Year", how="inner") 
+# Merge can be inner as you won't have missing years not in both datasets because of the nature of the datasets.
+print(combined_electrcity.head())
 
-# # Merge can be inner as you won't have missing years not in both datasets because of the nature of the datasets.
-
-# cols = ["Year"] + sorted([col for col in df_final.columns if col != "Year"])
-# df_final = df_final[cols] # Organising alphabetically for aesthetics, will need to edit the dataset names!!
+# cols = ["Year"] + sorted([col for col in combined_electrcity.columns if col != "Year"])
+# combined_electrcity = combined_electrcity[cols] # Organising alphabetically for aesthetics, will need to edit the dataset names!!
