@@ -48,7 +48,5 @@ combined_electrcity = pd.merge(gen_df, share_df, on="Year", how="inner")
 # Organising alphabetically for aesthetics to have share next to generation for each fuel type
 cols = ["Year"] + sorted([col for col in combined_electrcity.columns if col != "Year"])
 combined_electrcity = combined_electrcity[cols] 
+combined_electrcity.columns = combined_electrcity.columns.str.replace(r"\s*\[.*?\]", "", regex=True) #removing notes
 print(combined_electrcity.head())
-
-#Maybe remove notes in column titles in csv files to make them more concise, maybe using below line
-# combined_electrcity = combined_electrcity.str.replace(r"\s*\[.*?\]", "", regex=True)
