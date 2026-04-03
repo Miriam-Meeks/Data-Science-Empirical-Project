@@ -14,14 +14,19 @@ df_long = df.melt(
     value_name="Value"
 )
 
-df_long['Type'] = (
-    df_long['Type']
-    .str.replace('Northern Ireland','UK')
-    .str.replace('Wales','UK') # Replacing NI and Wales with UK so that the formatting works with the pivot
-)
+# df_long['Type'] = (
+#     df_long['Type']
+#     .str.replace('Northern Ireland','UK')
+#     .str.replace('Wales','UK') # Replacing NI and Wales with UK so that the formatting works with the pivot
+#     .str.strip() 
+# )
 
-df_long['Value'] = pd.to_numeric(df_long['Value'].str.replace(',', ''), errors='coerce') # Turning all characters to numeric
-#REMOVE DECIMAL PLACES FROM VALUE COLUMN/ TRUNCATE!!
+df_long['Value'] = pd.to_numeric(
+    df_long['Value'].str.replace(',', ''),
+    errors='coerce') # Turning all characters to numeric
+
+#REMOVE DECIMAL PLACES FROM VALUE COLUMN/ TRUNCATE!
+df_long['Value'] = df_long['Value'].astype('Int64') # Removing decimal places by turning to integers
 
 #Using regex to extract
 df_long["Variable"] = df_long["Type"].str.extract(r"^(Imports|Exports|Net imports)")
@@ -34,25 +39,29 @@ df_long["Country"] = (
     .str.strip() # useful to clean whitespace and standardise
 )
 
+df_long["Country"] = df_long["Country"].replace({
+    "Northern Ireland": "UK",
+    "Wales": "UK"
+})
+
 #Drop rows where NaN in Variable, i.e. removing transfers within UK columns
 df_long = df_long.dropna(subset=['Variable'])
+
+
+
+
+#WHAT DOES THIS LINE MEAN/ WHY IS IT SUGGESTED BY AI/ DOES IT MAKE A DIFFERENCE?
 df_final = df_long.groupby(['Year', 'Country', 'Variable'])['Value'].sum().unstack('Variable').reset_index()
 
 #Tried using a pivot but beause of the stacking and unstacking the import export to and from UK pivoting wasn't working, with lots of though and consulting LLMs this is what I came up with.
-df_final = df_long.pivot_table(
-    index=["Year", "Country"],
-    columns="Variable",
-    values="Value",
-    aggfunc="sum"   # best choice for trade data acccording to AI
-).reset_index()
-
-# df_final = df_long.pivot(
+# df_final = df_long.pivot_table(
 #     index=["Year", "Country"],
 #     columns="Variable",
 #     values="Value",
+#     aggfunc="sum"   # best choice for trade data acccording to AI
 # ).reset_index()
 
-print(df_final.head())
+print(df_final.head(10))
 df_final.to_csv("net-imports-long.csv", index=False)
 
 # #Data Viualsiation
