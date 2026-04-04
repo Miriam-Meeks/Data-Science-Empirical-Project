@@ -1,6 +1,10 @@
+import os
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.animation as animation # for creating animation
+import os #for saving video animation
 
 df = pd.read_csv("net-imports.csv")
 
@@ -60,44 +64,58 @@ df_final.to_csv("net-imports-long.csv", index=False)
 
 #Data Viualsiation
 df_trade = pd.read_csv("net-imports-long.csv")
-df_trade.head()
+frames = df_trade["Year"].unique()
 
-df_trade_2024 = df_trade[df_trade['Year'] == 2024]
+# Using ax to allow for animation
+fig, ax = plt.subplots(figsize=(12, 6))
 
-countries = df_trade_2024["Country"]
-imports = -df_trade_2024["Imports"] # imports made negative for bi-directional chart
-exports = df_trade_2024["Exports"]
+def animate(frame):
+    ax.clear()
+    df_trade_frame = df_trade[df_trade['Year'] == frame]
 
-#Using my favourite of the qualitative colormaps, but may later alter, to make all visualisations cohesive
-colors = plt.cm.tab20b(np.linspace(0, 1, len(countries))) 
+    countries = df_trade_frame["Country"]
+    imports = -df_trade_frame["Imports"]  # imports made negative for bi-directional chart
+    exports = df_trade_frame["Exports"]
 
-plt.figure(figsize=(10, 6))
+    # Using my favourite of the qualitative colormaps, but may later alter, to make all visualisations cohesive
+    colors = plt.cm.tab20b(np.linspace(0, 1, len(countries))) 
 
-plt.barh(countries, imports, color=colors, alpha=0.7, label='Imports')
-plt.barh(countries, exports, color=colors, alpha=0.7, label='Exports')
+    ax.barh(countries, imports, color=colors, alpha=0.7, label='Imports')
+    ax.barh(countries, exports, color=colors, alpha=0.7, label='Exports')
 
-#GO OVER THIS CODE PATCH!!
-for idx in range(len(countries)):
-    plt.text(imports.iloc[idx], idx, f"{abs(int(imports.iloc[idx])):,}", 
-             va='center', ha='right', color='black', fontsize=6)
-    plt.text(exports.iloc[idx], idx, f"{int(exports.iloc[idx]):,}", 
-             va='center', ha='left', color='black', fontsize=6)
-    
-plt.title("Trade Balance by Country", fontsize=14)
+    # GO OVER THIS CODE PATCH!!
+    for idx in range(len(countries)):
+        ax.text(imports.iloc[idx], idx, f"{abs(int(imports.iloc[idx])):,}", 
+                va='center', ha='right', color='black', fontsize=6)
+        ax.text(exports.iloc[idx], idx, f"{int(exports.iloc[idx]):,}", 
+                va='center', ha='left', color='black', fontsize=6)
+        
+    ax.set_title(f"Trade Balance by Country - {frame}", fontsize=14)
 
-# Add "Imports" and "Exports" text labels above chart
-y_pos = -1.25  # slightly below the bottom bar
-plt.text(min(imports), y_pos, "Imports", ha='left', fontsize=12)
-plt.text(max(exports), y_pos, "Exports", ha='right', fontsize=12)
+    # Add "Imports" and "Exports" text labels above chart
+    y_pos = -0.5  # slightly below the bottom bar
+    ax.text(min(imports) if len(imports) > 0 else 0, y_pos, "Imports", ha='left', fontsize=12)
+    ax.text(max(exports) if len(exports) > 0 else 0, y_pos, "Exports", ha='right', fontsize=12)
 
+    ax.axvline(0, color="black", linewidth=1)  # Adding a vertical line at x=0
 
-plt.axvline(0, color="black", linewidth=1) # Adding a vertical line at x=0
+    ax.grid(axis='x', linestyle='--', alpha=0.5)  # trying with a small dotted grid line style
 
-plt.grid(axis='x', linestyle='--', alpha=0.5) # trying with a small dotted grid line sstyle
-
-plt.tight_layout()
+trade_animation = animation.FuncAnimation(fig, animate, frames=frames, interval=500, repeat=True)
 plt.show()
+
+#STRUGGLING TO SAVE AS A VIDEO IN THE CORRECT FOLDER FIGURE OUT HOW TO FIX THIS!
+save_path = 'C:\\Users\\mm147\\Empirical-Project\\Data-Science-Empirical-Project\\Visualisations'
+if not os.path.exists(save_path):
+    os.makedirs(save_path)
+completed_video = os.path.join(save_path, 'trade_balance_animation.mp4')
+trade_animation.save(completed_video, writer="pillow", fps=2)
 
 #Improvements to graph!! 
 # Smaller grid line intervals
    #Order by countries that appear first
+
+# Animation improvements
+# Have central line remain constant and not redraw each time, as this causes a flickering effect
+# Save as a video
+# Stops when it reaches 2024 and you have to press a button to watch again
