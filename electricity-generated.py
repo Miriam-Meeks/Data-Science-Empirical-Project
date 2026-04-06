@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # Function that reads, reshapes and renames files from wide to long formats for sheets in 5.6
 def reshape (wide_files):
@@ -18,6 +19,8 @@ def reshape (wide_files):
         var_name="Year",     
         value_name="Value"
     )
+
+    df_long["Fuel"] = df_long["Fuel"].str.replace(r"\s*\[.*?\]", "", regex=True)
 
     df_final = df_long.pivot( #Pivoting to have fuel types as columns but no aggregation
         index="Year",
@@ -50,3 +53,9 @@ cols = ["Year"] + sorted([col for col in combined_electrcity.columns if col != "
 combined_electrcity = combined_electrcity[cols] 
 combined_electrcity.columns = combined_electrcity.columns.str.replace(r"\s*\[.*?\]", "", regex=True) #removing notes
 print(combined_electrcity.head())
+
+
+#Data visualisation
+# combined_electrcity.plot(kind = 'scatter', x = 'Renewable (%)', y = 'Year')
+
+# plt.show()
