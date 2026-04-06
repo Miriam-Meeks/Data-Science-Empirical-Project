@@ -1,5 +1,3 @@
-import os
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -102,14 +100,15 @@ def animate(frame):
     ax.grid(axis='x', linestyle='--', alpha=0.5)  # trying with a small dotted grid line style
 
 trade_animation = animation.FuncAnimation(fig, animate, frames=frames, interval=500, repeat=True)
-plt.show()
 
 #STRUGGLING TO SAVE AS A VIDEO IN THE CORRECT FOLDER FIGURE OUT HOW TO FIX THIS!
 save_path = 'C:\\Users\\mm147\\Empirical-Project\\Data-Science-Empirical-Project\\Visualisations'
 if not os.path.exists(save_path):
     os.makedirs(save_path)
-completed_video = os.path.join(save_path, 'trade_balance_animation.mp4')
+completed_video = os.path.join(save_path, 'trade_balance_animation.gif')
 trade_animation.save(completed_video, writer="pillow", fps=2)
+
+plt.show()
 
 #Improvements to graph!! 
 # Smaller grid line intervals
@@ -117,5 +116,4 @@ trade_animation.save(completed_video, writer="pillow", fps=2)
 
 # Animation improvements
 # Have central line remain constant and not redraw each time, as this causes a flickering effect
-# Save as a video
 # Stops when it reaches 2024 and you have to press a button to watch again
