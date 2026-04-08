@@ -62,24 +62,54 @@ df_final.to_csv("net-imports-long.csv", index=False)
 
 #Data Viualsiation
 df_trade = pd.read_csv("net-imports-long.csv")
+df_trade = df_trade[(df_trade["Year"] >= 2017) & (df_trade["Year"] <= 2024)] # To show years that we have trade data for more countries
+df_trade["Total"] = df_trade["Imports"] + df_trade["Exports"]
+#WORTH TRYING TO ORDER BY COUNTRIES WITH THE LARGEST NUMBER OF OCCURRENCES IN THE DATASET!! THEN HAVING ALL DATES!!!
+
+country_order = ( # Ordering countries by highest overall trade (imports + exports) for the animation
+    df_trade.groupby("Country")["Total"]
+    .mean()
+    .sort_values(ascending=True)   # smallest at bottom, largest at top
+    .index
+)
+
+# Create a stable color mapping for each country across frames
+all_countries = list(country_order)
+country_colors = {
+    country: plt.cm.tab20b(i / max(len(all_countries) - 1, 1)) # Chosen color pallette
+    for i, country in enumerate(all_countries)
+}
+
 frames = df_trade["Year"].unique()
 
 # Using ax to allow for animation
+max_import = (df_trade["Imports"].max()+ 2000) # Adding import buffer for clear visualisation
+max_export = df_trade["Exports"].max()
+x_limit = max(max_import, max_export)
 fig, ax = plt.subplots(figsize=(12, 6))
 
 def animate(frame):
     ax.clear()
     df_trade_frame = df_trade[df_trade['Year'] == frame]
 
+    df_trade_frame["Country"] = pd.Categorical(
+        df_trade_frame["Country"],
+        categories=country_order,
+        ordered=True
+    )
+    df_trade_frame = df_trade_frame.sort_values("Country") # Applying country order
+
     countries = df_trade_frame["Country"]
     imports = -df_trade_frame["Imports"]  # imports made negative for bi-directional chart
     exports = df_trade_frame["Exports"]
 
-    # Using my favourite of the qualitative colormaps, but may later alter, to make all visualisations cohesive
-    colors = plt.cm.tab20b(np.linspace(0, 1, len(countries))) 
+    # Use the same color for each country in every frame
+    colors = [country_colors[c] for c in countries]
 
     ax.barh(countries, imports, color=colors, alpha=0.7, label='Imports')
     ax.barh(countries, exports, color=colors, alpha=0.7, label='Exports')
+
+    ax.set_xlim(-x_limit, x_limit)
 
     # GO OVER THIS CODE PATCH!!
     for idx in range(len(countries)):
@@ -90,18 +120,19 @@ def animate(frame):
         
     ax.set_title(f"Trade Balance by Country - {frame}", fontsize=14)
 
-    # Add "Imports" and "Exports" text labels above chart
-    y_pos = -0.5  # slightly below the bottom bar
-    ax.text(min(imports) if len(imports) > 0 else 0, y_pos, "Imports", ha='left', fontsize=12)
-    ax.text(max(exports) if len(exports) > 0 else 0, y_pos, "Exports", ha='right', fontsize=12)
+    #Add "Imports" and "Exports" text labels above chart
+    y_pos = -1  # safely below bars
+    ax.text(-x_limit, y_pos, "Imports", ha='left', fontsize=12)
+    ax.text(x_limit, y_pos, "Exports", ha='right', fontsize=12)
 
     ax.axvline(0, color="black", linewidth=1)  # Adding a vertical line at x=0
 
-    ax.grid(axis='x', linestyle='--', alpha=0.5)  # trying with a small dotted grid line style
+    ax.grid(axis='x', linestyle='--', alpha=0.5)
+    ax.minorticks_on()
+    ax.grid(axis='x', which='minor', linestyle=':', linewidth=0.3, alpha=0.3)
 
 trade_animation = animation.FuncAnimation(fig, animate, frames=frames, interval=500, repeat=True)
 
-#STRUGGLING TO SAVE AS A VIDEO IN THE CORRECT FOLDER FIGURE OUT HOW TO FIX THIS!
 save_path = 'C:\\Users\\mm147\\Empirical-Project\\Data-Science-Empirical-Project\\Visualisations'
 if not os.path.exists(save_path):
     os.makedirs(save_path)
@@ -111,9 +142,5 @@ trade_animation.save(completed_video, writer="pillow", fps=2)
 plt.show()
 
 #Improvements to graph!! 
-# Smaller grid line intervals
-   #Order by countries that appear first
-
 # Animation improvements
-# Have central line remain constant and not redraw each time, as this causes a flickering effect
-# Stops when it reaches 2024 and you have to press a button to watch again
+#Export and Import labels are still moving around a bit??
