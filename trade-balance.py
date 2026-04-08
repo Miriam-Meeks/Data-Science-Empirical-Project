@@ -141,6 +141,5 @@ trade_animation.save(completed_video, writer="pillow", fps=2)
 
 plt.show()
 
-#Improvements to graph!! 
 # Animation improvements
 #Export and Import labels are still moving around a bit??
