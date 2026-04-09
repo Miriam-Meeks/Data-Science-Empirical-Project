@@ -58,110 +58,8 @@ combined_electrcity = pd.merge(gen_df, share_df, on="Year", how="inner")
 cols = ["Year"] + sorted([col for col in combined_electrcity.columns if col != "Year"])
 combined_electrcity = combined_electrcity[cols] 
 combined_electrcity.columns = combined_electrcity.columns.str.replace(r"\s*\[.*?\]", "", regex=True) #removing notes
-print(combined_electrcity.head())
 
 # #Data visualisation
-df = combined_electrcity.copy() # Only plotting these for now
-df["Year"] = pd.to_numeric(df["Year"])  # Convert Year to numeric for plotting and animation
-
-df["Total renewable generation"] = (
-    df["Total renewable generation"]
-    .astype(str)
-    .str.replace(",", "")
-)
-
-# Converting to numeric for plotting and later data manipulation
-df["Total renewable generation"] = pd.to_numeric(df["Total renewable generation"])
-df["Total wind"] = pd.to_numeric(df["Total wind"].astype(str).str.replace(",", ""))
-df["Solar"] = pd.to_numeric(df["Solar"].astype(str).str.replace(",", "")) 
-
-# Sorting values for visualisation
-df = df.sort_values("Year")
-
-fig, ax = plt.subplots(figsize=(12, 6)) # Creating a wide figure for time series
-
-# Data containers # WHAT EXACTLY IS THIS??
-x_renew, y_renew = [], []
-x_wind, y_wind = [], []
-x_solar, y_solar = [], []
-
-# Lines (thin + x markers)
-line1, = ax.plot([], [], marker='x', linewidth=1, label="Renewables (GWh)")
-line2, = ax.plot([], [], marker='x', linewidth=1, label="Wind")
-line3, = ax.plot([], [], marker='x', linewidth=1, label="Solar") #Looking at wind and solar generation
-
-# Axis settings
-ax.set_xlim(1995, 2025)
-ax.set_ylim(0, (df["Total renewable generation"].max()+10000)) # Adding extra space on y-axis for clarity
-
-ax.set_xlabel("Year")
-ax.set_ylabel("Value") #CHANGE Y-AXIS TO UNIT!!
-ax.set_title("Renewable Energy Trends Over Time")
-
-ax.grid(True, linestyle="--", linewidth=0.5, alpha=0.7)
-ax.legend(loc="upper left")
-
-#Adding text labels to the plot points for the visualisation
-text_renew = ax.text(0, 0, "", fontsize=9)
-text_wind = ax.text(0, 0, "", fontsize=9)
-text_solar = ax.text(0, 0, "", fontsize=9)
-
-offset = 500  # vertical offset for readability
-
-def update(frame):
-    current_df = df.iloc[:frame + 1]
-
-    # Apply your conditions
-    renew_data = current_df[current_df["Total renewable generation"] != 0]
-    wind_data = current_df[current_df["Total wind"] >= 1000] # Using threshold as 1000 Gwhs before showing generation on the graph
-    solar_data = current_df[current_df["Solar"] >= 1000]
-
-    # Update lines
-    line1.set_data(renew_data["Year"], renew_data["Total renewable generation"])
-    line2.set_data(wind_data["Year"], wind_data["Total wind"])
-    line3.set_data(solar_data["Year"], solar_data["Solar"])
-
-    # Updating text labels with if statement for latest updated points:
-    if not renew_data.empty: # Sets markers as none when data is empty/0 so renewable only appears once producing enough energy
-        x, y = renew_data["Year"].iloc[-1], renew_data["Total renewable generation"].iloc[-1]
-        text_renew.set_position((x, y + offset))
-        text_renew.set_text(f"{y:,.0f}")
-
-    if not wind_data.empty:
-        x, y = wind_data["Year"].iloc[-1], wind_data["Total wind"].iloc[-1]
-        text_wind.set_position((x, y + offset))
-        text_wind.set_text(f"{y:,.0f}")
-
-    if not solar_data.empty:
-        x, y = solar_data["Year"].iloc[-1], solar_data["Solar"].iloc[-1]
-        text_solar.set_position((x, y + offset))
-        text_solar.set_text(f"{y:,.0f}")
-
-    return line1, line2, line3, text_renew, text_wind, text_solar
-
-ani = FuncAnimation(
-    fig,
-    update,
-    frames=len(df),
-    interval=250,
-    repeat=False
-)
-
-plt.tight_layout()
-
-output_folder = r"C:\\Users\\mm147\\Empirical-Project\\Data-Science-Empirical-Project\\Visualisations" 
-os.makedirs(output_folder, exist_ok=True)
-
-gif_path = os.path.join(output_folder, "renewable_generation_trends.gif")
-ani.save(gif_path, writer=PillowWriter(fps=10))
-
-plt.show()
-
-# #Plot improvements:
-# #Some numbers are staying on the axis for extra time before being absorbed into the plot. Commit this for now and then edit
-
-
-
 
 # # Creating a new dataframe with aggregated years average shares of generation to visualise later:
 # df = combined_electrcity.copy()
@@ -251,4 +149,201 @@ plt.show()
 # fig.write_html("combined_energy_pie_charts.html") # Saved as an interactive html
 # fig.show()
 
-# ### Save to the visualisations folder in the Git repo
+# # ### Save to the visualisations folder in the Git repo
+
+
+
+
+
+
+# # Line graph animation of renewable energy generation over time
+df = combined_electrcity.copy() # Only plotting these for now
+df["Year"] = pd.to_numeric(df["Year"])  # Convert Year to numeric for plotting and animation
+
+df["Total renewable generation"] = (
+    df["Total renewable generation"]
+    .astype(str)
+    .str.replace(",", "")
+)
+
+# Converting to numeric for plotting and later data manipulation
+df["Total renewable generation"] = pd.to_numeric(df["Total renewable generation"])
+df["Total wind"] = pd.to_numeric(df["Total wind"].astype(str).str.replace(",", ""))
+df["Solar"] = pd.to_numeric(df["Solar"].astype(str).str.replace(",", "")) 
+
+# Sorting values for visualisation
+df = df.sort_values("Year")
+
+fig, ax = plt.subplots(figsize=(12, 6)) # Creating a wide figure for time series
+
+# Data containers # WHAT EXACTLY IS THIS??
+x_renew, y_renew = [], []
+x_wind, y_wind = [], []
+x_solar, y_solar = [], []
+
+# Lines (thin + x markers)
+line1, = ax.plot([], [], marker='x', linewidth=1, label="Renewables (GWh)")
+line2, = ax.plot([], [], marker='x', linewidth=1, label="Wind")
+line3, = ax.plot([], [], marker='x', linewidth=1, label="Solar") #Looking at wind and solar generation
+
+# Axis settings
+ax.set_xlim(1995, 2025)
+ax.set_ylim(0, (df["Total renewable generation"].max()+10000)) # Adding extra space on y-axis for clarity
+
+ax.set_xlabel("Year")
+ax.set_ylabel("Value") #CHANGE Y-AXIS TO UNIT!!
+ax.set_title("Renewable Energy Trends Over Time")
+
+ax.grid(True, linestyle="--", linewidth=0.5, alpha=0.7)
+ax.legend(loc="upper left")
+
+#Adding text labels to the plot points for the visualisation
+text_renew = ax.text(0, 0, "", fontsize=9)
+text_wind = ax.text(0, 0, "", fontsize=9)
+text_solar = ax.text(0, 0, "", fontsize=9)
+
+offset = 500  # vertical offset for readability
+
+def update(frame):
+    current_df = df.iloc[:frame + 1]
+
+    # Apply your conditions
+    renew_data = current_df[current_df["Total renewable generation"] != 0]
+    wind_data = current_df[current_df["Total wind"] >= 1000] # Using threshold as 1000 Gwhs before showing generation on the graph
+    solar_data = current_df[current_df["Solar"] >= 1000]
+
+    # Update lines
+    line1.set_data(renew_data["Year"], renew_data["Total renewable generation"])
+    line2.set_data(wind_data["Year"], wind_data["Total wind"])
+    line3.set_data(solar_data["Year"], solar_data["Solar"])
+
+    # Updating text labels with if statement for latest updated points:
+    if not renew_data.empty: # Sets markers as none when data is empty/0 so renewable only appears once producing enough energy
+        x, y = renew_data["Year"].iloc[-1], renew_data["Total renewable generation"].iloc[-1]
+        text_renew.set_position((x, y + offset))
+        text_renew.set_text(f"{y:,.0f}")
+
+    if not wind_data.empty:
+        x, y = wind_data["Year"].iloc[-1], wind_data["Total wind"].iloc[-1]
+        text_wind.set_position((x, y + offset))
+        text_wind.set_text(f"{y:,.0f}")
+
+    if not solar_data.empty:
+        x, y = solar_data["Year"].iloc[-1], solar_data["Solar"].iloc[-1]
+        text_solar.set_position((x, y + offset))
+        text_solar.set_text(f"{y:,.0f}")
+
+    return line1, line2, line3, text_renew, text_wind, text_solar
+
+ani1 = FuncAnimation(
+    fig,
+    update,
+    frames=len(df),
+    interval=400,
+    repeat=False
+)
+
+plt.tight_layout()
+
+output_folder = r"C:\\Users\\mm147\\Empirical-Project\\Data-Science-Empirical-Project\\Visualisations" 
+os.makedirs(output_folder, exist_ok=True)
+
+gif_path = os.path.join(output_folder, "renewable_generation_trends.gif")
+ani1.save(gif_path, writer=PillowWriter(fps=10))
+
+
+#Repeat make of the line graph animation for monthly data generation of MPPs to see cyclical nature.
+monthly_gen = pd.read_csv("monthly-energy-generation.csv") # new dataset
+monthly_gen = monthly_gen.loc[:, ~monthly_gen.columns.str.contains("^Unnamed")] # drop empty, unnamed columns
+
+monthly_gen.columns = monthly_gen.columns.str.replace(r"\s*\[.*?\]", "", regex=True) # removing notes
+
+df_monthly = monthly_gen[["Month", "Total electricity supplied by MPPs", "Total wind", "Solar"]]
+print(df_monthly.head())
+
+df = df_monthly.copy()
+
+# Clean Month values and convert to datetime (repeated process for before, look to previous comments)
+df["Month"] = (
+    df["Month"]
+    .astype(str)
+    .str.replace(r"\s*\[.*?\]", "", regex=True)
+    .str.strip()
+)
+df["Month"] = pd.to_datetime(df["Month"], format="%B %Y")
+
+# Ensure numeric
+df["Total electricity supplied by MPPs"] = pd.to_numeric(
+    df["Total electricity supplied by MPPs"]
+)
+df["Total wind"] = pd.to_numeric(df["Total wind"])
+df["Solar"] = pd.to_numeric(df["Solar"])
+
+# Sort by time
+df = df.sort_values("Month")
+
+fig, ax = plt.subplots(figsize=(12, 6))
+
+line1, = ax.plot([], [], marker='x', linewidth=1, label="Total Electricity (MPPs)")
+line2, = ax.plot([], [], marker='x', linewidth=1, label="Wind")
+line3, = ax.plot([], [], marker='x', linewidth=1, label="Solar")
+
+ax.set_xlim(df["Month"].min(), df["Month"].max())
+ax.set_ylim(0, df["Total electricity supplied by MPPs"].max() * 1.1)
+
+ax.set_xlabel("Year")
+ax.set_ylabel("Electricity (GWh)")
+ax.set_title("Monthly Electricity Generation Trends")
+
+ax.grid(True, linestyle="--", linewidth=0.5, alpha=0.7)
+ax.legend(loc="upper left")
+
+text_main = ax.text(0, 0, "", fontsize=9)
+text_wind = ax.text(0, 0, "", fontsize=9)
+text_solar = ax.text(0, 0, "", fontsize=9)
+
+offset = df["Total electricity supplied by MPPs"].max() * 0.02
+
+def update(frame):
+    current_df = df.iloc[:frame + 1]
+
+    main_data = current_df.dropna(subset=["Total electricity supplied by MPPs"])
+    wind_data = current_df[current_df["Total wind"].notna()]
+    solar_data = current_df[current_df["Solar"].notna()]
+
+    # Update lines
+    line1.set_data(main_data["Month"], main_data["Total electricity supplied by MPPs"])
+    line2.set_data(wind_data["Month"], wind_data["Total wind"])
+    line3.set_data(solar_data["Month"], solar_data["Solar"])
+
+    # --- Labels ---
+    if not main_data.empty:
+        x, y = main_data["Month"].iloc[-1], main_data["Total electricity supplied by MPPs"].iloc[-1]
+        text_main.set_position((x, y + offset))
+        text_main.set_text(f"{y:.2f}")
+
+    if not wind_data.empty:
+        x, y = wind_data["Month"].iloc[-1], wind_data["Total wind"].iloc[-1]
+        text_wind.set_position((x, y + offset))
+        text_wind.set_text(f"{y:.2f}")
+
+    if not solar_data.empty:
+        x, y = solar_data["Month"].iloc[-1], solar_data["Solar"].iloc[-1]
+        text_solar.set_position((x, y + offset))
+        text_solar.set_text(f"{y:.2f}")
+
+    return line1, line2, line3, text_main, text_wind, text_solar
+
+ani2 = FuncAnimation(
+    fig,
+    update,
+    frames=len(df),
+    interval=100,
+    repeat=False
+)
+
+plt.tight_layout()
+
+os.makedirs(output_folder, exist_ok=True)
+gif_path = os.path.join(output_folder, "monthly-mpps-renewable-generation.gif")
+ani2.save(gif_path, writer=PillowWriter(fps=10))
