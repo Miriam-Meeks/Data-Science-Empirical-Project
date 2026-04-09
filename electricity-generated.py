@@ -11,7 +11,7 @@ import os
 def reshape (wide_files):
     df = pd.read_csv(wide_files) 
     
-    df = df.loc[:, ~df.columns.str.contains("^Unnamed")] # drop empty, unamed columns #EDIT THIS!!
+    df = df.loc[:, ~df.columns.str.contains("^Unnamed")] # drop empty, unamed columns
 
     df.columns = df.columns.str.strip() #removing white space from all columns
     df["Fuel"] = df["Fuel"].astype(str).str.strip()
@@ -248,7 +248,7 @@ plt.tight_layout()
 output_folder = r"C:\\Users\\mm147\\Empirical-Project\\Data-Science-Empirical-Project\\Visualisations" 
 os.makedirs(output_folder, exist_ok=True)
 
-gif_path = os.path.join(output_folder, "renewable_generation_trends.gif")
+gif_path = os.path.join(output_folder, "annual_renewable_generation.gif")
 ani1.save(gif_path, writer=PillowWriter(fps=10))
 
 
