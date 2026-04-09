@@ -1,6 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation
+from matplotlib.animation import FuncAnimation, PillowWriter
 import numpy as np 
 import plotly.express as px # for interactive visuals of changing energy generation shares over time.
 from plotly.subplots import make_subplots # for merging interactive visuals looped
@@ -69,23 +69,21 @@ df["Total renewable generation"] = (
     .astype(str)
     .str.replace(",", "")
 )
+
+# Converting to numeric for plotting and later data manipulation
 df["Total renewable generation"] = pd.to_numeric(df["Total renewable generation"])
 df["Total wind"] = pd.to_numeric(df["Total wind"].astype(str).str.replace(",", ""))
-df["Solar"] = pd.to_numeric(df["Solar"].astype(str).str.replace(",", "")) # WHAT DOEAS THIS ERRORS=COERCE DO? I THINK IT JUST MAKES ANYTHING THAT CAN'T BE CONVERTED TO NUMERIC A NAN, WHICH IS FINE FOR OUR PURPOSES AS WE CAN DROP THESE LATER IF NEEDED. THIS IS USEFUL BECAUSE OF THE POSSIBILITY OF MISSING OR MALFORMATTED DATA IN THE CSV FILES, AND IT PREVENTS THE CODE FROM BREAKING DUE TO CONVERSION ERRORS.
+df["Solar"] = pd.to_numeric(df["Solar"].astype(str).str.replace(",", "")) 
 
-# Sort
+# Sorting values for visualisation
 df = df.sort_values("Year")
-
 
 fig, ax = plt.subplots(figsize=(12, 6)) # Creating a wide figure for time series
 
-# Data containers
-x_renew = []
-y_renew = []
-x_wind = []
-y_wind = []
-x_solar = []
-y_solar = []
+# Data containers # WHAT EXACTLY IS THIS??
+x_renew, y_renew = [], []
+x_wind, y_wind = [], []
+x_solar, y_solar = [], []
 
 # Lines (thin + x markers)
 line1, = ax.plot([], [], marker='x', linewidth=1, label="Renewables (GWh)")
@@ -101,59 +99,66 @@ ax.set_ylabel("Value") #CHANGE Y-AXIS TO UNIT!!
 ax.set_title("Renewable Energy Trends Over Time")
 
 ax.grid(True, linestyle="--", linewidth=0.5, alpha=0.7)
-ax.legend()
+ax.legend(loc="upper left")
 
-# --- ANIMATION FUNCTION ---
+#Adding text labels to the plot points for the visualisation
+text_renew = ax.text(0, 0, "", fontsize=9)
+text_wind = ax.text(0, 0, "", fontsize=9)
+text_solar = ax.text(0, 0, "", fontsize=9)
+
+offset = 500  # vertical offset for readability
+
 def update(frame):
-    year = df["Year"].iloc[frame]
-    renew_val = df["Total renewable generation"].iloc[frame]
-    wind_val = df["Total wind"].iloc[frame]
-    solar_val = df["Solar"].iloc[frame]
+    current_df = df.iloc[:frame + 1]
 
-    if renew_val != 0: # Sets markers as none when value is zero so method only appears once producing energy
-        x_renew.append(year)
-        y_renew.append(renew_val)
-    if wind_val >= 1000: # Using threshold as 1000 Gwhs before showing generation on the graph
-        x_wind.append(year)
-        y_wind.append(wind_val)
-    if solar_val >= 1000:
-        x_solar.append(year)
-        y_solar.append(solar_val)
+    # Apply your conditions
+    renew_data = current_df[current_df["Total renewable generation"] != 0]
+    wind_data = current_df[current_df["Total wind"] >= 1000] # Using threshold as 1000 Gwhs before showing generation on the graph
+    solar_data = current_df[current_df["Solar"] >= 1000]
 
-    line1.set_data(x_renew, y_renew)
-    line2.set_data(x_wind, y_wind)
-    line3.set_data(x_solar, y_solar)
+    # Update lines
+    line1.set_data(renew_data["Year"], renew_data["Total renewable generation"])
+    line2.set_data(wind_data["Year"], wind_data["Total wind"])
+    line3.set_data(solar_data["Year"], solar_data["Solar"])
 
-    return line1, line2, line3
+    # Updating text labels with if statement for latest updated points:
+    if not renew_data.empty: # Sets markers as none when data is empty/0 so renewable only appears once producing enough energy
+        x, y = renew_data["Year"].iloc[-1], renew_data["Total renewable generation"].iloc[-1]
+        text_renew.set_position((x, y + offset))
+        text_renew.set_text(f"{y:,.0f}")
 
-# --- CREATE ANIMATION ---
+    if not wind_data.empty:
+        x, y = wind_data["Year"].iloc[-1], wind_data["Total wind"].iloc[-1]
+        text_wind.set_position((x, y + offset))
+        text_wind.set_text(f"{y:,.0f}")
+
+    if not solar_data.empty:
+        x, y = solar_data["Year"].iloc[-1], solar_data["Solar"].iloc[-1]
+        text_solar.set_position((x, y + offset))
+        text_solar.set_text(f"{y:,.0f}")
+
+    return line1, line2, line3, text_renew, text_wind, text_solar
+
 ani = FuncAnimation(
     fig,
     update,
     frames=len(df),
-    interval=150,
+    interval=250,
     repeat=False
 )
 
 plt.tight_layout()
 
-save_path = 'C:\\Users\\mm147\\Empirical-Project\\Data-Science-Empirical-Project\\Visualisations'
-if not os.path.exists(save_path):
-    os.makedirs(save_path)
-completed_video = os.path.join(save_path, 'renewable-energy-generation.gif')
-ani.save(completed_video, writer="pillow", fps=2)
+output_folder = r"C:\\Users\\mm147\\Empirical-Project\\Data-Science-Empirical-Project\\Visualisations" 
+os.makedirs(output_folder, exist_ok=True)
 
-# plt.show()
+gif_path = os.path.join(output_folder, "renewable_generation_trends.gif")
+ani.save(gif_path, writer=PillowWriter(fps=10))
+
+plt.show()
 
 # #Plot improvements:
-# #Keep legend on the  top left handside for the whole plot
-# # Show the value of each line as its increasing overtime
-
-# # Find other source of daily generation data to plot more detailed time series
-
-
-
-
+# #Some numbers are staying on the axis for extra time before being absorbed into the plot. Commit this for now and then edit
 
 
 
