@@ -27,7 +27,7 @@ fig = px.line(
 # --- Styling improvements ---
 fig.update_layout(
     xaxis_title="Year",
-    yaxis_title="Fuel Consumption (millions of gallons of oil)",
+    yaxis_title="Fuel Consumption (millions tonnes)",
     hovermode="x unified",
 
     # White background

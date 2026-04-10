@@ -59,97 +59,100 @@ cols = ["Year"] + sorted([col for col in combined_electrcity.columns if col != "
 combined_electrcity = combined_electrcity[cols] 
 combined_electrcity.columns = combined_electrcity.columns.str.replace(r"\s*\[.*?\]", "", regex=True) #removing notes
 
-# #Data visualisation
+#Average Energy generation shares across time visualisation
+# Creating a new dataframe with aggregated years average shares of generation to visualise later:
+df = combined_electrcity.copy()
+df["Year"] = pd.to_numeric(df["Year"])  # Convert Year to numeric for comparisons
+percent_cols = [col for col in df.columns if '%' in col]
+df[percent_cols] = df[percent_cols].replace('%', '', regex=True).astype(float) # removing % sings
 
-# # Creating a new dataframe with aggregated years average shares of generation to visualise later:
-# df = combined_electrcity.copy()
-# df["Year"] = pd.to_numeric(df["Year"])  # Convert Year to numeric for comparisons
-# percent_cols = [col for col in df.columns if '%' in col]
-# df[percent_cols] = df[percent_cols].replace('%', '', regex=True).astype(float) # removing % sings
+# Define period of interest for aggregation
+periods = { 
+    "2020-2024": (2020, 2024),
+    "2010-2014": (2010, 2014),
+    "2005-2010": (2005, 2010),
+    "2000-2005": (2000, 2005),
+}
 
-# # Define period of interest for aggregation
-# periods = { 
-#     "2020-2024": (2020, 2024),
-#     "2010-2014": (2010, 2014),
-#     "2005-2010": (2005, 2010),
-#     "2000-2005": (2000, 2005),
-# }
+avg_data = [] # New dataframe for grouped averages
 
-# avg_data = [] # New dataframe for grouped averages
-
-# for label, (start, end) in periods.items(): #READ UNDERSTAND AND COMMENT THIS!!
-#     subset = df[(df["Year"] >= start) & (df["Year"] <= end)]
+for label, (start, end) in periods.items(): #READ UNDERSTAND AND COMMENT THIS!!
+    subset = df[(df["Year"] >= start) & (df["Year"] <= end)]
     
-#     means = subset[percent_cols].mean()
-#     means["Period"] = label
+    means = subset[percent_cols].mean()
+    means["Period"] = label
     
-#     avg_data.append(means)
+    avg_data.append(means)
 
-# avg_df = pd.DataFrame(avg_data).set_index("Period")
+avg_df = pd.DataFrame(avg_data).set_index("Period")
 
-# #Dropping columns that double count variables
-# avg_df.drop(
-#     columns=["Renewable generation share (%)",
-#     "Total all generating companies (%)",
-#     "Onshore wind (%)",
-#     "Offshore wind (%)", 
-#     "Renewable generation share (%)"], inplace=True)
+#Dropping columns that double count variables
+avg_df.drop(
+    columns=["Renewable generation share (%)",
+    "Total all generating companies (%)",
+    "Onshore wind (%)",
+    "Offshore wind (%)", 
+    "Renewable generation share (%)"], inplace=True)
 
-# # # Plotting figures in interactive pie charts (plotly)
+# # Plotting figures in interactive pie charts (plotly)
 
-# all_labels = avg_df.columns
-# avg_df = avg_df.sort_index() # Sort for chronological orderings in final visualisation.
+all_labels = avg_df.columns
+avg_df = avg_df.sort_index() # Sort for chronological orderings in final visualisation.
 
-# cmap = plt.get_cmap("tab20b") # Using constant colour palette between visualisations
-# colors = [cmap(i) for i in range(len(avg_df.columns))]
+cmap = plt.get_cmap("tab20b") # Using constant colour palette between visualisations
+colors = [cmap(i) for i in range(len(avg_df.columns))]
 
-# def rgba_to_hex(rgba): # Convert RGBA to Hexadecimal for Plotly recognition of colour palette
-#     return '#%02x%02x%02x' % tuple(int(255*x) for x in rgba[:3])
+def rgba_to_hex(rgba): # Convert RGBA to Hexadecimal for Plotly recognition of colour palette
+    return '#%02x%02x%02x' % tuple(int(255*x) for x in rgba[:3])
 
-# colors = [rgba_to_hex(c) for c in colors]
-# color_map = {
-#     label: colors[i % len(colors)]
-#     for i, label in enumerate(avg_df.columns)
-# }
+colors = [rgba_to_hex(c) for c in colors]
+color_map = {
+    label: colors[i % len(colors)]
+    for i, label in enumerate(avg_df.columns)
+}
 
-# rows = 2
-# cols = 2
+rows = 2
+cols = 2
 
-# fig = make_subplots( #Creating visual with 4 pie charts all in one visual from years of interest chosen using subplots
-#     rows=rows,
-#     cols=cols,
-#     specs=[[{'type':'domain'}]*cols for _ in range(rows)],
-#     subplot_titles=avg_df.index
-# )
+fig = make_subplots( #Creating visual with 4 pie charts all in one visual from years of interest chosen using subplots
+    rows=rows,
+    cols=cols,
+    specs=[[{'type':'domain'}]*cols for _ in range(rows)],
+    subplot_titles=avg_df.index
+)
 
-# positions = [(1,1), (1,2), (2,1), (2,2)] #Ordering the images chronolgically from left to right.
+positions = [(1,1), (1,2), (2,1), (2,2)] #Ordering the images chronolgically from left to right.
 
-# for (period, pos) in zip(avg_df.index, positions): #Looping through time periods
+for (period, pos) in zip(avg_df.index, positions): #Looping through time periods
     
-#     values = avg_df.loc[period]
+    values = avg_df.loc[period]
     
-#     fig.add_trace(
-#         go.Pie(
-#             labels=values.index,
-#             values=values.values,
-#             name=period,
-#             textinfo='none',  # removes numbers on pie wedges
-#             hovertemplate='%{label}: %{value:.2f}%', # interactive hover % display
-#             marker=dict(
-#                 colors=[color_map[label] for label in values.index] # consistent colors 
-#             )
-#         ),
-#         row=pos[0], col=pos[1]
-#     )
+    fig.add_trace(
+        go.Pie(
+            labels=values.index,
+            values=values.values,
+            name=period,
+            textinfo='none',  # removes numbers on pie wedges
+            hovertemplate='%{label}: %{value:.2f}%', # interactive hover % display
+            marker=dict(
+                colors=[color_map[label] for label in values.index] # consistent colors 
+            )
+        ),
+        row=pos[0], col=pos[1]
+    )
 
-# fig.update_layout(
-#     title_text="Energy Generation Shares Across Time Periods",
-#     showlegend=True
-# )
-# fig.write_html("combined_energy_pie_charts.html") # Saved as an interactive html
-# fig.show()
+fig.update_layout(
+    title_text="AverageEnergy Generation Shares Across Time Periods",
+    showlegend=True
+)
+fig.write_html("combined_energy_pie_charts.html") # Saved as an interactive html
+fig.show()
+
+
+
 
 # # ### Save to the visualisations folder in the Git repo
+
 
 
 
@@ -191,7 +194,7 @@ ax.set_xlim(1995, 2025)
 ax.set_ylim(0, (df["Total renewable generation"].max()+10000)) # Adding extra space on y-axis for clarity
 
 ax.set_xlabel("Year")
-ax.set_ylabel("Value") #CHANGE Y-AXIS TO UNIT!!
+ax.set_ylabel("GWhs")
 ax.set_title("Renewable Energy Trends Over Time")
 
 ax.grid(True, linestyle="--", linewidth=0.5, alpha=0.7)
@@ -250,6 +253,10 @@ os.makedirs(output_folder, exist_ok=True)
 
 gif_path = os.path.join(output_folder, "annual_renewable_generation.gif")
 ani1.save(gif_path, writer=PillowWriter(fps=10))
+
+#INSERT MORE DETAILED WIND SPLIT/ MAYBE WITH MONTHLY DATA?
+
+
 
 
 #Repeat make of the line graph animation for monthly data generation of MPPs to see cyclical nature.
