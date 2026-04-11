@@ -2,8 +2,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.express as px
 
-
-
 #Data didnt need much reshaping or cleaning/ no missing values, for years between datapoints
 # Looking at fuel usage over time
 fuel_consumption = pd.read_csv("uk-fuel-consumption.csv")
@@ -55,4 +53,5 @@ fig.update_traces(
 fig.write_html("fuel-consumption-line.html") # Saved as an interactive html
 fig.show()
 
+#Visualisation improvements
 #Put a dark border around the graph.
