@@ -414,5 +414,5 @@ fig.update_layout(
     xaxis_rangeslider_visible=True
 )
 
-fig.write_html("monthly-wind-generation.html") 
+fig.write_html("Visualisations/monthly-wind-generation.html")
 fig.show()
