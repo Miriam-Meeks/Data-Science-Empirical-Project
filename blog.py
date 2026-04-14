@@ -1,0 +1,115 @@
+# Simple Python Blog Generator Template
+# Edit posts in Python, generate HTML pages
+
+import os
+from datetime import datetime
+
+# Folder structure
+OUTPUT_DIR = "site"
+POSTS_DIR = "posts"
+
+# Basic HTML template
+BASE_HTML = """
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{title}</title>
+    <style>
+        body {{ font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; }}
+        h1 {{ color: #333; }}
+        .date {{ color: gray; font-size: 0.9em; }}
+        .content {{ margin-top: 20px; }}
+        pre {{ background: #f4f4f4; padding: 10px; overflow-x: auto; }}
+    </style>
+</head>
+<body>
+    <h1>{title}</h1>
+    <div class="date">{date}</div>
+    <div class="content">
+        {content}
+    </div>
+    <hr>
+    <a href="index.html">← Back to Home</a>
+</body>
+</html>
+"""
+
+INDEX_HTML = """
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Blog</title>
+</head>
+<body>
+    <h1>My Blog</h1>
+    <ul>
+        {posts}
+    </ul>
+</body>
+</html>
+"""
+
+# Example posts (edit or load dynamically)
+posts = [
+    {
+        "title": "How is the UKs energy provision changing over time?",
+        "date": "2026-04-14",
+        "filename": "uk-energy.html",
+        "content": """
+<h2>Introduction:</h2>
+<p>Like most people I will turn on my laptop and see my battery charging nicely, without thinking twice about what powers it or my life. Within this project I have begun to question where in the Uk does our energy come from and …………?</p>
+<p>With rapidly accelerating global affairs and increasing climate pressures I wanted to find out how the UK produces energy and its overseas provision. One of my inspirations behind this project was Kate Morley, who produced the site I will reference later, in respect to my web scrape, and my father who shows great interest in these sorts of things and showed me the site himself.</p>
+<p>My findings seem to suggest that we are moving away from coal as a source of energy provision and move towards renewables especially wind turbine production.</p>
+
+<h2>Electricity Generation over the past few decades:</h2>
+<p><i>Insert both animated line graph</i></p>
+
+<p># alter line graph to have updated monthly data for a cleaner and more detailed graphic (annual before monthly).</p>
+<p>New data set from Electricity production and availability from the public supply system (ET 5.4 - monthly)</p>
+<p><a href="https://www.gov.uk/government/statistics/electricity-section-5-energy-trends">Government dataset</a></p>
+<p>-MENTION THAT WE ARE LOOKING AT ENERGY PROVIDED BY MPPS (MAJOR POWER PRODUCERS) in the uk.</p>
+<p>WHY IS THIS INTERESTING? Because MPPs are moving towards renewables but don’t seem to be generating much more monthly.</p>
+
+<p><i>Insert pie charts and</i></p>
+"""
+    }
+]
+
+def generate_post(post):
+    html = BASE_HTML.format(
+        title=post["title"],
+        date=post["date"],
+        content=post["content"]
+    )
+
+    filepath = os.path.join(OUTPUT_DIR, post["filename"])
+    with open(filepath, "w", encoding="utf-8") as f:
+        f.write(html)
+
+
+def generate_index(posts):
+    items = ""
+    for post in posts:
+        items += f'<li><a href="{post["filename"]}">{post["title"]}</a> ({post["date"]})</li>'
+
+    html = INDEX_HTML.format(posts=items)
+
+    with open(os.path.join(OUTPUT_DIR, "index.html"), "w", encoding="utf-8") as f:
+        f.write(html)
+
+
+def main():
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+    for post in posts:
+        generate_post(post)
+
+    generate_index(posts)
+
+    print("Blog generated! Open 'site/index.html' in your browser.")
+
+
+if __name__ == "__main__":
+    main()
