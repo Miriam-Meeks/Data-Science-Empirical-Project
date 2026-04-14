@@ -64,7 +64,10 @@ posts = [
 <p>My findings seem to suggest that we are moving away from coal as a source of energy provision and move towards renewables especially wind turbine production.</p>
 
 <h2>Electricity Generation over the past few decades:</h2>
-<p><i>Insert both animated line graph</i></p>
+<div style="margin-top:20px;">
+    <iframe src="../Visualisations/monthly-wind-generation.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
+</div>
+<img src="../Visualisations/renewable_generation_trends.gif" alt="Renewable Generation Trends" style="width:100%; margin-top:20px; border-radius:10px;">
 
 <p># alter line graph to have updated monthly data for a cleaner and more detailed graphic (annual before monthly).</p>
 <p>New data set from Electricity production and availability from the public supply system (ET 5.4 - monthly)</p>

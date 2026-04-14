@@ -145,19 +145,8 @@ fig.update_layout(
     title_text="AverageEnergy Generation Shares Across Time Periods",
     showlegend=True
 )
-fig.write_html("combined_energy_pie_charts.html") # Saved as an interactive html
+fig.write_html("Visualisations/combined_energy_pie_charts.html") # Saved as an interactive html
 fig.show()
-
-
-
-
-# # ### Save to the visualisations folder in the Git repo
-
-
-
-
-
-
 
 # Line graph animation of renewable energy generation over time
 df = combined_electrcity.copy() # Only plotting these for now
@@ -194,7 +183,7 @@ ax.set_xlim(1995, 2025)
 ax.set_ylim(0, (df["Total renewable generation"].max()+10000)) # Adding extra space on y-axis for clarity
 
 ax.set_xlabel("Year")
-ax.set_ylabel("GWhs")
+ax.set_ylabel("Energy Generation (GWh)")
 ax.set_title("Renewable Energy Trends Over Time")
 
 ax.grid(True, linestyle="--", linewidth=0.5, alpha=0.7)
@@ -242,7 +231,7 @@ ani1 = FuncAnimation(
     fig,
     update,
     frames=len(df),
-    interval=400,
+    interval=200,
     repeat=False
 )
 
