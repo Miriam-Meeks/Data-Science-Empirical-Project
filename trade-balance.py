@@ -142,4 +142,4 @@ trade_animation.save(completed_video, writer="pillow", fps=2)
 plt.show()
 
 # Animation improvements
-#Export and Import labels are still moving around a bit?? - Is it worth interpolating (more interested in all countries staying in the visualisations, and the orderings.)
+#Export and Import labels are still moving around a bit?? - Is it worth interpolating (more interested in all countries staying in the visualisations, and the ordering.)

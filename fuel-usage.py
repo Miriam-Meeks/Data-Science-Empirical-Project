@@ -50,7 +50,7 @@ fig.update_traces(
     hovertemplate="Year: %{x}<br>Consumption: %{y:.2f}<extra></extra>"
 )
 
-fig.write_html("fuel-consumption-line.html") # Saved as an interactive html
+fig.write_html("Visualisations/fuel-consumption-line.html") # Saved as an interactive html
 fig.show()
 
 #Visualisation improvements
