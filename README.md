@@ -55,15 +55,13 @@ Web scrape option?
 
 
 The exact versions to produce the original results are listed below:
-```markdown
-| Package    | Version |
-|------------|--------|
-| pandas     | 3.0.2  |
-| matplotlib | 3.10.8 |
-| plotly     | 6.6.0  |
-| numpy      | 2.4.4  |
-| selenium   | 4.43.0 |
-```
+| Package      | Version|
+|--------------|--------|
+| `pandas`     | 3.0.2  |
+| `matplotlib` | 3.10.8 |
+| `plotly`     | 6.6.0  |
+| `numpy`      | 2.4.4  |
+| `selenium`   | 4.43.0 |
 
 ## Running
 ## Outputs
