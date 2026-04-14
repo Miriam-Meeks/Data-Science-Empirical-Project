@@ -19,20 +19,25 @@ I have also used a Web scrape to find and import interesting and current informa
 ## Data
 The published materials came as Excel worksheets, which I converted to csv and can be found in this repository. 
 Note that although the original imported Excel spreadsheets of the dataset are in the repository (folder: Raw Data Sources) I have used the converted csv’s in my code instead, the Excel spreadsheets are purely there for optional independent further investigation with the other worksheets.
-I read them directly using pandas and the key variables shown in the project are listed below: [share-electricity-generated.csv]
-Dataset: Electricity_Generation_DUKES_5.6.xlsx  [electricity-generated.csv]
+
+I read them directly using pandas and the key variables shown in the project are listed below: 
+Dataset: Electricity_Generation_DUKES_5.6.xlsx  [electricity-generated.csv], [share-electricity-generated.csv]
 | Variable                      | Description                                                                 |
 |-------------------------------|-----------------------------------------------------------------------------|
 | Total renewable generation    | Includes offshore and onshore wind generation, shoreline wave and tidal generation, solar generation and thermal renewable (bioenergy) generation. |
 | Total wind                    | Wind (fuel) used in generation GWh. The fuel used is assumed the same as the electricity generated. |
 | Total Solar                   | Solar (fuel) used in generation GWh. The fuel used is assumed the same as the electricity generated. |
+
 Dataset: monthly-energy-generation.csv
+
 | Variable                    | Description                                                                 |
 |-----------------------------|-----------------------------------------------------------------------------|
 | Total Electricity (MPPs)    | Electricity production from the Main Power Producers (MPPs), across fuels in TWh. |
 | Total Wind                  | Major Power Producers (onshore and offshore) wind provision TWh.           |
 | Total Solar                 | Major Power Producers solar provision TWh.                                 |
+
 Dataset: ECUK_2025_Consumption_tables.xlsx [uk-fuel-consumption.csv]
+
 | Variable            | Description                                                                 |
 |---------------------|-----------------------------------------------------------------------------|
 | Fuel consumption    | UK, all road transport energy consumption annually (million tonnes).       |
@@ -50,9 +55,13 @@ Python version 3 (tested on Python 3.14.3, Linux)
 Make (optional but recommended)
 Web scrape option?
 
-#Python Packages
+Python Packages
+Install the dependedcies via pip:
 
+`pip install pandas==3.0.2 matplotlib==3.10.8 plotly==6.6.0 numpy==2.4.4 selenium==4.43.0`
 
+Or install without pinned versions (results may differ slightly):
+`pip install pandas matplotlib plotly numpy selenium`
 
 The exact versions to produce the original results are listed below:
 | Package      | Version|
