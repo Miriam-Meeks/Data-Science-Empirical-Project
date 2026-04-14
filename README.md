@@ -2,14 +2,14 @@
 Data Science in Economics (BEE2041_A_2_202526) Empirical Project.
 
 Table of contents: MAKE HYPERLINKS
-1.	url
-2.	url
-3.	url
-4.	Requirements
-5.	Running Instructions
-6.	Outputs
-7.	Methods?
-8.	References and Resources
+1.	[Overview:](url)
+2.	[Data:](url)
+3.	[Repository structure:](url)
+4.	[Requirements:](url)
+5.	[Running Instructions:](url)
+6.	[Outputs:](url)
+7.	[Methods](url)
+8.	[References and Resources:](url)
 
 [Overview:](url)
 This project aims to understand more about energy, generation and provision within the UK and how it is changing overtime.
@@ -41,7 +41,7 @@ Import	(Foreign country to UK trade direction). What the UK takes from the speci
 Export	(UK to Foreign country trade direction). What the UK gives to the specified country.
 
 [Repository structure:](url)
-Requirements:
+[Requirements:](url)
 System
 Python version 3 (tested on Python 3.14.3, Linux)
 Make (optional but recommended)
@@ -59,13 +59,14 @@ plotly	6.6.0
 numpy	2.4.4
 selenium	4.43.0
 
-Running Instructions:
-Outputs:
+[Running Instructions:](url)
+[Outputs:](url)
 Figures ()
-Methods – Do I need to include this for a webscrape (maybe write a line).
+[Methods](url)
+Do I need to include this for a webscrape (maybe write a line).
 
 To create my blog post I used a python script, which generates the blog post and saves it locally in a file, that is accessible……………………………..VIA WHAT?
 One of the reasons I did this was so that when this repository is used and the make file is run the whole blog post will be recreated, with the up-to-date web scraped data and visualisations adjusted.
 
-References and Resources:
+[References and Resources:](url)
 Datasets, I am Kate, referenced text.
