@@ -145,7 +145,7 @@ fig.update_layout(
     title_text="AverageEnergy Generation Shares Across Time Periods",
     showlegend=True
 )
-fig.write_html("Visualisations/combined_energy_pie_charts.html") # Saved as an interactive html
+fig.write_html("Visualisations/combined_energy_pie_charts.html") # Saved as an interactive html in visualisations
 fig.show()
 
 # Line graph animation of renewable energy generation over time
