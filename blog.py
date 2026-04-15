@@ -78,6 +78,17 @@ posts = [
 <div style="margin-top:20px;">
     <iframe src="../Visualisations/combined_energy_pie_charts.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
 </div>
+
+<p> This trade animation tells us how our trade energy with other nations..
+
+<img src="../Visualisations/trade_balance_animation.gif" alt="Energy Trade" style="width:100%; margin-top:20px; border-radius:10px;">
+
+
+<p> Showing current energy mix in the UK, with a focus on the proportion of renewables. All the data so far we have looked at tells us the major trends, but what does our energy generation mix look like today?
+The data presented in the image below is scraped of ........... and the data shows you exactly the energy generation mix today.
+div style="margin-top:20px;">
+    <iframe src="../Visualisations/scraped-generation-mix.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
+</div>
 """
     }
 ]
