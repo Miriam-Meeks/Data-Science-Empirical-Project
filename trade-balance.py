@@ -146,7 +146,4 @@ if not os.path.exists(save_path):
 completed_video = os.path.join(save_path, 'trade_balance_animation.gif')
 trade_animation.save(completed_video, writer="pillow", fps=2)
 
-plt.show()
-
-# Animation improvements
-#Export and Import labels are still moving around a bit?? - Is it worth interpolating (more interested in all countries staying in the visualisations, and the ordering.)
+plt.show() # Not worth interpolating for a smooth animation as it made values very unclear and hard to follow.
