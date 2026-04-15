@@ -81,6 +81,11 @@ country_colors = {
 }
 
 frames = df_trade["Year"].unique()
+frames = (
+    [frames[0]] * 2 +        # pause at start
+    list(frames) +           
+    [frames[-1]] * 10         # pause at end
+)
 
 # Using ax to allow for animation
 max_import = (df_trade["Imports"].max()+ 2000) # Adding import buffer for clear visualisation
@@ -120,10 +125,12 @@ def animate(frame):
         
     ax.set_title(f"Trade Balance by Country - {frame}", fontsize=14)
 
-    #Add "Imports" and "Exports" text labels above chart
-    y_pos = -1  # safely below bars
-    ax.text(-x_limit, y_pos, "Imports", ha='left', fontsize=12)
-    ax.text(x_limit, y_pos, "Exports", ha='right', fontsize=12)
+    #Add "Imports" and "Exports" text labels below x-axis fixed in place
+    ax.text(0.0, -0.08, "Imports", transform=ax.transAxes,
+        ha='left', va='top', fontsize=12)
+
+    ax.text(1.0, -0.08, "Exports", transform=ax.transAxes,
+        ha='right', va='top', fontsize=12)
 
     ax.axvline(0, color="black", linewidth=1)  # Adding a vertical line at x=0
 
