@@ -4,12 +4,12 @@ Data Science in Economics (BEE2041_A_2_202526) Empirical Project.
 Table of contents: MAKE HYPERLINKS
 1.	[Overview](#overview)
 2.	[Data](#data)
-3.	[Repository structure](#respository)
-4.	[Requirements](#resquirements)
-5.	[Running Instructions:](#running)
+3.	[Repository Structure](#respository-structure)
+4.	[Requirements](#requirements)
+5.	[Running Instructions:](#running-instructions)
 6.	[Outputs](#outputs)
 7.	[Methods](#methods)
-8.	[References and Resources:](#references)
+8.	[References and Resources:](#references-and-resources)
 
 ## Overview
 This project aims to understand more about energy, generation and provision within the UK and how it is changing overtime.
@@ -48,7 +48,7 @@ Dataset: Net_Imports_DUKES_5.13.xlsx [net-imports.csv]
 | Import   | (Foreign country to UK trade direction). What the UK takes from the specified country. |
 | Export   | (UK to Foreign country trade direction). What the UK gives to the specified country. |
 
-## Repository structure
+## Repository Structure
 ## Requirements
 System
 Python version 3 (tested on Python 3.14.3, Linux)
@@ -72,7 +72,7 @@ The exact versions to produce the original results are listed below:
 | `numpy`      | 2.4.4  |
 | `selenium`   | 4.43.0 |
 
-## Running
+## Running Instructions
 ## Outputs
 Figures ()
 ## Methods
