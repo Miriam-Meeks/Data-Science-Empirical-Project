@@ -20,7 +20,7 @@ def reshape (wide_files):
     df = df[df["Generation type"] == "All generating companies"] # interested in total generated output
     df = df.drop(columns=["Generation type"]) 
 
-    df_long = df.melt(
+    df_long = df.melt( 
         id_vars=["Fuel"],    
         var_name="Year",     
         value_name="Value"
@@ -28,7 +28,7 @@ def reshape (wide_files):
 
     df_long["Fuel"] = df_long["Fuel"].str.replace(r"\s*\[.*?\]", "", regex=True) #removing notes after Fuel type
 
-    df_final = df_long.pivot( #Pivoting to have fuel types as columns but no aggregation
+    df_final = df_long.pivot( #Pivoting to have fuel types as columns but no aggregation (NOT pivot_table)
         index="Year",
         columns="Fuel",
         values="Value"
@@ -42,7 +42,7 @@ def reshape (wide_files):
 
 wide_files = ["electricity-generated.csv","share-electricity-generated.csv"]
 
-gen_df = reshape("electricity-generated.csv")
+gen_df = reshape("electricity-generated.csv") # Passing csv through re-shape function
 #Altering column names for share sheet so they don't completely match electricity-generated
 share_df = reshape("share-electricity-generated.csv")
 share_df.columns = [
@@ -51,6 +51,7 @@ share_df.columns = [
 ]
 share_df.to_csv("share-electricity-generated-long.csv", index=False) #Saving (%) column addition
 
+#Aggregation: merging reshaped dataframes
 combined_electrcity = pd.merge(gen_df, share_df, on="Year", how="inner") 
 # Merge can be inner as you won't have missing years not in both datasets because of the nature of the datasets.
 
@@ -65,6 +66,7 @@ combined_electrcity.columns = combined_electrcity.columns.str.replace(r"\s*\[.*?
 '''Initially tried using share (%) columns but aggregated this did not work as shares averaged gives
  a disproportionate pie chart so second try shown below, summing and averaging absolute values to give
  representative pie charts'''
+#Note pie charts do not have to add to 100 because of transfers
 df = combined_electrcity.copy()
 df.columns = df.columns.str.strip() # Removing white space from columns
 df["Year"] = pd.to_numeric(df["Year"])  # Convert Year to numeric for comparisons
@@ -106,10 +108,10 @@ share_data = [] # Computing shares for each fuel for pies
 for label, (start, end) in periods.items():
     subset = df[(df["Year"] >= start) & (df["Year"] <= end)] # Within time period for aggregation
     
-    # Sum generation over period
+    # Sum generation over period to find %
     totals = subset[fuel_cols].sum()
     
-    # Convert to %
+    # Convert to % to plot in representative pie charts 
     shares = totals / totals.sum() * 100
     
     shares["Period"] = label
@@ -169,7 +171,7 @@ positions = [(1,1), (1,2), (2,1), (2,2)] # Ordering pie charts chronologically b
 for (period, pos) in zip(avg_df.index, positions): #Looping through time periods
     values = avg_df.loc[period]
     
-    fig.add_trace(
+    fig.add_trace( # Making interactive pie chart with hover feature, with Plotly.
         go.Pie(
             labels=values.index,
             values=values.values,
@@ -183,7 +185,7 @@ for (period, pos) in zip(avg_df.index, positions): #Looping through time periods
         row=pos[0], col=pos[1]
     )
 
-fig.update_layout(
+fig.update_layout( # Adding title and legend
     title_text="Average Energy Generation Shares Across Time Periods",
     showlegend=True
 )
@@ -196,7 +198,7 @@ fig.show()
 df = combined_electrcity.copy() # Only plotting these for now
 df["Year"] = pd.to_numeric(df["Year"])  # Convert Year to numeric for plotting and animation
 
-df["Total renewable generation"] = (
+df["Total renewable generation"] = ( #Removing commas in dataframe with spaces
     df["Total renewable generation"]
     .astype(str)
     .str.replace(",", "")
@@ -212,7 +214,7 @@ df = df.sort_values("Year")
 
 fig, ax = plt.subplots(figsize=(12, 6)) # Creating a wide figure for time series
 
-# Data containers # WHAT EXACTLY IS THIS??
+# Creating Data containers for each frame
 x_renew, y_renew = [], []
 x_wind, y_wind = [], []
 x_solar, y_solar = [], []
@@ -240,15 +242,15 @@ text_solar = ax.text(0, 0, "", fontsize=9)
 
 offset = 500  # vertical offset for readability
 
-def update(frame):
+def update(frame): # Creating function to loop through frames fro animation
     current_df = df.iloc[:frame + 1]
 
     # Apply your conditions
     renew_data = current_df[current_df["Total renewable generation"] != 0]
-    wind_data = current_df[current_df["Total wind"] >= 1000] # Using threshold as 1000 Gwhs before showing generation on the graph
+    wind_data = current_df[current_df["Total wind"] >= 1000] # Using threshold as 1000 Gwhs before showing generation on the graph (otherwise too small)
     solar_data = current_df[current_df["Solar"] >= 1000]
 
-    # Update lines
+    # Update lines each frame
     line1.set_data(renew_data["Year"], renew_data["Total renewable generation"])
     line2.set_data(wind_data["Year"], wind_data["Total wind"])
     line3.set_data(solar_data["Year"], solar_data["Solar"])
@@ -269,8 +271,9 @@ def update(frame):
         text_solar.set_position((x, y + offset))
         text_solar.set_text(f"{y:,.0f}")
 
-    return line1, line2, line3, text_renew, text_wind, text_solar
+    return line1, line2, line3, text_renew, text_wind, text_solar #Draw each line and label each frame, if requirements met (return)
 
+#Animation created, with 200ms between each frame
 ani1 = FuncAnimation(
     fig,
     update,
@@ -284,9 +287,10 @@ plt.tight_layout()
 output_folder = r"C:\\Users\\mm147\\Empirical-Project\\Data-Science-Empirical-Project\\Visualisations" 
 os.makedirs(output_folder, exist_ok=True)
 
-gif_path = os.path.join(output_folder, "annual-renewable-generation.gif")
+gif_path = os.path.join(output_folder, "annual-renewable-generation.gif") # Saving to Visualisations folder as gif
 ani1.save(gif_path, writer=PillowWriter(fps=10))
 
+#New dataset
 #Importing and using a monthly dataset to briefly look at smaller, seasonal variations
 monthly_gen = pd.read_csv("monthly-energy-generation.csv") # new dataset
 monthly_gen = monthly_gen.loc[:, ~monthly_gen.columns.str.contains("^Unnamed")] # drop empty, unnamed columns
@@ -318,13 +322,13 @@ df["Solar"] = pd.to_numeric(df["Solar"])
 # Sort by time
 df = df.sort_values("Month")
 
-fig, ax = plt.subplots(figsize=(12, 6))
+fig, ax = plt.subplots(figsize=(12, 6)) #Standard dimensions fixed
 
 line1, = ax.plot([], [], marker='x', linewidth=1, label="Total Electricity (MPPs)")
 line2, = ax.plot([], [], marker='x', linewidth=1, label="Wind")
 line3, = ax.plot([], [], marker='x', linewidth=1, label="Solar")
 
-ax.set_xlim(df["Month"].min(), df["Month"].max())
+ax.set_xlim(df["Month"].min(), df["Month"].max()) # Setting limits
 ax.set_ylim(0, df["Total electricity supplied by MPPs"].max() * 1.1)
 
 ax.set_xlabel("Year")
@@ -340,19 +344,19 @@ text_solar = ax.text(0, 0, "", fontsize=9)
 
 offset = df["Total electricity supplied by MPPs"].max() * 0.02
 
-def update(frame):
+def update(frame): # Creating frame animations
     current_df = df.iloc[:frame + 1]
 
     main_data = current_df.dropna(subset=["Total electricity supplied by MPPs"])
     wind_data = current_df[current_df["Total wind"].notna()]
-    solar_data = current_df[current_df["Solar"].notna()]
+    solar_data = current_df[current_df["Solar"].notna()] # Plotting non-empty values
 
     # Update lines
     line1.set_data(main_data["Month"], main_data["Total electricity supplied by MPPs"])
     line2.set_data(wind_data["Month"], wind_data["Total wind"])
     line3.set_data(solar_data["Month"], solar_data["Solar"])
 
-    # --- Labels ---
+    #Labels postioning and text setting
     if not main_data.empty:
         x, y = main_data["Month"].iloc[-1], main_data["Total electricity supplied by MPPs"].iloc[-1]
         text_main.set_position((x, y + offset))
@@ -370,6 +374,7 @@ def update(frame):
 
     return line1, line2, line3, text_main, text_wind, text_solar
 
+#Animating monthly renewable generation
 ani2 = FuncAnimation(
     fig,
     update,
@@ -381,12 +386,12 @@ ani2 = FuncAnimation(
 plt.tight_layout()
 
 os.makedirs(output_folder, exist_ok=True)
-gif_path = os.path.join(output_folder, "monthly-mpps-renewable-generation.gif")
+gif_path = os.path.join(output_folder, "monthly-mpps-renewable-generation.gif") # Saving to Visualisation folder as gif
 ani2.save(gif_path, writer=PillowWriter(fps=10))
 
 #Interactive (hover) line graph for monthly wind generation over time
 df = df_monthly.copy()
-print(df.head())
+#print(df.head())
 
 # Clean Month values and convert to datetime
 df["Month"] = (
@@ -406,7 +411,7 @@ df = df.dropna(subset=["Total wind"])
 # Sort just in case
 df = df.sort_values("Month")
 
-# Create interactive plot
+# Create interactive plot with plotly express
 fig = px.line(
     df,
     x="Month",
@@ -415,11 +420,11 @@ fig = px.line(
     markers=True
 )
 
-# --- Styling ---
+#Improving aesthetic
 fig.update_layout(
     xaxis_title="Time",
     yaxis_title="Wind Generation (TWh)",
-    hovermode="x unified",
+    hovermode="x unified", # Best hover mode
 
     # White background
     plot_bgcolor="white",
@@ -429,7 +434,7 @@ fig.update_layout(
     xaxis=dict(
         showgrid=True,
         gridcolor="lightgrey",
-        dtick="M12"  # major grid every year
+        dtick="M12"  # major grid line for every year
     ),
     yaxis=dict(
         showgrid=True,
@@ -442,10 +447,10 @@ fig.update_traces(
     hovertemplate="Date: %{x|%b %Y}<br>Wind: %{y:.2f}<extra></extra>"
 )
 
-# Optional: add range slider (very useful for time series)
+# Range slider for time series and for good user interactivity within the visualisation
 fig.update_layout(
     xaxis_rangeslider_visible=True
 )
 
-fig.write_html("Visualisations/monthly-wind-generation.html")
-fig.show()
+fig.write_html("Visualisations/monthly-wind-generation.html") # Saved as html visualisation
+#fig.show()

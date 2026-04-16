@@ -12,16 +12,17 @@ df = df.drop(columns=["Total Imports (to UK)",
 ]) #Removing columns of no interest currently
 
 #reshape trade balance sheet to plot trade balance over time
-df_long = df.melt(
+df_long = df.melt(  
     id_vars=["Year"],
     var_name="Type",
     value_name="Value"
-)
+) # melt so that we have a long format
 
-#Using regex to extract
+#Using regex to extract variable and country from the type column
 df_long["Variable"] = df_long["Type"].str.extract(r"^(Imports|Exports|Net imports)")
 df_long["Country"] = df_long["Type"].str.extract(r"\((.*?)\)") # Extracts countries trading in type column
 
+#Replacing countries in the UK with UK and removing 'To UK' and 'UK to' from the country column name to find country names with import or export only
 df_long["Country"] = (
     df_long["Country"]
     .str.replace(r"\s*\[.*?\]", "", regex=True) # remove notes in column
@@ -56,15 +57,14 @@ df_final = df_long.pivot_table(
     aggfunc="sum"   # best choice for trade data acccording to AI
 ).reset_index()
 
-print(df_final.head())
+#print(df_final.head())
 df_final.to_csv("net-imports-long.csv", index=False)
 
 
 #Data Viualsiation
 df_trade = pd.read_csv("net-imports-long.csv")
 df_trade = df_trade[(df_trade["Year"] >= 2017) & (df_trade["Year"] <= 2024)] # To show years that we have trade data for more countries
-df_trade["Total"] = df_trade["Imports"] + df_trade["Exports"]
-#WORTH TRYING TO ORDER BY COUNTRIES WITH THE LARGEST NUMBER OF OCCURRENCES IN THE DATASET!! THEN HAVING ALL DATES!!!
+df_trade["Total"] = df_trade["Imports"] + df_trade["Exports"]# Summing imports and Exports for each row to get total
 
 country_order = ( # Ordering countries by highest overall trade (imports + exports) for the animation
     df_trade.groupby("Country")["Total"]
@@ -76,33 +76,33 @@ country_order = ( # Ordering countries by highest overall trade (imports + expor
 # Create a stable color mapping for each country across frames
 all_countries = list(country_order)
 country_colors = {
-    country: plt.cm.tab20b(i / max(len(all_countries) - 1, 1)) # Chosen color pallette
-    for i, country in enumerate(all_countries)
+    country: plt.cm.tab20b(i / max(len(all_countries) - 1, 1)) # Chosen color pallette tab20b
+    for i, country in enumerate(all_countries) # Each country given a unique color for each animation frame for consistency
 }
 
 frames = df_trade["Year"].unique()
 frames = (
     [frames[0]] * 2 +        # pause at start
     list(frames) +           
-    [frames[-1]] * 10         # pause at end
+    [frames[-1]] * 10         # pause at end for longer (at most recent frame)
 )
 
 # Using ax to allow for animation
 max_import = (df_trade["Imports"].max()+ 2000) # Adding import buffer for clear visualisation
 max_export = df_trade["Exports"].max()
 x_limit = max(max_import, max_export)
-fig, ax = plt.subplots(figsize=(12, 6))
+fig, ax = plt.subplots(figsize=(12, 6)) # Standard visualisation size set
 
 def animate(frame):
     ax.clear()
-    df_trade_frame = df_trade[df_trade['Year'] == frame]
+    df_trade_frame = df_trade[df_trade['Year'] == frame] # Making each year a frame in the animation
 
-    df_trade_frame["Country"] = pd.Categorical(
+    df_trade_frame["Country"] = pd.Categorical( #Making each category in the horsizontal bar chart a country
         df_trade_frame["Country"],
         categories=country_order,
         ordered=True
     )
-    df_trade_frame = df_trade_frame.sort_values("Country") # Applying country order
+    df_trade_frame = df_trade_frame.sort_values("Country") # Applying country order decided upon in country_order above
 
     countries = df_trade_frame["Country"]
     imports = -df_trade_frame["Imports"]  # imports made negative for bi-directional chart
@@ -111,39 +111,40 @@ def animate(frame):
     # Use the same color for each country in every frame
     colors = [country_colors[c] for c in countries]
 
+    #Drawing bar chart with imports and exports in different directions
     ax.barh(countries, imports, color=colors, alpha=0.7, label='Imports')
     ax.barh(countries, exports, color=colors, alpha=0.7, label='Exports')
 
     ax.set_xlim(-x_limit, x_limit)
 
-    # GO OVER THIS CODE PATCH!!
     for idx in range(len(countries)):
-        ax.text(imports.iloc[idx], idx, f"{abs(int(imports.iloc[idx])):,}", 
+        ax.text(imports.iloc[idx], idx, f"{abs(int(imports.iloc[idx])):,}", # Writing import labels for each frames bar (so exact value is shown for each frame)
                 va='center', ha='right', color='black', fontsize=6)
         ax.text(exports.iloc[idx], idx, f"{int(exports.iloc[idx]):,}", 
                 va='center', ha='left', color='black', fontsize=6)
         
-    ax.set_title(f"Trade Balance by Country - {frame}", fontsize=14)
+    ax.set_title(f"Trade Balance by Country - {frame}", fontsize=14) # Adding year to the title for each frame
 
-    #Add "Imports" and "Exports" text labels below x-axis fixed in place
+    #Add "Imports" and "Exports" text labels below x-axis fixed in place (-0.08 position below axis)
     ax.text(0.0, -0.08, "Imports", transform=ax.transAxes,
         ha='left', va='top', fontsize=12)
 
     ax.text(1.0, -0.08, "Exports", transform=ax.transAxes,
         ha='right', va='top', fontsize=12)
 
-    ax.axvline(0, color="black", linewidth=1)  # Adding a vertical line at x=0
+    ax.axvline(0, color="black", linewidth=1)  # Adding a fixed vertical line at x=0
 
     ax.grid(axis='x', linestyle='--', alpha=0.5)
     ax.minorticks_on()
     ax.grid(axis='x', which='minor', linestyle=':', linewidth=0.3, alpha=0.3)
 
-trade_animation = animation.FuncAnimation(fig, animate, frames=frames, interval=500, repeat=True)
+trade_animation = animation.FuncAnimation(fig, animate, frames=frames, interval=500, repeat=True) # Animating the function with 500ms between frames
 
+#Saving in visulisations folder as a gif using Pillow writer
 save_path = 'C:\\Users\\mm147\\Empirical-Project\\Data-Science-Empirical-Project\\Visualisations'
 if not os.path.exists(save_path):
     os.makedirs(save_path)
 completed_video = os.path.join(save_path, 'trade-balance-animation.gif')
 trade_animation.save(completed_video, writer="pillow", fps=2)
 
-plt.show() # Not worth interpolating for a smooth animation as it made values very unclear and hard to follow.
+#plt.show() # Not worth interpolating for a smooth animation as it made values very unclear and hard to follow.

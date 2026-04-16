@@ -1,14 +1,15 @@
 # Simple Python Blog Generator Template
-# Edit posts in Python, generate HTML pages
+# Generates when run Html page with required content on it. I preferred using this to local template.
+# Blog is hosted when file is run and can be accessed locally
 
 import os
 from datetime import datetime
 
-# Folder structure
+# Folder structure with Outer Page with post on it
 OUTPUT_DIR = "site"
 POSTS_DIR = "posts"
 
-# Basic HTML template
+# Basic HTML template - written for me in AI
 BASE_HTML = """
 <!DOCTYPE html>
 <html>
@@ -51,7 +52,7 @@ INDEX_HTML = """
 </html>
 """
 
-# Example posts (edit or load dynamically)
+# Writing post, with title, date,n name and content (including visualisations built)
 posts = [
     {
         "title": "How is the UKs energy provision changing over time?",
@@ -216,6 +217,7 @@ div style="margin-top:20px;">
     }
 ]
 
+#Function for creating the blog and merging template with required ontent
 def generate_post(post):
     html = BASE_HTML.format(
         title=post["title"],
@@ -225,10 +227,10 @@ def generate_post(post):
 
     filepath = os.path.join(OUTPUT_DIR, post["filename"])
     with open(filepath, "w", encoding="utf-8") as f:
-        f.write(html)
+        f.write(html) #Saving to html
 
 
-def generate_index(posts):
+def generate_index(posts): #Doing the same for the index page.
     items = ""
     for post in posts:
         items += f'<li><a href="{post["filename"]}">{post["title"]}</a> ({post["date"]})</li>'
@@ -252,3 +254,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+#Completed blog page with visualisations
