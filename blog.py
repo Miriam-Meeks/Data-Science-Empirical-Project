@@ -92,10 +92,6 @@ posts = [
 <p>-MENTION THAT WE ARE LOOKING AT ENERGY PROVIDED BY MPPS (MAJOR POWER PRODUCERS) in the uk.</p>
 <p>WHY IS THIS INTERESTING? Because MPPs are moving towards renewables but don’t seem to be generating much more monthly.</p>
 
-<div style="margin-top:20px;">
-    <iframe src="../Visualisations/combined_energy_pie_charts.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
-</div>
-
 <p> This trade animation tells us how our trade energy with other nations..
 
 <img src="../Visualisations/trade_balance_animation.gif" alt="Energy Trade" style="width:100%; margin-top:20px; border-radius:10px;">
