@@ -58,51 +58,155 @@ posts = [
         "date": "2026-04-14",
         "filename": "uk-energy.html",
         "content": """
-<h2>Introduction:</h2>
-<p>Like most people I will turn on my laptop and see my battery charging nicely, without thinking twice about what powers it or my life. Within this project I have begun to question where in the Uk does our energy come from and …………?</p>
-<p>With rapidly accelerating global affairs and increasing climate pressures I wanted to find out how the UK produces energy and its overseas provision. One of my inspirations behind this project was Kate Morley, who produced the site I will reference later, in respect to my web scrape, and my father who shows great interest in these sorts of things and showed me the site himself.</p>
-<p>My findings seem to suggest that we are moving away from coal as a source of energy provision and move towards renewables especially wind turbine production.</p>
+<h2>Introduction</h2>
 
-<h2>Electricity Generation over the past few decades:</h2>
-<img src="../Visualisations/annual_renewable_generation.gif" alt="Annual Renewable Generation Trends" style="width:100%; margin-top:20px; border-radius:10px;">
+<p>Recently, due to rapidly accelerating global affairs, increasing climate pressures, and perhaps simply reaching adulthood, I have become more aware of energy use in everyday life. Whether filling up my car at a petrol station or plugging in an electric vehicle to charge, questions arise: will energy always be available for transport? Could supply disruptions affect daily life? What happens if demand outpaces supply?</p>
+
+<p>I, like many others, have grown up in a world where leaving lights on, charging devices overnight, or turning up the heating comes without much thought. However, I have come to realise that this level of energy security is a privilege. These concerns motivated this project: to better understand how the UK produces energy and the extent to which it relies on overseas provision—something I had not previously considered in depth.</p>
+
+<p>One inspiration behind this project was Kate Morley, whose website I later reference in relation to my web scraping work. I was also encouraged by my father, who has a strong interest in energy systems and first introduced me to this topic.</p>
+
+<p>After exploring annual, monthly, and daily datasets, my findings suggest that the UK is moving away from coal as a source of energy provision and transitioning towards renewables—particularly wind generation.</p>
+
+
+<h2>Past Few Decades of Electricity Generation</h2>
+
+<img src="../Visualisations/annual-renewable-generation.gif" alt="Annual Renewable Generation Trends" style="width:100%; margin-top:20px; border-radius:10px;">
+
+<p>The graph above illustrates the growth of renewable energy generation in the UK since 1996. Wind energy (both offshore and onshore) begins to increase significantly in the early 2000s, while solar energy contributes a much smaller share, only rising noticeably over the past 15 years.</p>
+
+<p>This raises several key questions:</p>
+<ul>
+<li><strong>Why is wind growing faster than solar?</strong></li>
+<li><strong>Are there observable monthly trends?</strong></li>
+<li><strong>How fast is wind generation increasing?</strong></li>
+<li><strong>What about non-renewable energy generation?</strong></li>
+<li><strong>What does the current energy mix look like?</strong></li>
+</ul>
+
+<p>These questions are explored below.</p>
+
+
+<h3>Why is wind growing faster than solar?</h3>
+
+<p>In the graph below, monthly renewable energy generation for Major Power Producers (MPPs) is shown:</p>
 
 <img src="../Visualisations/monthly-mpps-renewable-generation.gif" alt="Monthly Renewable Generation Trends" style="width:100%; margin-top:20px; border-radius:10px;">
-<p> We can see in both graphs above that Wind is the most rapidly growing renewable energy source, although solar is also shown to be growing, after...
 
-<p> To explore wind changes monthly look below:
+<p>Clear seasonal trends can be observed in solar generation, with a smooth oscillating pattern—higher production in summer months and lower in winter—becoming visible from around 2014. Despite this, solar output remains significantly lower than wind.</p>
+
+<p>One explanation is efficiency and consistency. According to 
+<a href="https://www.compareyourfootprint.com/wind-vs-solar-green-energy-winning/" target="_blank">Compare Your Footprint</a>, 
+a wind turbine can produce substantially more energy per unit than a solar panel. Additionally, solar panels are limited to daylight hours, whereas wind—particularly offshore—can generate electricity more consistently.</p>
+
+<p>These factors help explain the faster growth of wind energy, although solar remains an attractive option for domestic energy generation.</p>
+
+
+<h3>How fast is wind generation increasing?</h3>
+
+<p>Between January 2007 and January 2026, wind generation increased by approximately 9.25 terawatt hours (TWh) on a monthly basis, as shown below.</p>
+
 <div style="margin-top:20px;">
     <iframe src="../Visualisations/monthly-wind-generation.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
 </div>
 
-<p> To explore not just renewable trends through the past few decades look below:
+<p>Recent data also highlights rapid short-term growth. According to 
+<a href="https://www.reuters.com/business/energy/record-wind-output-helps-shield-uk-worst-iran-war-fallout-2026-03-31/" target="_blank">Reuters</a>, 
+wind output surged by 33% between January and March 2026 compared to the same period in 2025.</p>
+
+<p>Large offshore wind projects have contributed significantly to this growth. For example, the Hornsea wind farm became the largest offshore wind farm in the world in 2022, with 339 turbines 
+(<a href="https://www.businessenergydeals.co.uk/blog/wind-farms-in-the-uk/" target="_blank">source</a>).</p>
+
+<p>New generation records continue to be set. On 25 March 2026, the UK generated 23,880 MW of wind power within a half-hour period 
+(<a href="https://renewablesnow.com/news/great-britain-sets-new-wind-generation-record-1292116/" target="_blank">Renewables Now</a>).</p>
+
+<p>This sustained growth highlights the UK’s increasing reliance on wind as a core component of energy provision.</p>
+
+
+<h3>What about non-renewable energy generation in the UK?</h3>
+
+<p>The pie charts below show the average fuel mix used in UK electricity generation across different time periods.</p>
 
 <div style="margin-top:20px;">
     <iframe src="../Visualisations/combined_energy_pie_charts.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
 </div>
 
-<p> Also interesting to understand that this data doesn't account for transport fuel used shown below annually:
+<p>Over the past two decades, there has been a clear shift away from coal. Between 2000–2005, coal accounted for 33.36% of energy generation. By 2020–2024, this had fallen to just 1.59%.</p>
+
+<p>Meanwhile, renewable sources—particularly wind, solar, and biomass—have expanded significantly. Biomass generation has also reached record levels in recent years 
+(<a href="https://www.reuters.com/business/energy/record-wind-output-helps-shield-uk-worst-iran-war-fallout-2026-03-31/" target="_blank">Reuters</a>).</p>
+
+<p>Gas, however, remains a major component of energy production. As a non-renewable fuel, this reliance exposes the UK to geopolitical risks and price volatility. In contrast, oil contributes only a small share to electricity generation (around 0.66% between 2020–2024), though it remains critical for transport.</p>
+
+
+<h2>Trade</h2>
+
+<h3>Are we becoming less reliant on overseas energy provision over time?</h3>
+
+<p>Before this project, I had not considered what happens when the UK produces too much or too little energy. In reality, international energy transfers play a crucial role.</p>
+
+<p><i>Trade animation</i></p>
+
+<img src="../Visualisations/trade-balance-animation.gif" alt="Energy Trade" style="width:100%; margin-top:20px; border-radius:10px;">
+
+<p>The animation above shows electricity imports and exports between the UK and neighbouring countries since 2017. While the UK imports fuels such as LNG and oil globally, electricity trade is largely limited to nearby countries via interconnectors.</p>
+
+<p>The UK has consistently imported electricity from France, partly because France generates around 70% of its electricity from nuclear power 
+(<a href="https://mactech.co.uk/why-britains-nuclear-future-runs-through-france/" target="_blank">source</a>), 
+providing a stable and reliable supply.</p>
+
+<p>Looking ahead, the planned Sizewell C nuclear power station is expected to generate 3.2 GW (around 7% of UK demand) by the mid-2030s 
+(<a href="https://www.nao.org.uk/work-in-progress/sizewell-c/" target="_blank">National Audit Office</a>). This could reduce reliance on imports.</p>
+
+<p>In 2022, the UK briefly became a net exporter of electricity for the first time in decades. This was largely due to nuclear outages in France and increased gas exports following the 
+<a href="https://reports.electricinsights.co.uk/?p=1740" target="_blank">European energy crisis</a> triggered by the war in Ukraine.</p>
+
+<p>Although recent trends suggest declining imports, this does not account for oil used in transport, which remains heavily import-dependent.</p>
+
+
+<h2>Energy Used in Transport</h2>
+
 <div style="margin-top:20px;">
     <iframe src="../Visualisations/fuel-consumption-line.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
 </div>
 
+<p>The graph above shows that, aside from the drop in 2020 due to COVID-19, transport fuel consumption has generally increased since 1970.</p>
 
-<p># alter line graph to have updated monthly data for a cleaner and more detailed graphic (annual before monthly).</p>
-<p>New data set from Electricity production and availability from the public supply system (ET 5.4 - monthly)</p>
-<p><a href="https://www.gov.uk/government/statistics/electricity-section-5-energy-trends">Government dataset</a></p>
-<p>-MENTION THAT WE ARE LOOKING AT ENERGY PROVIDED BY MPPS (MAJOR POWER PRODUCERS) in the uk.</p>
-<p>WHY IS THIS INTERESTING? Because MPPs are moving towards renewables but don’t seem to be generating much more monthly.</p>
+<p>According to the 
+<a href="https://www.gov.uk/government/statistics/national-travel-survey-2024/nts-2024-household-car-availability-and-trends-in-car-trips" target="_blank">UK National Travel Survey (2024)</a>, 
+around 59% of households own petrol cars and 30% own diesel vehicles. This highlights the UK’s continued reliance on oil.</p>
 
-<p> This trade animation tells us how our trade energy with other nations..
+<p>This dependence exposes the UK to global price shocks. For example, recent geopolitical tensions have led to fuel price increases, with petrol rising by 25p per litre and diesel by 48p 
+(<a href="https://www.bbc.co.uk/news/articles/cvgk3qgkz41o" target="_blank">BBC News</a>).</p>
 
-<img src="../Visualisations/trade_balance_animation.gif" alt="Energy Trade" style="width:100%; margin-top:20px; border-radius:10px;">
+<p>However, there are signs of change. UK transport fuel consumption appears to have peaked around 2007 and has since declined. The growth of electric vehicles, combined with cleaner electricity generation, offers a pathway towards reduced dependence on imported oil.</p>
 
 
-<p> Showing current energy mix in the UK, with a focus on the proportion of renewables. All the data so far we have looked at tells us the major trends, but what does our energy generation mix look like today?
-The data presented in the image below is scraped of ........... and the data shows you exactly the energy generation mix today.
+<h2>Today’s Energy Provision (UK)</h2>
+
+<h3>What does our energy generation mix look like today?</h3>
+
+<p>After analysing long-term trends, it is useful to examine energy provision on a daily basis.</p>
+
+<p>The image below shows today’s energy generation mix, total demand, and net imports/exports. This data is scraped from 
+<a href="https://grid.iamkate.com/" target="_blank">grid.iamkate.com</a>.</p>
+
 div style="margin-top:20px;">
     <iframe src="../Visualisations/scraped-generation-mix.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
 </div>
-"""
+
+<p><small>Data sourced from grid.iamkate.com by Kate Morley. Contains BMRS data © Elexon Limited (2026) and data from the National Energy System Operator and Carbon Intensity API.</small></p>
+
+<p>To update this daily view, run the web scraping script before generating the blog.</p>
+
+
+<h2>Conclusion</h2>
+
+<p>Renewable energy generation in the UK has expanded rapidly since around 2010, with wind playing a central role in day-to-day electricity supply. The continued development of infrastructure, such as Sizewell C, offers the potential to further reduce reliance on fossil fuels and energy imports.</p>
+
+<p>However, challenges remain—particularly the UK’s dependence on gas for electricity generation and oil for transport. These dependencies leave the country exposed to geopolitical and economic shocks.</p>
+
+<p>With ongoing technological advancements and policy shifts, there is cautious optimism that the UK can transition towards a more sustainable and secure energy system. This project has also encouraged a more mindful approach to personal energy use—something increasingly relevant in today’s world.</p> """
     }
 ]
 

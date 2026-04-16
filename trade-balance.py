@@ -143,7 +143,7 @@ trade_animation = animation.FuncAnimation(fig, animate, frames=frames, interval=
 save_path = 'C:\\Users\\mm147\\Empirical-Project\\Data-Science-Empirical-Project\\Visualisations'
 if not os.path.exists(save_path):
     os.makedirs(save_path)
-completed_video = os.path.join(save_path, 'trade_balance_animation.gif')
+completed_video = os.path.join(save_path, 'trade-balance-animation.gif')
 trade_animation.save(completed_video, writer="pillow", fps=2)
 
 plt.show() # Not worth interpolating for a smooth animation as it made values very unclear and hard to follow.
