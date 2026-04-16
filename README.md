@@ -72,15 +72,17 @@ Must be able to host locally html blog.
 
 Python Packages
 
-Install the dependedcies via pip:
+Install all dependedcies via pip:
 
 ```bash
 pip install pandas==3.0.2 matplotlib==3.10.8 plotly==6.6.0 numpy==2.4.4 selenium==4.43.0
+```
 
 Or install without pinned versions (results may differ slightly):
 
 ```bash
 pip install pandas matplotlib plotly numpy selenium
+```
 
 The exact versions to produce the original results are listed below:
 | Package      | Version|
@@ -93,16 +95,74 @@ The exact versions to produce the original results are listed below:
 
 ## Running Instructions
 Option A: Using make (recommended)
+
 If make is available, simply run from the top level of the repository:
-`make`
+
+```bash
+make
+```
+This will automatically:
+
+Run the Python scripts and re-create the blog (if outputs are out of date).
+
+Option B: Manual steps
+
+If `make` is not available, run the following steps in order:
+
+
 
 ## Outputs
-Figures ()
+Figures (results/figures/)
+
+|File | Description|
+|-----|------------|
+|`annual-renewable-generation.gif`| Animated line graph showing renewable energy (solar and wind) generation in GWhs between 1997 and 2024 |
+|`monthly-mpps-renewable-generation.gif`| Animated monthly renewable (solar and wind) TWh generation for Major Power Producers (MPPs) showing seasonal trends |
+|`monthly-wind-generation.html`|Interactive, hover and zoom graph to show monthly wind generation TWh in the UK since 2007|
+|`combined_energy_pie_charts.html`|Aggregated hover pie charts to show average energy generation mix between time periods over the past two decades|
+|`trade-balance-animation.gif`|Trade balance animation of energy imports/exports for the UK between 2017 and 2024|
+|`fuel-consumption-line.html`|Hover line graph for UK Road Transport Fuel Consumption between 1970 and 2024|
+|`scraped-generation-mix.html`|Scraped current/ up-to-date hover pie chart with data on energy generation mix|
+
 ## Methods
-Do I need to include this for a webscrape (maybe write a line).
+Web scraped relevant data off the website https://grid.iamkate.com/ and used selinium in the process. With this data I then created an interactive pie chart to show the current days energy generation mix. 
+
+This is scrapable data (off a free GitHub) and is correctly referenced on the blog and in the references section of this ReadME.
 
 To create my blog post I used a python script, which generates the blog post and saves it locally in a file, that is accessible……………………………..VIA WHAT?
 One of the reasons I did this was so that when this repository is used and the make file is run the whole blog post will be recreated, with the up-to-date web scraped data and visualisations adjusted.
 
 ## References and Resources
-Datasets, I am Kate, referenced text.
+Data:
+
+- Digest of UK Energy Statistics (DUKES) – Electricity (Chapter 5): https://www.gov.uk/government/statistics/electricity-chapter-5-digest-of-united-kingdom-energy-statistics-dukes
+
+- Energy Consumption in the UK (ECUK) 2025: https://www.gov.uk/government/statistics/energy-consumption-in-the-uk-2025
+
+- Energy Trends – Electricity (Section 5): https://www.gov.uk/government/statistics/electricity-section-5-energy-trends
+
+In Text:
+
+Compare Your Footprint. (n.d.). *Wind vs solar: Which green energy is winning?* https://www.compareyourfootprint.com/wind-vs-solar-green-energy-winning/
+
+Reuters. (2026, March 31). *Record wind output helps shield UK from worst Iran war fallout.* https://www.reuters.com/business/energy/record-wind-output-helps-shield-uk-worst-iran-war-fallout-2026-03-31/
+
+Business Energy Deals. (n.d.). *Wind farms in the UK.* https://www.businessenergydeals.co.uk/blog/wind-farms-in-the-uk/
+
+Renewables Now. (n.d.). *Great Britain sets new wind generation record.* https://renewablesnow.com/news/great-britain-sets-new-wind-generation-record-1292116/
+
+MacTech. (n.d.). *Why Britain’s nuclear future runs through France.* https://mactech.co.uk/why-britains-nuclear-future-runs-through-france/
+
+National Audit Office. (n.d.). *Sizewell C.* https://www.nao.org.uk/work-in-progress/sizewell-c/
+
+Electric Insights. (n.d.). *Electric Insights report.* https://reports.electricinsights.co.uk/?p=1740
+
+Energy UK. (n.d.). *The power of partnership: UK-EU energy cooperation for a clean, secure future.* https://www.energy-uk.org.uk/insights/the-power-of-partnership-uk-eu-energy-cooperation-for-a-clean-secure-future/
+
+UK Government. (2024). *National Travel Survey 2024: Household car availability and trends in car trips.* https://www.gov.uk/government/statistics/national-travel-survey-2024/nts-2024-household-car-availability-and-trends-in-car-trips
+
+BBC News. (n.d.). *News article.* https://www.bbc.co.uk/news/articles/cvgk3qgkz41o
+
+Scrape: 
+
+https://grid.iamkate.com/ by Kate Morley. Contains BMRS data © Elexon Limited (2026) and data from the National Energy System Operator and Carbon Intensity API.
