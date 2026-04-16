@@ -135,7 +135,9 @@ One of the reasons I did this was so that when this repository is used and the m
 ## References and Resources
 Data:
 
-- Digest of UK Energy Statistics (DUKES) – Electricity (Chapter 5): https://www.gov.uk/government/statistics/electricity-chapter-5-digest-of-united-kingdom-energy-statistics-dukes
+- Digest of UK Energy Statistics (DUKES) – Electricity (Chapter 5):
+
+https://www.gov.uk/government/statistics/electricity-chapter-5-digest-of-united-kingdom-energy-statistics-dukes
 
 - Energy Consumption in the UK (ECUK) 2025: https://www.gov.uk/government/statistics/energy-consumption-in-the-uk-2025
 
@@ -143,13 +145,19 @@ Data:
 
 In Text:
 
-Compare Your Footprint. (n.d.). *Wind vs solar: Which green energy is winning?* https://www.compareyourfootprint.com/wind-vs-solar-green-energy-winning/
+Compare Your Footprint. (n.d.). *Wind vs solar: Which green energy is winning?* 
 
-Reuters. (2026, March 31). *Record wind output helps shield UK from worst Iran war fallout.* https://www.reuters.com/business/energy/record-wind-output-helps-shield-uk-worst-iran-war-fallout-2026-03-31/
+https://www.compareyourfootprint.com/wind-vs-solar-green-energy-winning/
+
+Reuters. (2026, March 31). *Record wind output helps shield UK from worst Iran war fallout.* 
+
+https://www.reuters.com/business/energy/record-wind-output-helps-shield-uk-worst-iran-war-fallout-2026-03-31/
 
 Business Energy Deals. (n.d.). *Wind farms in the UK.* https://www.businessenergydeals.co.uk/blog/wind-farms-in-the-uk/
 
-Renewables Now. (n.d.). *Great Britain sets new wind generation record.* https://renewablesnow.com/news/great-britain-sets-new-wind-generation-record-1292116/
+Renewables Now. (n.d.). *Great Britain sets new wind generation record.* 
+
+https://renewablesnow.com/news/great-britain-sets-new-wind-generation-record-1292116/
 
 MacTech. (n.d.). *Why Britain’s nuclear future runs through France.* https://mactech.co.uk/why-britains-nuclear-future-runs-through-france/
 
@@ -157,9 +165,13 @@ National Audit Office. (n.d.). *Sizewell C.* https://www.nao.org.uk/work-in-prog
 
 Electric Insights. (n.d.). *Electric Insights report.* https://reports.electricinsights.co.uk/?p=1740
 
-Energy UK. (n.d.). *The power of partnership: UK-EU energy cooperation for a clean, secure future.* https://www.energy-uk.org.uk/insights/the-power-of-partnership-uk-eu-energy-cooperation-for-a-clean-secure-future/
+Energy UK. (n.d.). *The power of partnership: UK-EU energy cooperation for a clean, secure future.* 
 
-UK Government. (2024). *National Travel Survey 2024: Household car availability and trends in car trips.* https://www.gov.uk/government/statistics/national-travel-survey-2024/nts-2024-household-car-availability-and-trends-in-car-trips
+https://www.energy-uk.org.uk/insights/the-power-of-partnership-uk-eu-energy-cooperation-for-a-clean-secure-future/
+
+UK Government. (2024). *National Travel Survey 2024: Household car availability and trends in car trips.* 
+
+https://www.gov.uk/government/statistics/national-travel-survey-2024/nts-2024-household-car-availability-and-trends-in-car-trips
 
 BBC News. (n.d.). *News article.* https://www.bbc.co.uk/news/articles/cvgk3qgkz41o
 
