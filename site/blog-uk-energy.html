@@ -1,63 +1,22 @@
-# Simple Python Blog Generator Template
-# Edit posts in Python, generate HTML pages
 
-import os
-from datetime import datetime
-
-# Folder structure
-OUTPUT_DIR = "site"
-POSTS_DIR = "posts"
-
-# Basic HTML template
-BASE_HTML = """
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{title}</title>
+    <title>How is the UKs energy provision changing over time?</title>
     <style>
-        body {{ font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; }}
-        h1 {{ color: #333; }}
-        .date {{ color: gray; font-size: 0.9em; }}
-        .content {{ margin-top: 20px; }}
-        pre {{ background: #f4f4f4; padding: 10px; overflow-x: auto; }}
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; }
+        h1 { color: #333; }
+        .date { color: gray; font-size: 0.9em; }
+        .content { margin-top: 20px; }
+        pre { background: #f4f4f4; padding: 10px; overflow-x: auto; }
     </style>
 </head>
 <body>
-    <h1>{title}</h1>
-    <div class="date">{date}</div>
+    <h1>How is the UKs energy provision changing over time?</h1>
+    <div class="date">2026-04-14</div>
     <div class="content">
-        {content}
-    </div>
-    <hr>
-    <a href="index.html">← Back to Home</a>
-</body>
-</html>
-"""
-
-INDEX_HTML = """
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>My Blog</title>
-</head>
-<body>
-    <h1>My Blog</h1>
-    <ul>
-        {posts}
-    </ul>
-</body>
-</html>
-"""
-
-# Example posts (edit or load dynamically)
-posts = [
-    {
-        "title": "How is the UKs energy provision changing over time?",
-        "date": "2026-04-14",
-        "filename": "blog-uk-energy.html",
-        "content": """
+        
 <h2>Introduction</h2>
 
 <p>Recently, due to rapidly accelerating global affairs, increasing climate pressures, and perhaps simply reaching adulthood, I have become more aware of energy use in everyday life. Whether filling up my car at a petrol station or plugging in an electric vehicle to charge, questions arise: will energy always be available for transport? Could supply disruptions affect daily life? What happens if demand outpaces supply?</p>
@@ -206,43 +165,9 @@ div style="margin-top:20px;">
 
 <p>However, challenges remain—particularly the UK’s dependence on gas for electricity generation and oil for transport. These dependencies leave the country exposed to geopolitical and economic shocks.</p>
 
-<p>With ongoing technological advancements and policy shifts, there is cautious optimism that the UK can transition towards a more sustainable and secure energy system. This project has also encouraged a more mindful approach to personal energy use—something increasingly relevant in today’s world.</p> """
-    }
-]
-
-def generate_post(post):
-    html = BASE_HTML.format(
-        title=post["title"],
-        date=post["date"],
-        content=post["content"]
-    )
-
-    filepath = os.path.join(OUTPUT_DIR, post["filename"])
-    with open(filepath, "w", encoding="utf-8") as f:
-        f.write(html)
-
-
-def generate_index(posts):
-    items = ""
-    for post in posts:
-        items += f'<li><a href="{post["filename"]}">{post["title"]}</a> ({post["date"]})</li>'
-
-    html = INDEX_HTML.format(posts=items)
-
-    with open(os.path.join(OUTPUT_DIR, "index.html"), "w", encoding="utf-8") as f:
-        f.write(html)
-
-
-def main():
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-
-    for post in posts:
-        generate_post(post)
-
-    generate_index(posts)
-
-    print("Blog generated! Open 'site/index.html' in your browser.")
-
-
-if __name__ == "__main__":
-    main()
+<p>With ongoing technological advancements and policy shifts, there is cautious optimism that the UK can transition towards a more sustainable and secure energy system. This project has also encouraged a more mindful approach to personal energy use—something increasingly relevant in today’s world.</p> 
+    </div>
+    <hr>
+    <a href="index.html">← Back to Home</a>
+</body>
+</html>
