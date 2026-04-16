@@ -328,8 +328,8 @@ ax.set_xlim(df["Month"].min(), df["Month"].max())
 ax.set_ylim(0, df["Total electricity supplied by MPPs"].max() * 1.1)
 
 ax.set_xlabel("Year")
-ax.set_ylabel("Electricity (GWh)")
-ax.set_title("Monthly Electricity Generation Trends")
+ax.set_ylabel("Electricity (TWh)")
+ax.set_title("Electricity supplied (net) by Major Power Producers (MPPs) monthly trends")
 
 ax.grid(True, linestyle="--", linewidth=0.5, alpha=0.7)
 ax.legend(loc="upper left")
@@ -411,7 +411,7 @@ fig = px.line(
     df,
     x="Month",
     y="Total wind",
-    title="Monthly Wind Generation Over Time",
+    title="MPPs Monthly Wind Generation Over Time (UK)",
     markers=True
 )
 
