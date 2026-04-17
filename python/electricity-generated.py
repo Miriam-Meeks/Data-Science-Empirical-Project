@@ -40,19 +40,21 @@ def reshape (wide_files):
     df_final.to_csv(output_name, index=False) #saved to renamed csv
     return df_final
 
-wide_files = ["electricity-generated.csv","share-electricity-generated.csv"]
+wide_files = ["csv-raw/electricity-generated.csv","csv-raw/share-electricity-generated.csv"]
 
-gen_df = reshape("electricity-generated.csv") # Passing csv through re-shape function
+gen_df = reshape("csv-raw/electricity-generated.csv") # Passing csv through re-shape function
+gen_df.to_csv("csv-reshaped/electricity-generated-long.csv", index=False)
 #Altering column names for share sheet so they don't completely match electricity-generated
-share_df = reshape("share-electricity-generated.csv")
+share_df = reshape("csv-raw/share-electricity-generated.csv")
 share_df.columns = [
     col if col == "Year" else col + " (%)"
     for col in share_df.columns
 ]
-share_df.to_csv("share-electricity-generated-long.csv", index=False) #Saving (%) column addition
+share_df.to_csv("csv-reshaped/share-electricity-generated-long.csv", index=False) #Saving (%) column addition
 
 #Aggregation: merging reshaped dataframes
 combined_electrcity = pd.merge(gen_df, share_df, on="Year", how="inner") 
+
 # Merge can be inner as you won't have missing years not in both datasets because of the nature of the datasets.
 
 # Organising alphabetically for aesthetics to have share next to generation for each fuel type
@@ -292,7 +294,7 @@ ani1.save(gif_path, writer=PillowWriter(fps=10))
 
 #New dataset
 #Importing and using a monthly dataset to briefly look at smaller, seasonal variations
-monthly_gen = pd.read_csv("monthly-energy-generation.csv") # new dataset
+monthly_gen = pd.read_csv("csv-raw/monthly-energy-generation.csv") # new dataset
 monthly_gen = monthly_gen.loc[:, ~monthly_gen.columns.str.contains("^Unnamed")] # drop empty, unnamed columns
 
 monthly_gen.columns = monthly_gen.columns.str.replace(r"\s*\[.*?\]", "", regex=True) # removing notes
