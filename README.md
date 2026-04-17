@@ -77,17 +77,10 @@ Dataset: Net_Imports_DUKES_5.13.xlsx [net-imports.csv]
 │   ├── fuel-usage.py
 │   ├── web-scrape.py                      # Includes topic 5 web scrape
 │   └── blog.py                            # Script for creating HTML blog
-├── Visualisation/
-│   ├── annual-renewable-generation.gif
-│   ├── monthly-mpps-renewable-generation.gif
-│   ├── trade-balance-animation.gif
-│   ├── combined_energy_pie_charts.html
-│   ├── fuel-consumption-line.html
-│   ├── monthly-wind-generation.html
-│   └── scraped-generation-mix.html
 └── site/
     ├── index.html                         # Index page that blog is accessible from
     └── blog-uk-energy.html                # Locally hosted blog on UK energy
+    └── Visualisations/                    #Saved outputs (gifs and html visuals)
 ```
 All raw data (in csv format) lives in `csv-raw/`. All python scripts, including the one that creates a blog is in `python/` and all output is exported to `Visualisations`. It is important to understand that for the blog to have the most up-to-date visualisations, **all other python scripts must be run before running blog.py** -as made clear in the makefile. To access the blog open the site folder and follow the link in the index.html or go directly to the blog-uk-energy-html page by following the hyperlink in the folder.
 
