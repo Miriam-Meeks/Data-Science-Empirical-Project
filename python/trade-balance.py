@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.animation as animation # for creating animation
 import os #for saving video animation
 
-df = pd.read_csv("net-imports.csv")
+df = pd.read_csv("csv-raw/net-imports.csv")
 
 df = df.drop(columns=["Total Imports (to UK)",
     "Total Exports (from UK)",
@@ -58,11 +58,11 @@ df_final = df_long.pivot_table(
 ).reset_index()
 
 #print(df_final.head())
-df_final.to_csv("net-imports-long.csv", index=False)
+df_final.to_csv("csv-reshaped/net-imports-long.csv", index=False)
 
 
 #Data Viualsiation
-df_trade = pd.read_csv("net-imports-long.csv")
+df_trade = pd.read_csv("csv-reshaped/net-imports-long.csv")
 df_trade = df_trade[(df_trade["Year"] >= 2017) & (df_trade["Year"] <= 2024)] # To show years that we have trade data for more countries
 df_trade["Total"] = df_trade["Imports"] + df_trade["Exports"]# Summing imports and Exports for each row to get total
 
