@@ -95,9 +95,9 @@ posts = [
 
 <p>Clear seasonal trends can be observed from solar generation, with a smooth oscillating pattern—higher production in summer months and lower in winter—becoming visible from around 2014. Despite this, solar output remains significantly lower than wind.</p>
 
-<p>One explanation for this disparity is efficiency and consistency. According to 
-<a href="https://www.compareyourfootprint.com/wind-vs-solar-green-energy-winning/" target="_blank">Compare Your Footprint</a>, 
-a wind turbine can produce forty-eight thousand times the amount of energy per kWh than a solar panel can. Additionally, solar panels are limited to daylight hours, whereas wind (particularly offshore) can generate electricity more consistently, due to relatively constant wind.</p>
+<p>One explanation for this disparity is efficiency and consistency. A wind turbine can approximately produce 
+<a href="https://www.compareyourfootprint.com/wind-vs-solar-green-energy-winning/" target="_blank">forty-eight thousand times the amount of energy per kWh</a>, 
+than a solar panel can. Additionally, solar panels are limited to daylight hours, whereas wind (particularly offshore) can generate electricity more consistently, due to relatively constant wind.</p>
 
 <p>These factors help explain the faster growth of wind power generation, although solar remains an attractive option for domestic energy generation.</p>
 
@@ -114,8 +114,8 @@ a wind turbine can produce forty-eight thousand times the amount of energy per k
 <a href="https://www.reuters.com/business/energy/record-wind-output-helps-shield-uk-worst-iran-war-fallout-2026-03-31/" target="_blank">Reuters</a>, 
 wind output surged by 33% between January and March 2026 compared to the same period in 2025.</p>
 
-<p>Large offshore wind projects have contributed significantly to this growth. For example, the Hornsea wind farm became the largest offshore wind farm in the world in 2022, with 339 turbines 
-(<a href="https://www.businessenergydeals.co.uk/blog/wind-farms-in-the-uk/" target="_blank">source</a>).</p>
+<p>Large offshore wind projects have contributed significantly to this growth. For example, Hornsea became the largest offshore wind farm in the world in 2022, with 339 turbines, as highlighted in 
+<a href="https://www.businessenergydeals.co.uk/blog/wind-farms-in-the-uk/" target="_blank"> this overview of UK wind farms</a>.
 
 <p>With the growth in wind power capacity, electricitygeneration records continue to be set. On 25 March 2026, the UK generated 23,880 MW of wind power within a half-hour period 
 (<a href="https://renewablesnow.com/news/great-britain-sets-new-wind-generation-record-1292116/" target="_blank">Renewables Now</a>).</p>
@@ -130,15 +130,17 @@ wind output surged by 33% between January and March 2026 compared to the same pe
 <div style="margin-top:20px;">
     <iframe src="../Visualisations/combined_energy_pie_charts.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
 </div>
-<p><small>[Hover over chart to reveal more information<small]></p>
+<p><small>[Hover over chart to reveal more information]</small></p>
 
 <p>Over the past two decades, there has been a clear shift away from coal. Between 2000–2005, coal accounted for 33.36% of energy generation. By 2020–2024, this had fallen to just 1.59%, despite the marginal increase in coal use in 2010-2014. Also the output from Nuclear (a renewable fuel) has fallen in the last 20 years.</p>
 
-<p>Meanwhile, renewable sources—particularly wind, solar, and biomass—have expanded significantly. Biomass generation has also reached record levels of outputin recently, which has helped lift the UK's renewable output share.</p> 
-(<a href="https://www.reuters.com/business/energy/record-wind-output-helps-shield-uk-worst-iran-war-fallout-2026-03-31/" target="_blank">Reuters</a>).</p>
+<p>Meanwhile, renewable sources—particularly wind, solar, and biomass—have expanded significantly. 
+<a href="https://www.reuters.com/business/energy/record-wind-output-helps-shield-uk-worst-iran-war-fallout-2026-03-31/" target="_blank">
+Biomass generation</a>.
+has also reached record levels of output recently, which has helped lift the UK's renewable output share.</p>
 
 <p>Gas, however, is still extensively used in energy production. As a non-renewable fuel, this reliance exposes the UK to geopolitical risks such as the conflict in Iran, which has pushed up current prices on oil and natural gas. </p>
-<p>Fortunately, oil contributes to only asmall proportion of UK electricity generation (around 0.66% between 2020–2024), although it remains critical as a transport fuel.</p>
+<p>Fortunately, oil contributes to only a small proportion of UK electricity generation (around 0.66% between 2020–2024), although it remains critical as a transport fuel.</p>
 
 
 <h2>Trade</h2>
@@ -147,22 +149,21 @@ wind output surged by 33% between January and March 2026 compared to the same pe
 
 <p>Something that had never occurred to me before beginning this project was what happened to the excess energy we produce? Or an even more pressing issue of what happens if we don’t produce enough energy? In reality, international energy transfers play a crucial role.</p>
 
-<p><i>Trade animation</i></p>
-
 <img src="../Visualisations/trade-balance-animation.gif" alt="Energy Trade" style="width:100%; margin-top:20px; border-radius:10px;">
 
 <p>The animation above shows electricity imports and exports between the UK and neighbouring countries since 2017. While the UK imports fuels such as LNG and oil from nations across the globe, electricity trade is largely limited to geographically close countries due to infrastructure and efficiency constraints. Therefore, the UK recieves transfers mainly from European countries, with which it has undersea interconnectors for power trading.</p>
 
 <p>The UK has consistently imported electricity from France (2017-2024). One reason for this is because France generates around 70% of its electricity from nuclear power
-(<a href="https://mactech.co.uk/why-britains-nuclear-future-runs-through-france/" target="_blank">source</a>), 
+(<a href="https://mactech.co.uk/why-britains-nuclear-future-runs-through-france/" target="_blank">Britains nuclear future</a>), 
 providing a stable and reliable supply that it can cheaply export to the UK.</p>
 
-<p>Looking ahead, the planned Sizewell C nuclear power station built in the UK along the Suffolk coast is expected to generate 3.2 GWs annually (currently around 7% of UK demand) by the mid-2030s, when it becomes operational
-(<a href="https://www.nao.org.uk/work-in-progress/sizewell-c/" target="_blank">National Audit Office</a>). This should help to reduce reliance on France and (increasingly) Norway for electricity.</p>
+<p>Looking ahead, the planned 
+<a href="https://www.nao.org.uk/work-in-progress/sizewell-c/" target="_blank">Sizewell C</a> nuclear power station built in the UK along the Suffolk coast is expected to generate 3.2 GWs annually (currently around 7% of UK demand) by the mid-2030s, when it becomes operational
+This should help to reduce reliance on France and (increasingly) Norway for electricity.</p>
 
 <p>Throughout this animation, except in 2022 the UK is in a trade deficit. In 2022, for the first time in 40 years the UK became a net exporter of electricity.
 <a href="https://reports.electricinsights.co.uk/?p=1740" target="_blank">European energy crisis</a>
-<p>This was largely due to nuclear outages (corrosion and cracking in reactor cores that required urgent maintenance) in France. . Also the Russian invasion of Ukraine in 2022 meant that the EU lost a significant source of natural gas allowing the UK to plug the market, with  UK gas exports to the EU were over five times higher in summer 2022 than summer 2021 
+<p>This was largely due to nuclear outages (corrosion and cracking in reactor cores that required urgent maintenance) in France. Also the Russian invasion of Ukraine in 2022 meant that the EU lost a significant source of natural gas allowing the UK to plug the market, with  UK gas exports to the EU were over five times higher in summer 2022 than summer 2021 
 (<a href=" https://www.energy-uk.org.uk/insights/the-power-of-partnership-uk-eu-energy-cooperation-for-a-clean-secure-future/" target="_blank">Energy Insights</a>).</p>
 
 <p>Although recent trends suggest declining imports, this does not account for oil used in transport, which remains heavily import-dependent.</p>
@@ -173,7 +174,7 @@ providing a stable and reliable supply that it can cheaply export to the UK.</p>
 <div style="margin-top:20px;">
     <iframe src="../Visualisations/fuel-consumption-line.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
 </div>
-<p><small>[Hover over chart to reveal more information<small]></p>
+<p><small>[Hover over chart to reveal more information]</small></p>
 
 <p>The graph above shows that, aside from the exception of 2020 due to COVID-19, transport fuel consumption has generally increased since 1970.</p>
 
@@ -201,7 +202,7 @@ around 59% of households own petrol and 30% own diesel vehicles in the UK. This 
 </div>
 
 <p><small>Data sourced from grid.iamkate.com by Kate Morley. Contains BMRS data © Elexon Limited (2026) and data from the National Energy System Operator and Carbon Intensity API.</small></p>
-<p><small>[Hover over chart to reveal more information<small]></p>
+<p><small>[Hover over chart to reveal more information]</small></p>
 
 <p>To update this daily view, run the web scraping script before generating the blog.</p>
 

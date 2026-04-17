@@ -389,7 +389,7 @@ plt.tight_layout()
 
 os.makedirs(output_folder, exist_ok=True)
 gif_path = os.path.join(output_folder, "monthly-mpps-renewable-generation.gif") # Saving to Visualisation folder as gif
-ani2.save(gif_path, writer=PillowWriter(fps=20))#Doubling frames per second to have a faster monthly animation.
+ani2.save(gif_path, writer=PillowWriter(fps=15))#Doubling frames per second to have a faster monthly animation.
 
 #Interactive (hover) line graph for monthly wind generation over time
 df = df_monthly.copy()
