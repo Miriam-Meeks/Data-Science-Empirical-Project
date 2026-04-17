@@ -140,7 +140,32 @@ Option B: Manual steps
 
 If `make` is not available, run the following steps in order:
 
+**1. Run the Python scripts:**
 
+```bash
+Python 3  electricity-generated.py
+    trade-balance.py
+    fuel-usage.py
+    web-scrape.py
+```
+
+This will update the webscrape and outputs in the `Visualisations` folder.
+
+**2. Subsequently run the Python script**
+
+```bash
+blog.py 
+```
+
+**3. Open the blog**
+
+Open the site folder and follow the link in the index folder to get to the HTML blog (locally hosted) or just open site/blog-uk-energy.html
+
+```bash
+site/
+    index.html
+    blog-uk-energy.html
+```
 
 ## Outputs
 Figures (results/figures/)
@@ -156,12 +181,14 @@ Figures (results/figures/)
 |`scraped-generation-mix.html`|Scraped current/ up-to-date hover pie chart with data on energy generation mix|
 
 ## Methods
-Web scraped relevant data off the website https://grid.iamkate.com/ and used selinium in the process. With this data I then created an interactive pie chart to show the current days energy generation mix. 
+Web scraped relevant data off the website https://grid.iamkate.com/ and using the package selinium in the process. With this data I then created an interactive pie chart to show the current days energy generation mix. 
 
-This is scrapable data (off a free GitHub) and is correctly referenced on the blog and in the references section of this ReadME.
+This is scrapable data (off a free GitHub: given to the public domain) and is correctly referenced on the blog and in the references section of this ReadME.
 
-To create my blog post I used a python script, which generates the blog post and saves it locally in a file, that is accessible……………………………..VIA WHAT?
-One of the reasons I did this was so that when this repository is used and the make file is run the whole blog post will be recreated, with the up-to-date web scraped data and visualisations adjusted.
+To create my blog post I used a python script, which generates the blog post and saves it locally in a file, that is accessible through the site folder.
+One of the reasons I did this was so that when this repository is used and the make file is run the whole blog post will be recreated, with the up-to-date web scraped data and visualisations adjusted, while being available locally it is not available for anyone online to find.
+
+Note: The web-scrape script should be run before running the blog script for the scraped pie chart visualisation to correctly update.
 
 ## References and Resources
 **Data:**
