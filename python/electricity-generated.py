@@ -286,7 +286,7 @@ ani1 = FuncAnimation(
 
 plt.tight_layout()
 
-output_folder = r"C:\\Users\\mm147\\Empirical-Project\\Data-Science-Empirical-Project\\site\\Visualisations" 
+output_folder = r"site/Visualisations" 
 os.makedirs(output_folder, exist_ok=True)
 
 gif_path = os.path.join(output_folder, "annual-renewable-generation.gif") # Saving to Visualisations folder as gif

@@ -141,7 +141,7 @@ def animate(frame):
 trade_animation = animation.FuncAnimation(fig, animate, frames=frames, interval=500, repeat=True) # Animating the function with 500ms between frames
 
 #Saving in visulisations folder as a gif using Pillow writer
-save_path = 'C:\\Users\\mm147\\Empirical-Project\\Data-Science-Empirical-Project\\site\\Visualisations'
+save_path = 'site/Visualisations'
 if not os.path.exists(save_path):
     os.makedirs(save_path)
 completed_video = os.path.join(save_path, 'trade-balance-animation.gif')

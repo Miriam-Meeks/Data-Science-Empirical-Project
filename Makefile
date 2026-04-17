@@ -8,17 +8,20 @@ ELECTRICITY_OUTPUTS = \
 	Visualisations/monthly-wind-generation.html
 
 # Other outputs (adjust as needed)
-TRADE_OUT = Visualisations/trade-balance-animation.gif
-FUEL_OUT  = Visualisations/fuel-consumption-line.html
-SCRAPE_OUT = Visualisations/scraped-generation-mix.html
+TRADE_OUT = site/Visualisations/trade-balance-animation.gif
+FUEL_OUT  = site/Visualisations/fuel-consumption-line.html
+SCRAPE_OUT = site/Visualisations/scraped-generation-mix.html
 BLOG_OUT = site/blog-uk-energy.html
 
 # Default
 all: $(BLOG_OUT)
 
-# --- Electricity (multiple outputs from one script) ---
-$(ELECTRICITY_OUTPUTS):  python/electricity-generated.py
-	$(PYTHON)  python/electricity-generated.py
+# Runs once 
+electricity.stamp: python/electricity-generated.py
+	$(PYTHON) python/electricity-generated.py
+	@touch electricity.stamp
+
+$(ELECTRICITY_OUTPUTS): electricity.stamp
 
 # --- Other scripts ---
 $(TRADE_OUT): python/trade-balance.py
