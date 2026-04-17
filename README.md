@@ -1,7 +1,7 @@
 # How is the UKs energy provision changing over time?
 Data Science in Economics (BEE2041_A_2_202526) Empirical Project.
 
-Table of contents:
+## Table of contents:
 1.	[Overview](#overview)
 2.	[Data](#data)
 3.	[Repository Structure](#repository-structure)
@@ -57,8 +57,39 @@ Dataset: Net_Imports_DUKES_5.13.xlsx [net-imports.csv]
 
 ## Repository Structure
 
-
-
+```bash
+.
+├── README.md
+├── Makefile
+├── csv-raw/
+│   ├── electricity-generated.csv          # Raw data sheets in CSV format
+│   ├── monthly-energy-generation.csv
+│   ├── net-imports.csv
+│   ├── share-electricity-generated.csv
+│   └── uk-fuel-consption.csv
+├── csv-reshaped/
+│   ├── electricity-generated-long.csv     # Reshaped, manipulated CSV ready for visualising
+│   ├── net-imports-long.csv
+│   └── share-electricity-generated-long.csv
+├── python/
+│   ├── electricity-generated.py           # Main bulk of data wrangling and visualising
+│   ├── trade-balance.py
+│   ├── fuel-usage.py
+│   ├── web-scrape.py                      # Includes topic 5 web scrape
+│   └── blog.py                            # Script for creating HTML blog
+├── Visualisation/
+│   ├── annual-renewable-generation.gif
+│   ├── monthly-mpps-renewable-generation.gif
+│   ├── trade-balance-animation.gif
+│   ├── combined_energy_pie_charts.html
+│   ├── fuel-consumption-line.html
+│   ├── monthly-wind-generation.html
+│   └── scraped-generation-mix.html
+└── site/
+    ├── index.html                         # Index page that blog is accessible from
+    └── blog-uk-energy.html                # Locally hosted blog on UK energy
+```
+All raw data (in csv format) lives in `csv-raw/`. All python scripts, including the one that creates a blog is in `python/` and all output is exported to `Visualisations`. It is important to understand that for the blog to have the most up-to-date visualisations, **all other python scripts must be run before running blog.py** -as made clear in the makefile. To access the blog open the site folder and follow the link in the index.html or go directly to the blog-uk-energy-html page by following the hyperlink in the folder.
 
 
 ## Requirements
