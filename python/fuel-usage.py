@@ -4,7 +4,7 @@ import plotly.express as px
 
 #Data didnt need much reshaping or cleaning/ no missing values, for years between datapoints also little wrangling needed
 # Looking at fuel usage over time
-fuel_consumption = pd.read_csv("uk-fuel-consumption.csv")
+fuel_consumption = pd.read_csv("csv-raw/uk-fuel-consumption.csv")
 fuel_consumption = fuel_consumption[["Year", "All vehicles"]] # Keeping 2 columns of interest only
 #print(fuel_consumption.head())
 
