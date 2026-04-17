@@ -18,6 +18,8 @@ I have used multiple datasets and techniques to adequately visualise changes of 
 
 I have also used a Web scrape to find and import current information for this project from the site of inspiration https://grid.iamkate.com/ 
 
+An easy to view version is checked in and available via GitHub pages: https://miriam-meeks.github.io/Data-Science-Empirical-Project/site/blog-uk-energy.html
+
 ## Data
 Datasets used came from Digest of UK Energy Statistics (DUKES) and Accredited official statistics - both reliable UK Government sources
 
@@ -159,6 +161,10 @@ site/
     index.html
     blog-uk-energy.html
 ```
+
+I have also checked in the generated site which you can view below in GitHub pages:
+
+https://miriam-meeks.github.io/Data-Science-Empirical-Project/site/blog-uk-energy.html
 
 ## Outputs
 Figures (results/figures/)
