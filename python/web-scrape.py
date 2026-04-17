@@ -95,6 +95,6 @@ fig.update_layout(
     ]
 )
 
-fig.write_html("Visualisations/scraped-generation-mix.html") #Saving as html in Visualisations
+fig.write_html("site/Visualisations/scraped-generation-mix.html") #Saving as html in Visualisations
 
 #fig.show()

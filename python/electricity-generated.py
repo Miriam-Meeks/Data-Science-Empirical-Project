@@ -192,7 +192,7 @@ fig.update_layout( # Adding title and legend
     showlegend=True
 )
 
-fig.write_html("Visualisations/combined_energy_pie_charts.html") # Saved as an interactive html in visualisations
+fig.write_html("site/Visualisations/combined_energy_pie_charts.html") # Saved as an interactive html in visualisations
 #fig.show()
 
 
@@ -286,7 +286,7 @@ ani1 = FuncAnimation(
 
 plt.tight_layout()
 
-output_folder = r"C:\\Users\\mm147\\Empirical-Project\\Data-Science-Empirical-Project\\Visualisations" 
+output_folder = r"C:\\Users\\mm147\\Empirical-Project\\Data-Science-Empirical-Project\\site\\Visualisations" 
 os.makedirs(output_folder, exist_ok=True)
 
 gif_path = os.path.join(output_folder, "annual-renewable-generation.gif") # Saving to Visualisations folder as gif
@@ -454,5 +454,5 @@ fig.update_layout(
     xaxis_rangeslider_visible=True
 )
 
-fig.write_html("Visualisations/monthly-wind-generation.html") # Saved as html visualisation
+fig.write_html("site/Visualisations/monthly-wind-generation.html") # Saved as html visualisation
 #fig.show()
