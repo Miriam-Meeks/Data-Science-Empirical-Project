@@ -72,7 +72,7 @@ posts = [
 
 <h2>Past Few Decades of Electricity Generation</h2>
 
-<img src="../Visualisations/annual-renewable-generation.gif" alt="Annual Renewable Generation Trends" style="width:100%; margin-top:20px; border-radius:10px;">
+<img src="../site/Visualisations/annual-renewable-generation.gif" alt="Annual Renewable Generation Trends" style="width:100%; margin-top:20px; border-radius:10px;">
 
 <p>The graph above illustrates the growth of renewable energy generation in the UK since 1996. Wind power generation (both offshore and onshore) began to increase significantly in the early 2000s, while solar energy contributed a much smaller share of generation, only generating noticable amounts of power in the last 15 years.</p>
 
@@ -91,7 +91,7 @@ posts = [
 
 <p>In the graph below, monthly renewable energy generation for Major Power Producers (MPPs) is shown:</p>
 
-<img src="../Visualisations/monthly-mpps-renewable-generation.gif" alt="Monthly Renewable Generation Trends" style="width:100%; margin-top:20px; border-radius:10px;">
+<img src="../site/Visualisations/monthly-mpps-renewable-generation.gif" alt="Monthly Renewable Generation Trends" style="width:100%; margin-top:20px; border-radius:10px;">
 
 <p>Clear seasonal trends can be observed from solar generation, with a smooth oscillating pattern—higher production in summer months and lower in winter—becoming visible from around 2014. Despite this, solar output remains significantly lower than wind.</p>
 
@@ -107,7 +107,7 @@ than a solar panel can. Additionally, solar panels are limited to daylight hours
 <p>Between January 2007 and 2026, wind generation increased by approximately 9.25 terawatt hours (TWh) on a monthly basis, as shown below.</p>
 
 <div style="margin-top:20px;">
-    <iframe src="../Visualisations/monthly-wind-generation.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
+    <iframe src="../site/Visualisations/monthly-wind-generation.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
 </div>
 
 <p>Recent trends highlight rapid growth, although not in this dataset, according to 
@@ -128,7 +128,7 @@ wind output surged by 33% between January and March 2026 compared to the same pe
 <p>The pie charts below show the average fuel mix used in UK electricity generation across each time period.</p>
 
 <div style="margin-top:20px;">
-    <iframe src="../Visualisations/combined_energy_pie_charts.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
+    <iframe src="../site/Visualisations/combined_energy_pie_charts.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
 </div>
 <p><small>[Hover over chart to reveal more information]</small></p>
 
@@ -149,7 +149,7 @@ has also reached record levels of output recently, which has helped lift the UK'
 
 <p>Something that had never occurred to me before beginning this project was what happened to the excess energy we produce? Or an even more pressing issue of what happens if we don’t produce enough energy? In reality, international energy transfers play a crucial role.</p>
 
-<img src="../Visualisations/trade-balance-animation.gif" alt="Energy Trade" style="width:100%; margin-top:20px; border-radius:10px;">
+<img src="../site/Visualisations/trade-balance-animation.gif" alt="Energy Trade" style="width:100%; margin-top:20px; border-radius:10px;">
 
 <p>The animation above shows electricity imports and exports between the UK and neighbouring countries since 2017. While the UK imports fuels such as LNG and oil from nations across the globe, electricity trade is largely limited to geographically close countries due to infrastructure and efficiency constraints. Therefore, the UK recieves transfers mainly from European countries, with which it has undersea interconnectors for power trading.</p>
 
@@ -172,7 +172,7 @@ This should help to reduce reliance on France and (increasingly) Norway for elec
 <h2>Energy Used in Transport</h2>
 
 <div style="margin-top:20px;">
-    <iframe src="../Visualisations/fuel-consumption-line.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
+    <iframe src="../site/Visualisations/fuel-consumption-line.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
 </div>
 <p><small>[Hover over chart to reveal more information]</small></p>
 
@@ -198,7 +198,7 @@ around 59% of households own petrol and 30% own diesel vehicles in the UK. This 
 <a href="https://grid.iamkate.com/" target="_blank">grid.iamkate.com</a>.</p>
 
 <div style="margin-top:20px;">
-    <iframe src="../Visualisations/scraped-generation-mix.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
+    <iframe src="../site/Visualisations/scraped-generation-mix.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
 </div>
 
 <p><small>Data sourced from grid.iamkate.com by Kate Morley. Contains BMRS data © Elexon Limited (2026) and data from the National Energy System Operator and Carbon Intensity API.</small></p>
