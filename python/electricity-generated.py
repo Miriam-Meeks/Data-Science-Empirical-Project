@@ -300,7 +300,7 @@ monthly_gen = monthly_gen.loc[:, ~monthly_gen.columns.str.contains("^Unnamed")] 
 monthly_gen.columns = monthly_gen.columns.str.replace(r"\s*\[.*?\]", "", regex=True) # removing notes
 
 df_monthly = monthly_gen[["Month", "Total electricity supplied by MPPs", "Total wind", "Solar"]]
-print(df_monthly.head())
+#print(df_monthly.head())
 
 #Repeat make of the line graph animation for monthly data generation of MPPs to see cyclical nature.
 df = df_monthly.copy()
@@ -389,7 +389,7 @@ plt.tight_layout()
 
 os.makedirs(output_folder, exist_ok=True)
 gif_path = os.path.join(output_folder, "monthly-mpps-renewable-generation.gif") # Saving to Visualisation folder as gif
-ani2.save(gif_path, writer=PillowWriter(fps=10))
+ani2.save(gif_path, writer=PillowWriter(fps=20))#Doubling frames per second to have a faster monthly animation.
 
 #Interactive (hover) line graph for monthly wind generation over time
 df = df_monthly.copy()

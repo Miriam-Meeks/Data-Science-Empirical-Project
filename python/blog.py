@@ -196,7 +196,7 @@ around 59% of households own petrol and 30% own diesel vehicles in the UK. This 
 <p>The image below shows today’s energy generation mix, total demand, and net transfers (imports & exports). This data is scraped from 
 <a href="https://grid.iamkate.com/" target="_blank">grid.iamkate.com</a>.</p>
 
-div style="margin-top:20px;">
+<div style="margin-top:20px;">
     <iframe src="../Visualisations/scraped-generation-mix.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
 </div>
 
