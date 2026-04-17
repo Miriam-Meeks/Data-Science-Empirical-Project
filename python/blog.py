@@ -65,7 +65,7 @@ posts = [
 
 <p>I, like many others, have grown up in a world where leaving lights on, charging devices overnight, or turning up the heating comes without much thought. However, I have come to realise that this level of energy security is a privilege. These increasing concerns motivated this project: to better understand how the UK produces energy and the extent to which it relies on overseas provision—something I had not previously considered in depth.</p>
 
-<p>One inspiration behind this project was Kate Morley, whose website I later reference in relation to my web scraping work. I was also encouraged by my father, who has a strong interest in energy systems and first introduced me to this topic. I also have an interest in whether or not we are adjusting and adapting ovetime to overcome economic and environmental challenges which will be explored later.</p>
+<p>One inspiration behind this project was Kate Morley, whose website I later reference in relation to my web scraping work. I was also encouraged by my father, who has a strong interest in energy systems and first introduced me to this topic. I also have an interest in whether or not we are adjusting and adapting overtime to overcome economic and environmental challenges which will be explored later.</p>
 
 <p>After exploring annual, monthly, and daily data, my findings suggest that the UK is moving away from coal as a source of energy provision and transitioning towards renewables—particularly wind and nuclear generation, while becoming less dependent on overseas provision.</p>
 
@@ -95,9 +95,8 @@ posts = [
 
 <p>Clear seasonal trends can be observed from solar generation, with a smooth oscillating pattern—higher production in summer months and lower in winter—becoming visible from around 2014. Despite this, solar output remains significantly lower than wind.</p>
 
-<p>One explanation for this disparity is efficiency and consistency. A wind turbine can approximately produce 
-<a href="https://www.compareyourfootprint.com/wind-vs-solar-green-energy-winning/" target="_blank">forty-eight thousand times the amount of energy per kWh</a>, 
-than a solar panel can. Additionally, solar panels are limited to daylight hours, whereas wind (particularly offshore) can generate electricity more consistently, due to relatively constant wind.</p>
+<p>One explanation for this disparity is 
+<a href="https://www.withouthotair.com/c6/page_39.shtml" target = "_blank">efficiency and consistency</a>. Solar panels generally have about 10-20% efficiency, while turbines can have around a 50% efficiency conversion. Additionally, solar panels are limited to daylight hours, whereas wind (particularly offshore) can generate electricity more consistently, due to relatively constant wind.</p>
 
 <p>These factors help explain the faster growth of wind power generation, although solar remains an attractive option for domestic energy generation.</p>
 
@@ -110,7 +109,7 @@ than a solar panel can. Additionally, solar panels are limited to daylight hours
     <iframe src="../site/Visualisations/monthly-wind-generation.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
 </div>
 
-<p>Recent trends highlight rapid growth, although not in this dataset, according to 
+<p>Recent trends highlight rapid growth, although not shown in this dataset, according to 
 <a href="https://www.reuters.com/business/energy/record-wind-output-helps-shield-uk-worst-iran-war-fallout-2026-03-31/" target="_blank">Reuters</a>, 
 wind output surged by 33% between January and March 2026 compared to the same period in 2025.</p>
 
@@ -158,8 +157,9 @@ has also reached record levels of output recently, which has helped lift the UK'
 providing a stable and reliable supply that it can cheaply export to the UK.</p>
 
 <p>Looking ahead, the planned 
-<a href="https://www.nao.org.uk/work-in-progress/sizewell-c/" target="_blank">Sizewell C</a> nuclear power station built in the UK along the Suffolk coast is expected to generate 3.2 GWs annually (currently around 7% of UK demand) by the mid-2030s, when it becomes operational
+<a href="https://www.nao.org.uk/work-in-progress/sizewell-c/" target="_blank">Sizewell C</a> nuclear power station built in the UK along the Suffolk coast is expected to have a 3.2 GW capacity (currently around 7% of UK demand) by the mid-2030s, when it becomes operational
 This should help to reduce reliance on France and (increasingly) Norway for electricity.</p>
+<p>Not only this but Hinkley point, of which Sizewell is the duplicate power plant, is hoping to provide similiar magnitudes of power to the UK, funded by France. <p>
 
 <p>Throughout this animation, except in 2022 the UK is in a trade deficit. In 2022, for the first time in 40 years the UK became a net exporter of electricity.
 <a href="https://reports.electricinsights.co.uk/?p=1740" target="_blank">European energy crisis</a>
@@ -209,7 +209,7 @@ around 59% of households own petrol and 30% own diesel vehicles in the UK. This 
 
 <h2>Conclusion</h2>
 
-<p>Renewable energy generation in the UK has expanded rapidly since around 2010, with wind playing a central role in day-to-day electricity supply in the UK. The continued development of infrastructure, such as offshore-wind farms and nuclear power stations (Sizewell C), offer the potential to further reduce reliance on fossil fuels and energy imports.</p>
+<p>Renewable energy generation in the UK has expanded rapidly since around 2010, with wind playing a central role in day-to-day electricity supply in the UK. The continued development of infrastructure, such as offshore-wind farms and nuclear power stations (Hinkley Point & Sizewell C), offer the potential to further reduce reliance on fossil fuels and energy imports.</p>
 
 <p>However, challenges remain—particularly the UK’s dependence on gas for electricity generation and oil for transport. These dependencies leave the country exposed to geopolitical and economic shocks.</p>
 
