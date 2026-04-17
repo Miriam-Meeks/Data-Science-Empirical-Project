@@ -130,7 +130,7 @@ wind output surged by 33% between January and March 2026 compared to the same pe
 <div style="margin-top:20px;">
     <iframe src="../Visualisations/combined_energy_pie_charts.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
 </div>
-<p> Hover over chart to reveal more information</p>
+<p><small>[Hover over chart to reveal more information<small]></p>
 
 <p>Over the past two decades, there has been a clear shift away from coal. Between 2000–2005, coal accounted for 33.36% of energy generation. By 2020–2024, this had fallen to just 1.59%, despite the marginal increase in coal use in 2010-2014. Also the output from Nuclear (a renewable fuel) has fallen in the last 20 years.</p>
 
@@ -173,7 +173,7 @@ providing a stable and reliable supply that it can cheaply export to the UK.</p>
 <div style="margin-top:20px;">
     <iframe src="../Visualisations/fuel-consumption-line.html" width="100%" height="500px" style="border:none; border-radius:10px;"></iframe>
 </div>
-<p> Hover over chart to reveal more information</p>
+<p><small>[Hover over chart to reveal more information<small]></p>
 
 <p>The graph above shows that, aside from the exception of 2020 due to COVID-19, transport fuel consumption has generally increased since 1970.</p>
 
@@ -201,6 +201,7 @@ div style="margin-top:20px;">
 </div>
 
 <p><small>Data sourced from grid.iamkate.com by Kate Morley. Contains BMRS data © Elexon Limited (2026) and data from the National Energy System Operator and Carbon Intensity API.</small></p>
+<p><small>[Hover over chart to reveal more information<small]></p>
 
 <p>To update this daily view, run the web scraping script before generating the blog.</p>
 

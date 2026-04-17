@@ -192,8 +192,8 @@ fig.update_layout( # Adding title and legend
     showlegend=True
 )
 
-fig.write_html("Visualisations/combined_energy_pie_charts.html") # Saved as an interactive html in visualisations
-fig.show()
+#fig.write_html("Visualisations/combined_energy_pie_charts.html") # Saved as an interactive html in visualisations
+#fig.show()
 
 
 # Line graph animation of renewable energy generation over time
@@ -280,7 +280,7 @@ ani1 = FuncAnimation(
     fig,
     update,
     frames=len(df),
-    interval=200,
+    interval=300,
     repeat=False
 )
 
@@ -292,167 +292,167 @@ os.makedirs(output_folder, exist_ok=True)
 gif_path = os.path.join(output_folder, "annual-renewable-generation.gif") # Saving to Visualisations folder as gif
 ani1.save(gif_path, writer=PillowWriter(fps=10))
 
-#New dataset
-#Importing and using a monthly dataset to briefly look at smaller, seasonal variations
-monthly_gen = pd.read_csv("csv-raw/monthly-energy-generation.csv") # new dataset
-monthly_gen = monthly_gen.loc[:, ~monthly_gen.columns.str.contains("^Unnamed")] # drop empty, unnamed columns
+# #New dataset
+# #Importing and using a monthly dataset to briefly look at smaller, seasonal variations
+# monthly_gen = pd.read_csv("csv-raw/monthly-energy-generation.csv") # new dataset
+# monthly_gen = monthly_gen.loc[:, ~monthly_gen.columns.str.contains("^Unnamed")] # drop empty, unnamed columns
 
-monthly_gen.columns = monthly_gen.columns.str.replace(r"\s*\[.*?\]", "", regex=True) # removing notes
+# monthly_gen.columns = monthly_gen.columns.str.replace(r"\s*\[.*?\]", "", regex=True) # removing notes
 
-df_monthly = monthly_gen[["Month", "Total electricity supplied by MPPs", "Total wind", "Solar"]]
-print(df_monthly.head())
+# df_monthly = monthly_gen[["Month", "Total electricity supplied by MPPs", "Total wind", "Solar"]]
+# print(df_monthly.head())
 
-#Repeat make of the line graph animation for monthly data generation of MPPs to see cyclical nature.
-df = df_monthly.copy()
+# #Repeat make of the line graph animation for monthly data generation of MPPs to see cyclical nature.
+# df = df_monthly.copy()
 
-# Clean Month values and convert to datetime (repeated process for before, look to previous comments)
-df["Month"] = (
-    df["Month"]
-    .astype(str)
-    .str.replace(r"\s*\[.*?\]", "", regex=True)
-    .str.strip()
-)
-df["Month"] = pd.to_datetime(df["Month"], format="%B %Y")
+# # Clean Month values and convert to datetime (repeated process for before, look to previous comments)
+# df["Month"] = (
+#     df["Month"]
+#     .astype(str)
+#     .str.replace(r"\s*\[.*?\]", "", regex=True)
+#     .str.strip()
+# )
+# df["Month"] = pd.to_datetime(df["Month"], format="%B %Y")
 
-# Ensure numeric
-df["Total electricity supplied by MPPs"] = pd.to_numeric(
-    df["Total electricity supplied by MPPs"]
-)
-df["Total wind"] = pd.to_numeric(df["Total wind"])
-df["Solar"] = pd.to_numeric(df["Solar"])
+# # Ensure numeric
+# df["Total electricity supplied by MPPs"] = pd.to_numeric(
+#     df["Total electricity supplied by MPPs"]
+# )
+# df["Total wind"] = pd.to_numeric(df["Total wind"])
+# df["Solar"] = pd.to_numeric(df["Solar"])
 
-# Sort by time
-df = df.sort_values("Month")
+# # Sort by time
+# df = df.sort_values("Month")
 
-fig, ax = plt.subplots(figsize=(12, 6)) #Standard dimensions fixed
+# fig, ax = plt.subplots(figsize=(12, 6)) #Standard dimensions fixed
 
-line1, = ax.plot([], [], marker='x', linewidth=1, label="Total Electricity (MPPs)")
-line2, = ax.plot([], [], marker='x', linewidth=1, label="Wind")
-line3, = ax.plot([], [], marker='x', linewidth=1, label="Solar")
+# line1, = ax.plot([], [], marker='x', linewidth=1, label="Total Electricity (MPPs)")
+# line2, = ax.plot([], [], marker='x', linewidth=1, label="Wind")
+# line3, = ax.plot([], [], marker='x', linewidth=1, label="Solar")
 
-ax.set_xlim(df["Month"].min(), df["Month"].max()) # Setting limits
-ax.set_ylim(0, df["Total electricity supplied by MPPs"].max() * 1.1)
+# ax.set_xlim(df["Month"].min(), df["Month"].max()) # Setting limits
+# ax.set_ylim(0, df["Total electricity supplied by MPPs"].max() * 1.1)
 
-ax.set_xlabel("Year")
-ax.set_ylabel("Electricity (TWh)")
-ax.set_title("Electricity supplied (net) by Major Power Producers (MPPs) monthly trends")
+# ax.set_xlabel("Year")
+# ax.set_ylabel("Electricity (TWh)")
+# ax.set_title("Electricity supplied (net) by Major Power Producers (MPPs) monthly trends")
 
-ax.grid(True, linestyle="--", linewidth=0.5, alpha=0.7)
-ax.legend(loc="upper left")
+# ax.grid(True, linestyle="--", linewidth=0.5, alpha=0.7)
+# ax.legend(loc="upper left")
 
-text_main = ax.text(0, 0, "", fontsize=9)
-text_wind = ax.text(0, 0, "", fontsize=9)
-text_solar = ax.text(0, 0, "", fontsize=9)
+# text_main = ax.text(0, 0, "", fontsize=9)
+# text_wind = ax.text(0, 0, "", fontsize=9)
+# text_solar = ax.text(0, 0, "", fontsize=9)
 
-offset = df["Total electricity supplied by MPPs"].max() * 0.02
+# offset = df["Total electricity supplied by MPPs"].max() * 0.02
 
-def update(frame): # Creating frame animations
-    current_df = df.iloc[:frame + 1]
+# def update(frame): # Creating frame animations
+#     current_df = df.iloc[:frame + 1]
 
-    main_data = current_df.dropna(subset=["Total electricity supplied by MPPs"])
-    wind_data = current_df[current_df["Total wind"].notna()]
-    solar_data = current_df[current_df["Solar"].notna()] # Plotting non-empty values
+#     main_data = current_df.dropna(subset=["Total electricity supplied by MPPs"])
+#     wind_data = current_df[current_df["Total wind"].notna()]
+#     solar_data = current_df[current_df["Solar"].notna()] # Plotting non-empty values
 
-    # Update lines
-    line1.set_data(main_data["Month"], main_data["Total electricity supplied by MPPs"])
-    line2.set_data(wind_data["Month"], wind_data["Total wind"])
-    line3.set_data(solar_data["Month"], solar_data["Solar"])
+#     # Update lines
+#     line1.set_data(main_data["Month"], main_data["Total electricity supplied by MPPs"])
+#     line2.set_data(wind_data["Month"], wind_data["Total wind"])
+#     line3.set_data(solar_data["Month"], solar_data["Solar"])
 
-    #Labels postioning and text setting
-    if not main_data.empty:
-        x, y = main_data["Month"].iloc[-1], main_data["Total electricity supplied by MPPs"].iloc[-1]
-        text_main.set_position((x, y + offset))
-        text_main.set_text(f"{y:.2f}")
+#     #Labels postioning and text setting
+#     if not main_data.empty:
+#         x, y = main_data["Month"].iloc[-1], main_data["Total electricity supplied by MPPs"].iloc[-1]
+#         text_main.set_position((x, y + offset))
+#         text_main.set_text(f"{y:.2f}")
 
-    if not wind_data.empty:
-        x, y = wind_data["Month"].iloc[-1], wind_data["Total wind"].iloc[-1]
-        text_wind.set_position((x, y + offset))
-        text_wind.set_text(f"{y:.2f}")
+#     if not wind_data.empty:
+#         x, y = wind_data["Month"].iloc[-1], wind_data["Total wind"].iloc[-1]
+#         text_wind.set_position((x, y + offset))
+#         text_wind.set_text(f"{y:.2f}")
 
-    if not solar_data.empty:
-        x, y = solar_data["Month"].iloc[-1], solar_data["Solar"].iloc[-1]
-        text_solar.set_position((x, y + offset))
-        text_solar.set_text(f"{y:.2f}")
+#     if not solar_data.empty:
+#         x, y = solar_data["Month"].iloc[-1], solar_data["Solar"].iloc[-1]
+#         text_solar.set_position((x, y + offset))
+#         text_solar.set_text(f"{y:.2f}")
 
-    return line1, line2, line3, text_main, text_wind, text_solar
+#     return line1, line2, line3, text_main, text_wind, text_solar
 
-#Animating monthly renewable generation
-ani2 = FuncAnimation(
-    fig,
-    update,
-    frames=len(df),
-    interval=100,
-    repeat=False
-)
+# #Animating monthly renewable generation
+# ani2 = FuncAnimation(
+#     fig,
+#     update,
+#     frames=len(df),
+#     interval=100,
+#     repeat=False
+# )
 
-plt.tight_layout()
+# plt.tight_layout()
 
-os.makedirs(output_folder, exist_ok=True)
-gif_path = os.path.join(output_folder, "monthly-mpps-renewable-generation.gif") # Saving to Visualisation folder as gif
-ani2.save(gif_path, writer=PillowWriter(fps=10))
+# os.makedirs(output_folder, exist_ok=True)
+# gif_path = os.path.join(output_folder, "monthly-mpps-renewable-generation.gif") # Saving to Visualisation folder as gif
+# ani2.save(gif_path, writer=PillowWriter(fps=10))
 
-#Interactive (hover) line graph for monthly wind generation over time
-df = df_monthly.copy()
-#print(df.head())
+# #Interactive (hover) line graph for monthly wind generation over time
+# df = df_monthly.copy()
+# #print(df.head())
 
-# Clean Month values and convert to datetime
-df["Month"] = (
-    df["Month"]
-    .astype(str)
-    .str.replace(r"\s*\[.*?\]", "", regex=True)
-    .str.strip()
-)
-df["Month"] = pd.to_datetime(df["Month"], format="%B %Y", errors="coerce")
+# # Clean Month values and convert to datetime
+# df["Month"] = (
+#     df["Month"]
+#     .astype(str)
+#     .str.replace(r"\s*\[.*?\]", "", regex=True)
+#     .str.strip()
+# )
+# df["Month"] = pd.to_datetime(df["Month"], format="%B %Y", errors="coerce")
 
-# Ensure numeric
-df["Total wind"] = pd.to_numeric(df["Total wind"], errors="coerce")
+# # Ensure numeric
+# df["Total wind"] = pd.to_numeric(df["Total wind"], errors="coerce")
 
-# Drop rows where wind is NaN
-df = df.dropna(subset=["Total wind"])
+# # Drop rows where wind is NaN
+# df = df.dropna(subset=["Total wind"])
 
-# Sort just in case
-df = df.sort_values("Month")
+# # Sort just in case
+# df = df.sort_values("Month")
 
-# Create interactive plot with plotly express
-fig = px.line(
-    df,
-    x="Month",
-    y="Total wind",
-    title="MPPs Monthly Wind Generation Over Time (UK)",
-    markers=True
-)
+# # Create interactive plot with plotly express
+# fig = px.line(
+#     df,
+#     x="Month",
+#     y="Total wind",
+#     title="MPPs Monthly Wind Generation Over Time (UK)",
+#     markers=True
+# )
 
-#Improving aesthetic
-fig.update_layout(
-    xaxis_title="Time",
-    yaxis_title="Wind Generation (TWh)",
-    hovermode="x unified", # Best hover mode
+# #Improving aesthetic
+# fig.update_layout(
+#     xaxis_title="Time",
+#     yaxis_title="Wind Generation (TWh)",
+#     hovermode="x unified", # Best hover mode
 
-    # White background
-    plot_bgcolor="white",
-    paper_bgcolor="white",
+#     # White background
+#     plot_bgcolor="white",
+#     paper_bgcolor="white",
 
-    # Gridlines
-    xaxis=dict(
-        showgrid=True,
-        gridcolor="lightgrey",
-        dtick="M12"  # major grid line for every year
-    ),
-    yaxis=dict(
-        showgrid=True,
-        gridcolor="lightgrey"
-    )
-)
+#     # Gridlines
+#     xaxis=dict(
+#         showgrid=True,
+#         gridcolor="lightgrey",
+#         dtick="M12"  # major grid line for every year
+#     ),
+#     yaxis=dict(
+#         showgrid=True,
+#         gridcolor="lightgrey"
+#     )
+# )
 
-# Cleaner hover labels
-fig.update_traces(
-    hovertemplate="Date: %{x|%b %Y}<br>Wind: %{y:.2f}<extra></extra>"
-)
+# # Cleaner hover labels
+# fig.update_traces(
+#     hovertemplate="Date: %{x|%b %Y}<br>Wind: %{y:.2f}<extra></extra>"
+# )
 
-# Range slider for time series and for good user interactivity within the visualisation
-fig.update_layout(
-    xaxis_rangeslider_visible=True
-)
+# # Range slider for time series and for good user interactivity within the visualisation
+# fig.update_layout(
+#     xaxis_rangeslider_visible=True
+# )
 
-fig.write_html("Visualisations/monthly-wind-generation.html") # Saved as html visualisation
-#fig.show()
+# fig.write_html("Visualisations/monthly-wind-generation.html") # Saved as html visualisation
+# #fig.show()
